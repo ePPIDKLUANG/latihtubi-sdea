@@ -13,8 +13,9 @@
     
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Amiri', serif;
             background-color: #f8fafc;
+            font-size: 1.1rem;
         }
         .font-jawi {
             font-family: 'Amiri', serif;
@@ -86,28 +87,30 @@
                         <div class="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-md">
                             <i class="fas fa-book-quran"></i>
                         </div>
-                        <span class="font-bold text-xl text-emerald-800 hidden sm:block">Koleksi Latihan SDEA DAERAH KLUANG</span>
+                        <span class="font-bold text-2xl text-emerald-800 hidden sm:block font-jawi mt-1">کوليکسي لاتيهن SDEA داءيره کلوڠ</span>
                     </a>
                 </div>
 
                 <!-- Menu Desktop -->
                 <div class="hidden md:flex items-center space-x-1 lg:space-x-3">
-                    <a href="#tauhid" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 transition flex items-center gap-1.5">
-                        <i class="fas fa-mosque text-emerald-600"></i> Tauhid
+                    <a href="#tauhid" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 transition flex items-center gap-1.5 font-jawi text-xl">
+                        <i class="fas fa-mosque text-emerald-600"></i> توحيد
                     </a>
-                    <a href="#muamalat" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 transition flex items-center gap-1.5">
-                        <i class="fas fa-handshake text-blue-600"></i> Muamalat
+                    <a href="#muamalat" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 transition flex items-center gap-1.5 font-jawi text-xl">
+                        <i class="fas fa-handshake text-blue-600"></i> معاملات
                     </a>
-                    <a href="#akhlak" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-purple-700 bg-purple-50 hover:bg-purple-100 transition flex items-center gap-1.5">
-                        <i class="fas fa-heart text-purple-600"></i> Akhlak Tasawuf
+                    <a href="#akhlak" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg font-semibold text-purple-700 bg-purple-50 hover:bg-purple-100 transition flex items-center gap-1.5 font-jawi text-xl">
+                        <i class="fas fa-heart text-purple-600"></i> اخلاق تصوف
                     </a>
-                    <a href="#arab" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-amber-700 bg-amber-50 hover:bg-amber-100 transition flex items-center gap-1.5">
-                        <i class="fas fa-language text-amber-600"></i> Bahasa Arab
+                    <a href="#arab" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg font-semibold text-amber-700 bg-amber-50 hover:bg-amber-100 transition flex items-center gap-1.5 font-jawi text-xl">
+                        <i class="fas fa-language text-amber-600"></i> بهاس عرب
                     </a>
-                    <a href="#ibadat" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-teal-700 bg-teal-50 hover:bg-teal-100 transition flex items-center gap-1.5">
-                        <i class="fas fa-pray text-teal-600"></i> Ibadat
+                    <a href="#ibadat" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg font-semibold text-teal-700 bg-teal-50 hover:bg-teal-100 transition flex items-center gap-1.5 font-jawi text-xl">
+                        <i class="fas fa-pray text-teal-600"></i> عبادات
                     </a>
-                    <a href="#faraid" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 transition">Faraid</a>
+                    <a href="#faraid" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg font-semibold text-rose-700 hover:bg-rose-50 transition flex items-center gap-1.5 font-jawi text-xl">
+                        <i class="fas fa-balance-scale text-rose-500"></i> فرائض
+                    </a>
                 </div>
 
                 <!-- Butang Menu Mudah Alih (Hamburger) -->
@@ -125,12 +128,12 @@
         <!-- Menu Mudah Alih -->
         <div class="md:hidden hidden bg-white border-t border-gray-100" id="mobile-menu">
             <div class="px-3 pt-2 pb-3 space-y-1 shadow-inner">
-                <a href="#tauhid" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-semibold text-emerald-700 bg-emerald-50">SDEA Tauhid (5 Mod Interaktif)</a>
-                <a href="#muamalat" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-semibold text-blue-700 bg-blue-50">SDEA Muamalat (5 Mod Interaktif)</a>
-                <a href="#akhlak" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-semibold text-purple-700 bg-purple-50">SDEA Akhlak Tasawuf (5 Mod Interaktif)</a>
-                <a href="#arab" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-semibold text-amber-700 bg-amber-50">SDEA Bahasa Arab (5 Mod Interaktif)</a>
-                <a href="#ibadat" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-semibold text-teal-700 bg-teal-50">SDEA Ibadat (5 Mod Interaktif)</a>
-                <a href="#faraid" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-semibold text-rose-700 bg-rose-50">SDEA Faraid (5 Mod Interaktif)</a>
+                <a href="#tauhid" onclick="showPortalHome()" class="block px-3 py-2 rounded-md font-semibold text-emerald-700 bg-emerald-50 font-jawi text-xl">SDEA توحيد (5 مود اينترکتيف)</a>
+                <a href="#muamalat" onclick="showPortalHome()" class="block px-3 py-2 rounded-md font-semibold text-blue-700 bg-blue-50 font-jawi text-xl">SDEA معاملات (5 مود اينترکتيف)</a>
+                <a href="#akhlak" onclick="showPortalHome()" class="block px-3 py-2 rounded-md font-semibold text-purple-700 bg-purple-50 font-jawi text-xl">SDEA اخلاق تصوف (5 مود اينترکتيف)</a>
+                <a href="#arab" onclick="showPortalHome()" class="block px-3 py-2 rounded-md font-semibold text-amber-700 bg-amber-50 font-jawi text-xl">SDEA بهاس عرب (5 مود اينترکتيف)</a>
+                <a href="#ibadat" onclick="showPortalHome()" class="block px-3 py-2 rounded-md font-semibold text-teal-700 bg-teal-50 font-jawi text-xl">SDEA عبادات (5 مود اينترکتيف)</a>
+                <a href="#faraid" onclick="showPortalHome()" class="block px-3 py-2 rounded-md font-semibold text-rose-700 bg-rose-50 font-jawi text-xl">SDEA فرائض (5 مود اينترکتيف)</a>
             </div>
         </div>
     </nav>
@@ -153,11 +156,11 @@
             <!-- Pengepala Utama (Hero Section) -->
             <header class="bg-gradient-to-r from-emerald-800 via-teal-800 to-blue-900 text-white py-16 px-4 text-center shadow-lg relative overflow-hidden">
                 <div class="max-w-4xl mx-auto relative z-10">
-                    <span class="inline-block px-4 py-1.5 bg-emerald-700/60 rounded-full text-emerald-200 text-sm font-semibold mb-4 border border-emerald-500/30">
-                        <i class="fas fa-star text-amber-300 mr-1"></i> Hub Pengajian Islam Terpadu
+                    <span class="inline-block px-4 py-1.5 bg-emerald-700/60 rounded-full text-emerald-200 text-sm font-semibold mb-4 border border-emerald-500/30 font-jawi text-xl">
+                        <i class="fas fa-star text-amber-300 mr-1"></i> هوب ڤڠاجين إسلام ترڤادو
                     </span>
-                    <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Koleksi Latihan SDEA DAERAH KLUANG</h1>
-                    <p class="text-lg md:text-xl text-emerald-100 max-w-2xl mx-auto font-light">Satu portal komprehensif yang menghimpunkan koleksi soalan dan modul pembelajaran interaktif persediaan peperiksaan <strong>Sijil Darjah Enam Agama (SDEA)</strong> yang lengkap bagi murid-murid Darjah 6.</p>
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight font-jawi leading-tight">کوليکسي لاتيهن SDEA داءيره کلوڠ</h1>
+                    <p class="text-xl md:text-2xl text-emerald-100 max-w-3xl mx-auto font-light font-jawi leading-loose">ساتو ڤورتل کومڤريهنسيف يڠ مڠهيمڤونکن کوليکسي سوءالن دان مودول ڤمبلاجرن اينترکتيف ڤرسدياءن ڤڤريقساءن <strong class="text-white">سيجيل درجه انم اݢام (SDEA)</strong> يڠ لڠکڤ باݢي موريد-موريد درجه 6.</p>
                 </div>
             </header>
 
@@ -170,15 +173,15 @@
                                 <i class="fas fa-mosque"></i>
                             </div>
                             <div>
-                                <div class="flex items-center gap-2">
-                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">SDEA Tauhid</h2>
-                                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">Darjah 6</span>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 font-jawi">SDEA توحيد</h2>
+                                    <span class="bg-emerald-100 text-emerald-800 text-sm font-bold px-3 py-1 rounded-full font-jawi">درجه 6</span>
                                 </div>
-                                <p class="text-slate-600 font-jawi text-xl mt-1">ڤورتل اوتام توحيد درجه 6 (5 مود ڤمبلاجرن)</p>
+                                <p class="text-slate-600 font-jawi text-xl">ڤورتل اوتام توحيد درجه 6 (5 مود ڤمبلاجرن)</p>
                             </div>
                         </div>
-                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600">
-                            <i class="fas fa-layer-group text-emerald-600 mr-1"></i> Merangkumi <strong>Pelajaran 1 hingga 8</strong>
+                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600 font-jawi text-xl">
+                            <i class="fas fa-layer-group text-emerald-600 mr-1"></i> مرڠکومي <strong>ڤلاجرن 1 هيڠݢ 8</strong>
                         </div>
                     </div>
 
@@ -271,15 +274,15 @@
                                 <i class="fas fa-handshake"></i>
                             </div>
                             <div>
-                                <div class="flex items-center gap-2">
-                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">SDEA Muamalat</h2>
-                                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">Darjah 6</span>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 font-jawi">SDEA معاملات</h2>
+                                    <span class="bg-blue-100 text-blue-800 text-sm font-bold px-3 py-1 rounded-full font-jawi">درجه 6</span>
                                 </div>
-                                <p class="text-slate-600 font-jawi text-xl mt-1">ڤورتل اوتام معاملات درجه 6 (5 مود ڤمبلاجرن)</p>
+                                <p class="text-slate-600 font-jawi text-xl">ڤورتل اوتام معاملات درجه 6 (5 مود ڤمبلاجرن)</p>
                             </div>
                         </div>
-                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600">
-                            <i class="fas fa-layer-group text-blue-600 mr-1"></i> Merangkumi <strong>Pelajaran 1 hingga 5</strong>
+                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600 font-jawi text-xl">
+                            <i class="fas fa-layer-group text-blue-600 mr-1"></i> مرڠکومي <strong>ڤلاجرن 1 هيڠݢ 5</strong>
                         </div>
                     </div>
 
@@ -372,15 +375,15 @@
                                 <i class="fas fa-heart"></i>
                             </div>
                             <div>
-                                <div class="flex items-center gap-2">
-                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">SDEA Akhlak Tasawuf</h2>
-                                    <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full">Darjah 6</span>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 font-jawi">SDEA اخلاق تصوف</h2>
+                                    <span class="bg-purple-100 text-purple-800 text-sm font-bold px-3 py-1 rounded-full font-jawi">درجه 6</span>
                                 </div>
-                                <p class="text-slate-600 font-jawi text-xl mt-1">ڤورتل اوتام اخلاق دان تصوف درجه 6 (5 مود ڤمبلاجرن)</p>
+                                <p class="text-slate-600 font-jawi text-xl">ڤورتل اوتام اخلاق دان تصوف درجه 6 (5 مود ڤمبلاجرن)</p>
                             </div>
                         </div>
-                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600">
-                            <i class="fas fa-layer-group text-purple-600 mr-1"></i> Merangkumi <strong>Pelajaran 1 hingga 10</strong>
+                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600 font-jawi text-xl">
+                            <i class="fas fa-layer-group text-purple-600 mr-1"></i> مرڠکومي <strong>ڤلاجرن 1 هيڠݢ 10</strong>
                         </div>
                     </div>
 
@@ -473,15 +476,15 @@
                                 <i class="fas fa-language"></i>
                             </div>
                             <div>
-                                <div class="flex items-center gap-2">
-                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">SDEA Bahasa Arab</h2>
-                                    <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">Darjah 6</span>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 font-jawi">SDEA بهاس عرب</h2>
+                                    <span class="bg-amber-100 text-amber-800 text-sm font-bold px-3 py-1 rounded-full font-jawi">درجه 6</span>
                                 </div>
-                                <p class="text-slate-600 font-jawi text-xl mt-1">ڤورتل اوتام بهاس عرب درجه 6 (5 مود ڤمبلاجرن)</p>
+                                <p class="text-slate-600 font-jawi text-xl">ڤورتل اوتام بهاس عرب درجه 6 (5 مود ڤمبلاجرن)</p>
                             </div>
                         </div>
-                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600">
-                            <i class="fas fa-layer-group text-amber-600 mr-1"></i> Merangkumi <strong>Pelajaran 1 hingga 5</strong>
+                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600 font-jawi text-xl">
+                            <i class="fas fa-layer-group text-amber-600 mr-1"></i> مرڠکومي <strong>ڤلاجرن 1 هيڠݢ 5</strong>
                         </div>
                     </div>
 
@@ -574,15 +577,15 @@
                                 <i class="fas fa-pray"></i>
                             </div>
                             <div>
-                                <div class="flex items-center gap-2">
-                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">SDEA Ibadat</h2>
-                                    <span class="bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full">Darjah 6</span>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 font-jawi">SDEA عبادات</h2>
+                                    <span class="bg-teal-100 text-teal-800 text-sm font-bold px-3 py-1 rounded-full font-jawi">درجه 6</span>
                                 </div>
-                                <p class="text-slate-600 font-jawi text-xl mt-1">ڤورتل اوتام عبادات درجه 6 (5 مود ڤمبلاجرن)</p>
+                                <p class="text-slate-600 font-jawi text-xl">ڤورتل اوتام عبادات درجه 6 (5 مود ڤمبلاجرن)</p>
                             </div>
                         </div>
-                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600">
-                            <i class="fas fa-layer-group text-teal-600 mr-1"></i> Merangkumi <strong>Pelajaran 1 hingga 8</strong>
+                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600 font-jawi text-xl">
+                            <i class="fas fa-layer-group text-teal-600 mr-1"></i> مرڠکومي <strong>ڤلاجرن 1 هيڠݢ 8</strong>
                         </div>
                     </div>
 
@@ -675,15 +678,15 @@
                                 <i class="fas fa-balance-scale"></i>
                             </div>
                             <div>
-                                <div class="flex items-center gap-2">
-                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">SDEA Faraid</h2>
-                                    <span class="bg-rose-100 text-rose-800 text-xs font-bold px-3 py-1 rounded-full">Darjah 6</span>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 font-jawi">SDEA فرائض</h2>
+                                    <span class="bg-rose-100 text-rose-800 text-sm font-bold px-3 py-1 rounded-full font-jawi">درجه 6</span>
                                 </div>
-                                <p class="text-slate-600 font-jawi text-xl mt-1">ڤورتل اوتام فرائض درجه 6 (5 مود ڤمبلاجرن)</p>
+                                <p class="text-slate-600 font-jawi text-xl">ڤورتل اوتام فرائض درجه 6 (5 مود ڤمبلاجرن)</p>
                             </div>
                         </div>
-                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600">
-                            <i class="fas fa-layer-group text-rose-600 mr-1"></i> Merangkumi <strong>Pelajaran 1 hingga 7</strong>
+                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600 font-jawi text-xl">
+                            <i class="fas fa-layer-group text-rose-600 mr-1"></i> مرڠکومي <strong>ڤلاجرن 1 هيڠݢ 7</strong>
                         </div>
                     </div>
 
@@ -773,17 +776,17 @@
             <!-- Header Navigasi Aplikasi Interaktif -->
             <header class="bg-white border-b border-slate-200 h-20 px-4 md:px-8 flex items-center justify-between shadow-sm sticky top-20 z-40">
                 <div class="flex items-center gap-3">
-                    <button onclick="showPortalHome()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-semibold text-sm transition flex items-center gap-2">
-                        <i class="fas fa-arrow-right"></i> Kembali ke Portal Utama
+                    <button onclick="showPortalHome()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-semibold transition flex items-center gap-2 font-jawi text-xl mt-1">
+                        <i class="fas fa-arrow-right"></i> کمبالي ک ڤورتل اوتام
                     </button>
                     <span class="text-slate-300">|</span>
-                    <div class="flex items-center gap-2 font-bold font-jawi text-xl" id="subject-mode-header">
+                    <div class="flex items-center gap-2 font-bold font-jawi text-2xl mt-1" id="subject-mode-header">
                         <i class="fas fa-book-reader" id="subject-mode-icon"></i>
                         <span id="subject-mode-title-jawi">اوجين اوبجيکتيف</span>
                     </div>
                 </div>
                 <div class="flex items-center gap-2">
-                    <span id="subject-badge" class="text-xs bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-bold">Tauhid Darjah 6</span>
+                    <span id="subject-badge" class="bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded-full font-bold font-jawi text-lg mt-1">توحيد درجه 6</span>
                 </div>
             </header>
 
@@ -892,8 +895,8 @@
                 <div class="bg-white p-6 rounded-3xl shadow-lg border border-slate-200">
                     <div class="flex justify-between items-center mb-6 border-b pb-4">
                         <h3 class="font-jawi text-2xl font-bold text-amber-800">ڤادنکن ڤرپاتاءن دڠن جواڤن يڠ بتول</h3>
-                        <span id="match-score" class="font-sans font-bold text-amber-700 bg-amber-100 px-4 py-1.5 rounded-full text-sm">
-                            Padanan Sah: 0 / 4
+                        <span id="match-score" class="font-jawi font-bold text-amber-700 bg-amber-100 px-4 py-1.5 rounded-full text-xl">
+                            ڤادنن صح: 0 / 4
                         </span>
                     </div>
                     <div id="match-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 font-jawi text-xl"></div>
@@ -905,47 +908,47 @@
     <!-- Kaki Halaman (Footer) -->
     <footer class="bg-slate-900 text-slate-400 py-8 text-center border-t border-slate-800 mt-auto">
         <div class="max-w-7xl mx-auto px-4">
-            <p class="text-sm">&copy; 2026 Koleksi Latihan SDEA DAERAH KLUANG.</p>
+            <p class="font-jawi text-xl">&copy; 2026 کوليکسي لاتيهن SDEA داءيره کلوڠ.</p>
         </div>
     </footer>
 
     <script>
         // Data Pembelajaran Tauhid (Pelajaran 1 - 8)
         const tauhidObjectiveData = [
-            { q: "اڤاکه مکنا الإله دري سݢي بهاس؟", options: ["يڠ دسمبه", "يڠ دچيڤتا", "يڠ دموليکن", "يڠ دتاکوتي"], ans: 0, cat: "ڤلاجرن 1: الألوهية" },
+            { q: "اڤاکه معنى الإله دري سݢي بهاس؟", options: ["يڠ دسمبه", "يڠ دچيڤتا", "يڠ دمولياکن", "يڠ دتاکوتي"], ans: 0, cat: "ڤلاجرن 1: الألوهية" },
             { q: "حکوم معرفة الله تعالى باݢي ستياڤ مکلف اداله...", options: ["فرض عين", "فرض كفاية", "سنة", "هاروس"], ans: 0, cat: "ڤلاجرن 1: الألوهية" },
-            { q: "براڤکاه بيلڠن عقيدة الإيمان يڠ واجب دکتاهوءي؟", options: ["50 عقيدة", "20 عقيدة", "13 عقيدة", "66 عقيدة"], ans: 0, cat: "ڤلاجرن 2: عقائد الإيمان" },
-            { q: "صفت يڠ واجب باݢي رسول بربيلڠ...", options: ["4 صفت", "20 صفت", "5 صفت", "1 صفت"], ans: 0, cat: "ڤلاجرن 3: نبي دان رسول" },
-            { q: "کتاب التوراة دتورونکن کيڤد نبي...", options: ["موسى عليه السلام", "عيسى عليه السلام", "داود عليه السلام", "محمد صلى الله عليه وسلم"], ans: 0, cat: "ڤلاجرن 4: کتاب" },
-            { q: "ملائکة يڠ برتݢس منچاتت عمل باءيق اداله...", options: ["رقيب", "عتيد", "جبريل", "ميكائيل"], ans: 0, cat: "ڤلاجرن 5: ملائکة" },
-            { q: "برإيمان کيڤد هاري قيامة ترماسوق دالم روکون...", options: ["الإيمان يڠ کـ5", "الإيمان يڠ کـ3", "الإسلام يڠ کـ2", "الإحسان"], ans: 0, cat: "ڤلاجرن 6: هاري قيامة" },
-            { q: "قضاء مپاتاکن کتنتوان الله سجق...", options: ["ازل", "سکارڠ", "هاري قيامة", "د عالم برزخ"], ans: 0, cat: "ڤلاجرن 7: قضاء دان قدر" }
+            { q: "براڤاکه بيلڠن عقيدة الإيمان يڠ واجب دکتاهوءي؟", options: ["50 عقيدة", "20 عقيدة", "13 عقيدة", "66 عقيدة"], ans: 0, cat: "ڤلاجرن 2: عقائد الإيمان" },
+            { q: "صفت يڠ واجب باݢي رسول اد...", options: ["4 صفت", "20 صفت", "5 صفت", "1 صفت"], ans: 0, cat: "ڤلاجرن 3: نبي دان رسول" },
+            { q: "کتاب التوراة دتورونکن کڤد نبي...", options: ["موسى عليه السلام", "عيسى عليه السلام", "داود عليه السلام", "محمد صلى الله عليه وسلم"], ans: 0, cat: "ڤلاجرن 4: کتاب" },
+            { q: "ملائکة يڠ برتوݢس منچاتت عمل باءيق اداله...", options: ["رقيب", "عتيد", "جبريل", "ميكائيل"], ans: 0, cat: "ڤلاجرن 5: ملائکة" },
+            { q: "برإيمان کڤد هاري قيامة ترماسوق دالم روکون...", options: ["الإيمان يڠ کـ5", "الإيمان يڠ کـ3", "الإسلام يڠ کـ2", "الإحسان"], ans: 0, cat: "ڤلاجرن 6: هاري قيامة" },
+            { q: "قضاء مننتوکن کتنتوان الله سجق...", options: ["ازلي", "سکارڠ", "هاري قيامة", "د عالم برزخ"], ans: 0, cat: "ڤلاجرن 7: قضاء دان قدر" }
         ];
 
         const tauhidStructuredData = [
-            { q: "پاتاکن تعريف الإله دري سݢي شرع.", ans: "الإله اداله ذات يڠ برحق دسمبه دڠن سبنر-بنرڽ.", cat: "ڤلاجرن 1: الألوهية" },
-            { q: "سنارايکن 4 صفت يڠ واجب باݢي رسول.", ans: "1. الصدق (بنر)\n2. الأمانة (جوجور)\n3. التبليغ (مپامڤايکن)\n4. الفطانة (بيجقسانا)", cat: "ڤلاجرن 3: نبي دان رسول" },
-            { q: "پاتاکن نبي يڠ منريما کتاب الإنجيل.", ans: "نبي عيسى عليه السلام.", cat: "ڤلاجرن 4: کتاب" },
-            { q: "اڤاکه مکنا الشفاعة العظمى؟", ans: "شفاعة تربسر نبي محمد صلى الله عليه وسلم د عالم محشر باݢي ملڤسکن ماءنسي دري کسوسهن.", cat: "ڤلاجرن 8: الشفاعة" }
+            { q: "ڽاتاکن تعريف الإله دري سݢي شرع.", ans: "الإله اداله ذات يڠ برحق دسمبه دڠن سبنر-بنرڽ.", cat: "ڤلاجرن 1: الألوهية" },
+            { q: "سنارايکن 4 صفت يڠ واجب باݢي رسول.", ans: "1. الصدق (بنر)\n2. الأمانة (جوجور)\n3. التبليغ (مڽمڤايکن)\n4. الفطانة (بيجقسانا)", cat: "ڤلاجرن 3: نبي دان رسول" },
+            { q: "ڽاتاکن نبي يڠ منريما کتاب الإنجيل.", ans: "نبي عيسى عليه السلام.", cat: "ڤلاجرن 4: کتاب" },
+            { q: "اڤاکه معنى الشفاعة العظمى؟", ans: "شفاعة تربسر نبي محمد صلى الله عليه وسلم د عالم محشر باݢي ملڤسکن ماءنسي دري کسوسهن.", cat: "ڤلاجرن 8: الشفاعة" }
         ];
 
         const tauhidTrueFalseData = [
-            { q: "حکوم مڠتاهوءي صفت2 واجب باݢي الله اداله فرض عين باݢي ستياڤ مکلف.", ans: true, cat: "ڤلاجرن 1" },
-            { q: "صفت الكذب (دوستا) اداله صفت يڠ واجب باݢي رسول.", ans: false, cat: "ڤلاجرن 3" },
+            { q: "حکوم مڠتاهوءي صفت-صفت واجب باݢي الله اداله فرض عين باݢي ستياڤ مکلف.", ans: true, cat: "ڤلاجرن 1" },
+            { q: "صفت الكذب (دوستا) اداله صفت يڠ مستحيل باݢي رسول.", ans: true, cat: "ڤلاجرن 3" },
             { q: "کتاب القرآن دتورونکن دالم بهاس عرب.", ans: true, cat: "ڤلاجرن 4" },
-            { q: "ملائکة رضوان برتݢس منجاݢ نراک.", ans: false, cat: "ڤلاجرن 5" },
-            { q: "مؤمن يڠ برإيمان wajib برإيمان کيڤد قضاء دان قدر.", ans: true, cat: "ڤلاجرن 7" }
+            { q: "ملائکة رضوان برتوݢس منجاݢ نراک.", ans: false, cat: "ڤلاجرن 5" },
+            { q: "مؤمن يڠ برإيمان واجب برإيمان کڤد قضاء دان قدر.", ans: true, cat: "ڤلاجرن 7" }
         ];
 
         const tauhidMindMapTopics = [
-            { title: "الألوهية (الإله)", nodes: ["تعريف: ذات يڠ برحق دسمبه", "حکوم معرفة: فرض عين", "توجوان: مڠتاهوءي صفت2 الله"] },
+            { title: "الألوهية (الإله)", nodes: ["تعريف: ذات يڠ برحق دسمبه", "حکوم معرفة: فرض عين", "توجوان: مڠتاهوءي صفت-صفت الله"] },
             { title: "عقائد الإيمان (50 عقيدة)", nodes: ["20 صفت واجب باݢي الله", "20 صفت مستحيل باݢي الله", "1 صفت هاروس باݢي الله", "4 صفت واجب باݢي رسول", "4 صفت مستحيل باݢي رسول", "1 صفت هاروس باݢي رسول"] },
-            { title: "نبي دان رسول", nodes: ["صفت واجب: الصدق, الأمانة, التبليغ, الفطانة", "صفت مستحيل: الكذب, الخيانة, الكتمان, البلادة", "بيلڠن رسول wajib دکتاهوءي: 25 اورڠ"] },
-            { title: "کتاب2 الله", nodes: ["التوراة: نبي موسى عليه السلام", "الزبور: نبي داود عليه السلام", "الإنجيل: نبي عيسى عليه السلام", "القرآن: نبي محمد صلى الله عليه وسلم"] },
-            { title: "ملائکة الله", nodes: ["جبريل: مپامڤايکن وحي", "ميكائيل: منورونکن رزقي/هوجن", "إسرافيل: منيوڤ سڠککالا", "عزرائيل: مڽابوت ڽاوا"] },
-            { title: "هاري قيامة", nodes: ["تندا کوچک: باڽق معصية", "تندا تربسر: کلوار دجال & نبي عيسى", "عالم محشر: تمڤت برهيمڤول ماءنسي"] },
-            { title: "قضاء دان قدر", nodes: ["قضاء: کتنتوان الله منذ ازل", "قدر: perlaksanaan کتنتوان mengikut موديليتي", "المعلق: بوليه برأوبه دڠن دعاء", "المبرم: کتنتوان يڠ تتڤ"] },
-            { title: "الشفاعة", nodes: ["الشفاعة العظمى: باݢي نبي محمد صلى الله عليه وسلم", "توجوان: مڠهيندرکن کسيقساءن د محشر", "شرط: دإيزينکن الله تعالى"] }
+            { title: "نبي دان رسول", nodes: ["صفت واجب: الصدق، الأمانة، التبليغ، الفطانة", "صفت مستحيل: الكذب، الخيانة، الكتمان، البلادة", "بيلڠن رسول واجب دکتاهوءي: 25 اورڠ"] },
+            { title: "کتاب-کتاب الله", nodes: ["التوراة: نبي موسى عليه السلام", "الزبور: نبي داود عليه السلام", "الإنجيل: نبي عيسى عليه السلام", "القرآن: نبي محمد صلى الله عليه وسلم"] },
+            { title: "ملائکة الله", nodes: ["جبريل: مڽمڤايکن وحي", "ميكائيل: منورونکن رزقي/هوجن", "إسرافيل: منيوڤ سڠکاکالا", "عزرائيل: منچابوت ڽاوا"] },
+            { title: "هاري قيامة", nodes: ["تندا کچيل: باڽق معصية", "تندا بسر: کلوار دجال & نبي عيسى", "عالم محشر: تمڤت برهيمڤون ماءنسي"] },
+            { title: "قضاء دان قدر", nodes: ["قضاء: کتنتوان الله سجق ازلي", "قدر: ڤرلقساناءن کتنتوان مڠيکوت يڠ دتتڤکن", "المعلق: بوليه بروبه دڠن دعا", "المبرم: کتنتوان يڠ تتڤ"] },
+            { title: "الشفاعة", nodes: ["الشفاعة العظمى: باݢي نبي محمد صلى الله عليه وسلم", "توجوان: مڠهيندرکن سيقساءن د محشر", "شرط: دأيذينکن الله تعالى"] }
         ];
 
         const tauhidMatchPairs = [
@@ -957,35 +960,35 @@
 
         // Data Pembelajaran Muamalat (Pelajaran 1 - 5)
         const muamalatObjectiveData = [
-            { q: "اڤاکه مکنا معاملات دري سݢي بهاس؟", options: ["سام-سام برعقاد/برأوروسن", "جوال بيلي سهاج", "ممباير هوتڠ", "سيوا مڽيوا"], ans: 0, cat: "ڤلاجرن 1: مفهوم معاملات" },
-            { q: "حکوم asal برمعاملات دالم اسلام اداله...", options: ["هاروس", "واجب", "سنة", "مکروه"], ans: 0, cat: "ڤلاجرن 1: مفهوم معاملات" },
+            { q: "اڤاکه معنى معاملات دري سݢي بهاس؟", options: ["سام-سام برعقد/برأوروسن", "جوال بيلي سهاج", "ممباير هوتڠ", "سيوا مڽيوا"], ans: 0, cat: "ڤلاجرن 1: مفهوم معاملات" },
+            { q: "حکوم اصل برمعاملات دالم إسلام اداله...", options: ["هاروس", "واجب", "سنة", "مکروه"], ans: 0, cat: "ڤلاجرن 1: مفهوم معاملات" },
             { q: "روکون جوال بيلي (البيع) ترديري دري...", options: ["3 ڤرکارا", "4 ڤرکارا", "5 ڤرکارا", "2 ڤرکارا"], ans: 0, cat: "ڤلاجرن 2: البيع (جوال بيلي)" },
-            { q: "مڠمبيل تمباهن دالم أوروسن ڤينجمن اتاو ڤرتوکارن بارڠ ترماسوق دالم...", options: ["الربا", "الرهن", "الإجارة", "الوديعة"], ans: 0, cat: "ڤلاجرن 3: الربا" },
-            { q: "الرهن (ݢاداين) برمعنا...", options: ["مڠݢاداي بارڠ سباݢاي چاݢرن هوتڠ", "مڽيوا رومه", "ممبوات صيغة جوال بيلي", "مڠولورکن صدقة"], ans: 0, cat: "ڤلاجرن 4: الرهن (ݢاداين)" },
+            { q: "مڠمبيل تمباهن دالم اوروسن ڤينجمن اتاو ڤرتوکارن بارڠ ترماسوق دالم...", options: ["الربا", "الرهن", "الإجارة", "الوديعة"], ans: 0, cat: "ڤلاجرن 3: الربا" },
+            { q: "الرهن (ݢاداين) برمعنى...", options: ["مڠݢاداي بارڠ سباݢاي چاݢرن هوتڠ", "مڽيوا رومه", "ممبوات صيغة جوال بيلي", "مڠهولورکن صدقه"], ans: 0, cat: "ڤلاجرن 4: الرهن (ݢاداين)" },
             { q: "اڤاکه حکوم ممباير هوتڠ باݢي اورڠ يڠ ممڤو؟", options: ["واجب", "سنة", "هاروس", "مکروه"], ans: 0, cat: "ڤلاجرن 5: الدين (هوتڠ)" }
         ];
 
         const muamalatStructuredData = [
-            { q: "پاتاکن تعريف البيع (جوال بيلي) دري سݢي شرع.", ans: "منوکرکن هرتا دڠن هرتا يڠ لاءين دڠن کاءيده ترتنتو يڠ دإيزينکن شرع.", cat: "ڤلاجرن 2: البيع" },
-            { q: "سنارايکن 3 rukun jual beli.", ans: "1. اورڠ يڠ برعقد (Penjual & Pembeli)\n2. بارڠ يڠ دچوال/دبلي\n3. صيغة (Ijab & Qabul)", cat: "ڤلاجرن 2: البيع" },
-            { q: "اڤاکه مکنا الربا دان حکومڽ دالم اسلام؟", ans: "الربا اداله تمباهن يڠ دشارطکن دالم أوروسن ڤينجمن اتاو ڤرتوکارن barangan terbabit. حکومڽ اداله حرام دان ترماسوق دالم دوسا تربسر.", cat: "ڤلاجرن 3: الربا" },
-            { q: "پاتاکن 2 هکمة دشرعتکن الإجارة (سيوا مڽيوا).", ans: "1. ممودهکن أوروسن کهيدوڤن ماءنسي.\n2. ممبنتو اورڠ يڠ ممبرلوکن ڤرخدمتن اتاو بارڠن تنڤا ممبلي.", cat: "ڤلاجرن 4: الإجارة" }
+            { q: "ڽاتاکن تعريف البيع (جوال بيلي) دري سݢي شرع.", ans: "منوکرکن هرتا دڠن هرتا يڠ لاءين مڠيکوت قاعده ترتنتو يڠ دأيذينکن شرع.", cat: "ڤلاجرن 2: البيع" },
+            { q: "سنارايکن 3 روکون جوال بيلي.", ans: "1. اورڠ يڠ برعقد (ڤنجوال & ڤمبلي)\n2. بارڠ يڠ دجوال/دبلي\n3. صيغة (ايجاب & قبول)", cat: "ڤلاجرن 2: البيع" },
+            { q: "اڤاکه معنى الربا دان حکومڽ دالم إسلام؟", ans: "الربا اداله تمباهن يڠ دتتڤکن دالم اوروسن ڤينجمن اتاو ڤرتوکارن بارڠن. حکومڽ اداله حرام دان ترماسوق دالم دوسا بسر.", cat: "ڤلاجرن 3: الربا" },
+            { q: "ڽاتاکن 2 حکمة دشريعتکن الإجارة (سيوا مڽيوا).", ans: "1. ممودهکن اوروسن کهيدوڤن ماءنسي.\n2. ممبنتو اورڠ يڠ ممرلوکن ڤرخدمتن اتاو بارڠن تنڤا ممبلي.", cat: "ڤلاجرن 4: الإجارة" }
         ];
 
         const muamalatTrueFalseData = [
-            { q: "حکوم asal ber-Muamalat dalam Islam adalah harus selagi tiada larangan Syarak.", ans: true, cat: "ڤلاجرن 1" },
+            { q: "حکوم اصل برمعاملات دالم إسلام اداله هاروس سلاݢي تياد لارڠن شرع.", ans: true, cat: "ڤلاجرن 1" },
             { q: "جوال بيلي بارڠن يڠ حرام سڤرتي ارق دان بابي اداله صح.", ans: false, cat: "ڤلاجرن 2" },
-            { q: "الربا اداله عمالن يڠ دبرکاتي دالم إسلام.", ans: false, cat: "ڤلاجرن 3" },
-            { q: "ممباير هوتڠ اداله واجب دان واجب دجلسکن سݢرا apabila dimampu.", ans: true, cat: "ڤلاجرن 5" },
-            { q: "الإجارة برمعنا ممبري هرتا secara percuma tanpa bayaran.", ans: false, cat: "ڤلاجرن 4" }
+            { q: "الربا اداله عملن يڠ دبرکاتي دالم إسلام.", ans: false, cat: "ڤلاجرن 3" },
+            { q: "ممباير هوتڠ اداله واجب دان مستي دجلسکن سݢرا اڤابيلا ممڤو.", ans: true, cat: "ڤلاجرن 5" },
+            { q: "الإجارة برمعنى ممبري هرتا سچارا ڤرچوما تنڤا بايرن.", ans: false, cat: "ڤلاجرن 4" }
         ];
 
         const muamalatMindMapTopics = [
-            { title: "مفهوم معاملات", nodes: ["تعريف: أوروسن هارين ماءنسي دالم هرتا", "حکوم اصل: هاروس", "توجوان: منجاݢ مسلحة دان هق ماءنسي"] },
-            { title: "البيع (جوال بيلي)", nodes: ["تعريف: ڤرتوکارن هرتا دڠن هرتا", "روکون: penjual/pembeli, barang, صيغة", "شرط صح: بالغ, عاقل, سريلاءين, برسوچي"] },
-            { title: "الربا (ربا)", nodes: ["تعريف: تمباهن دالم ڤينجمن/ڤرتوکارن", "حکوم: حرام دان دوسا تربسر", "اکيبت: منجسکن ايكونومي & ظلم"] },
-            { title: "الإجارة (سيوا مڽيوا)", nodes: ["تعريف: مميليقي منفعة دڠن بايرن", "شرط: منفعة معلوم دان حلال", "کتنتوان: بارڠ تمڤت سيوا ترأوروس باءيق"] },
-            { title: "الرهن & الدين (ݢاداين & هوتڠ)", nodes: ["الرهن: منجادين بارڠ چاݢرن هوتڠ", "الدين: ڤينجمن يڠ wajib دباير سيمولا", "ادب: چڤت ممباير دان تيدک منڠݢوه"] }
+            { title: "مفهوم معاملات", nodes: ["تعريف: اوروسن هارين ماءنسي دالم هرتا", "حکوم اصل: هاروس", "توجوان: منجاݢ مصلحة دان حق ماءنسي"] },
+            { title: "البيع (جوال بيلي)", nodes: ["تعريف: ڤرتوکارن هرتا دڠن هرتا", "روکون: ڤنجوال/ڤمبلي، بارڠ، صيغة", "شرط صح: بالغ، برعقل، سوکاريلا، برسوچي"] },
+            { title: "الربا (ربا)", nodes: ["تعريف: تمباهن دالم ڤينجمن/ڤرتوکارن", "حکوم: حرام دان دوسا بسر", "عاقبة: منججسکن ايكونومي & کظاليمن"] },
+            { title: "الإجارة (سيوا مڽيوا)", nodes: ["تعريف: مميليقي منفعة دڠن بايرن", "شرط: منفعة معلوم دان حلال", "کتنتوان: بارڠ تمڤت سيوا ترأوروس دڠن باءيق"] },
+            { title: "الرهن & الدين (ݢاداين & هوتڠ)", nodes: ["الرهن: منجاديکن بارڠ چاݢرن هوتڠ", "الدين: ڤينجمن يڠ واجب دباير سمولا", "ادب: چڤت ممباير دان تيدک منڠݢوهکن"] }
         ];
 
         const muamalatMatchPairs = [
@@ -998,38 +1001,38 @@
         // Data Pembelajaran Akhlak Tasawuf (Pelajaran 1 - 10)
         const akhlakObjectiveData = [
             { q: "اڤاکه حکوم برادب ترهادڤ کدوا ايبو باڤ؟", options: ["فرض عين", "فرض كفاية", "سنة", "هاروس"], ans: 0, cat: "ڤلاجرن 1: ادب ترهادڤ ايبو باڤ" },
-            { q: "انتارا ادب برتوبة يڠ بتول اداله...", options: ["مڽسلي معصية دان مڠهنتيکنڽ", "ممبوات معصية لاݢي", "منڠݢوه توبة", "ملاکوکنڽ تنڤا نية"], ans: 0, cat: "ڤلاجرن 2: ادب برتوبة" },
-            { q: "اڤاکه حکوم مڠيکوتي جنازة کي قبور باݢي ليلاکي؟", options: ["سنة", "واجب", "مکروه", "حرام"], ans: 0, cat: "ڤلاجرن 3: ادب زياره جنازة" },
-            { q: "صفت برهيس ديري يڠ دتنتوکن دالم إسلام اداله...", options: ["منوتوڤ عورة دان تيدک تبرج", "ممامرکن زينة", "سومبوڠ دڠن ڤکايان", "ممبذير دالم برهيس"], ans: 0, cat: "ڤلاجرن 4: ادب برهيس ديري" },
-            { q: "شرط صلاة قصر دان جمع کتيک برمسافر اداله مسافة سفر سد کورڠ-کورڠڽ...", options: ["2 مرحلة (81 كم)", "10 كم", "1 مرحلة", "50 كم"], ans: 0, cat: "ڤلاجرن 5: ادب برمسافر" },
-            { q: "ممبواڠ سمڤه ک دالم سوڠاي اداله ڤربواتن يڠ...", options: ["مروسقکن عالم دان دتلاڠ شرع", "دتغاه دالم إسلام", "سنة", "هاروس سهاج"], ans: 0, cat: "ڤلاجرن 6: ادب ممبلهارا عالم" },
-            { q: "اڤاکه صفت محمودة يڠ برمکنا ممبوات عملن سمارتا-مارتا کران الله تعالى؟", options: ["الإخلاص", "الرياء", "العجب", "الحسد"], ans: 0, cat: "ڤلاجرن 8: صفت محمودة" },
-            { q: "صفت رياء برمکنا...", options: ["منونجوق-نونجوق عملن سوڤايا دڤوجي", "برسوچي هاتي", "سبر منريم قضاء", "توكل کيڤد الله"], ans: 0, cat: "ڤلاجرن 9: صفت مذمومة" }
+            { q: "انتارا ادب برتوبة يڠ بتول اداله...", options: ["مڽسلي معصية دان مڠهنتيکنڽ", "ممبوات معصية لاݢي", "منڠݢوهکن توبة", "ملاکوکنڽ تنڤا نية"], ans: 0, cat: "ڤلاجرن 2: ادب برتوبة" },
+            { q: "اڤاکه حکوم مڠيکوتي جنازه ک قبور باݢي للاکي؟", options: ["سنة", "واجب", "مکروه", "حرام"], ans: 0, cat: "ڤلاجرن 3: ادب زياره جنازة" },
+            { q: "صفت برهيس ديري يڠ دتتڤکن دالم إسلام اداله...", options: ["منوتوڤ عورة دان تيدک تبرج", "ممڤامرکن ڤرهياسن", "سومبوڠ دڠن ڤاکاين", "ممبذير دالم برهيس"], ans: 0, cat: "ڤلاجرن 4: ادب برهيس ديري" },
+            { q: "شرط صلاة قصر دان جمع کتيک برمسافر اداله جارق سفر سکورڠ-کورڠڽ...", options: ["2 مرحلة (81 کم)", "10 کم", "1 مرحلة", "50 کم"], ans: 0, cat: "ڤلاجرن 5: ادب برمسافر" },
+            { q: "ممبواڠ سمڤه ک دالم سوڠاي اداله ڤربواتن يڠ...", options: ["مروسقکن عالم دان دلارڠ شرع", "دتݢه دالم إسلام", "سنة", "هاروس سهاج"], ans: 0, cat: "ڤلاجرن 6: ادب ممبلهارا عالم" },
+            { q: "اڤاکه صفت محمودة يڠ برمعنى ممبوات عملن سماتا-ماتا کران الله تعالى؟", options: ["الإخلاص", "الرياء", "العجب", "الحسد"], ans: 0, cat: "ڤلاجرن 8: صفت محمودة" },
+            { q: "صفت رياء برمعنى...", options: ["منونجوق-نونجوق عملن سوڤايا دڤوجي", "برسوچي هاتي", "صبر منريما قضاء", "توكل کڤد الله"], ans: 0, cat: "ڤلاجرن 9: صفت مذمومة" }
         ];
 
         const akhlakStructuredData = [
-            { q: "سنارايکن 3 ادب ترهادڤ کدوا ايبو باڤ.", ans: "1. ممباتوهي ڤرينته يڠ تيدک معصية.\n2. بربهاس صنتون دان لمه لمبوت.\n3. مڠولورکن دعاء دان كباءيقن باݢي کدوا-دواڽ.", cat: "ڤلاجرن 1: ادب ايبو باڤ" },
-            { q: "پاتاکن 3 شرط توبة نصوح.", ans: "1. مڽسلي معصية يڠ دلاکوکن.\n2. برهنتي دري ملاکوکن معصية سݢرا.\n3. برعزم تيدک مڠولڠي معصية ترسبوت سسلماڽ.", cat: "ڤلاجرن 2: ادب برتوبة" },
-            { q: "اڤاکه مکنا صفت الإخلاص؟", ans: "الإخلاص اداله ممبوات ستياڤ عبادة دان عملن هاڽ سمارتا-مارتا کران الله تعالى تنڤا مڠهارڤکن ڤوجين ماءنسي.", cat: "ڤلاجرن 8: صفت محمودة" },
-            { q: "سنارايکن 2 بهايا صفت حسد (دڠکي) دالم کهيدوڤن.", ans: "1. ممبوسوقکن هاتي دان مڠهاڤوسکن کتنانݢن.\n2. ممباکر عملن باءيق سڤرتي اڤي ممباکر کايو.", cat: "ڤلاجرن 9: صفت مذمومة" }
+            { q: "سنارايکن 3 ادب ترهادڤ کدوا ايبو باڤ.", ans: "1. مماتوهي ڤرينته يڠ تيدک معصية.\n2. بربهاس سنتون دان لمه لمبوت.\n3. مڠهولورکن دعا دان کباجيقن باݢي کدوا-دواڽ.", cat: "ڤلاجرن 1: ادب ايبو باڤ" },
+            { q: "ڽاتاکن 3 شرط توبة نصوح.", ans: "1. مڽسلي معصية يڠ دلاکوکن.\n2. برهنتي دري ملاکوکن معصية سݢرا.\n3. برعزم تيدک مڠولڠي معصية ترسبوت سلاما-لاماڽ.", cat: "ڤلاجرن 2: ادب برتوبة" },
+            { q: "اڤاکه معنى صفت الإخلاص؟", ans: "الإخلاص اداله ممبوات ستياڤ عبادة دان عملن هاڽ سماتا-ماتا کران الله تعالى تنڤا مڠهارڤکن ڤوجين ماءنسي.", cat: "ڤلاجرن 8: صفت محمودة" },
+            { q: "سنارايکن 2 بهايا صفت حسد (دڠکي) دالم کهيدوڤن.", ans: "1. ممبوسوقکن هاتي دان مڠهاڤوسکن کتنڠن.\n2. ممباکر عملن باءيق سڤرتي اڤي ممباکر کايو.", cat: "ڤلاجرن 9: صفت مذمومة" }
         ];
 
         const akhlakTrueFalseData = [
-            { q: "مڠدرهاکاي کدوا ايبو باڤ اداله ترماسوق دالم دوسا-دوسا تربسر.", ans: true, cat: "ڤلاجرن 1" },
-            { q: "توبة هاڽ بوليه دلاکوکن سماس دالم أوسيا توا سهاج.", ans: false, cat: "ڤلاجرن 2" },
-            { q: "ممبواڠ سمڤه د تمڤت أوموم دان مروسقکن عالم اداله ادب يڠ دتلاڠ دالم إسلام.", ans: true, cat: "ڤلاجرن 6" },
-            { q: "صفت الإخلاص منجاديلن ستياڤ عبادة دتريما الله تعالى.", ans: true, cat: "ڤلاجرن 8" },
-            { q: "صفت رياء دان عجب اداله صفت محمودة يڠ واجب دتلاعداني.", ans: false, cat: "ڤلاجرن 9" }
+            { q: "مندرهاکاي کدوا ايبو باڤ اداله ترماسوق دالم دوسا-دوسا بسر.", ans: true, cat: "ڤلاجرن 1" },
+            { q: "توبة هاڽ بوليه دلاکوکن سماس أوسيا توا سهاج.", ans: false, cat: "ڤلاجرن 2" },
+            { q: "ممبواڠ سمڤه د تمڤت عوام دان مروسقکن عالم اداله ادب يڠ دلارڠ دالم إسلام.", ans: true, cat: "ڤلاجرن 6" },
+            { q: "صفت الإخلاص منجاديکن ستياڤ عبادة دتريما الله تعالى.", ans: true, cat: "ڤلاجرن 8" },
+            { q: "صفت رياء دان عجب اداله صفت محمودة يڠ واجب دتولادني.", ans: false, cat: "ڤلاجرن 9" }
         ];
 
         const akhlakMindMapTopics = [
-            { title: "ادب ترهادڤ ايبو باڤ", nodes: ["حکوم: فرض عين", "ادب: ممباتوهي, برچاکڤ لمه لمبوت, مندعاءکن", "اکيبت درهاكا: منداڤت مورکا الله"] },
-            { title: "ادب برتوبة", nodes: ["تعريف: کمبالي کيڤد الله دري معصية", "شرط: مڽسل, برهنتي, برعزم تيدک مڠولڠي", "کليبهن: دأمڤوني الله دان تنڠ هاتي"] },
-            { title: "ادب زياره جنازة", nodes: ["حکوم زياره: سنة", "ادب: مندعاءکن الميت, تيدک مراتڤ, ممبنتو کلوارݢ جنازة", "توجوان: مڠيڠتي ماتي"] },
-            { title: "ادب برهيس ديري", nodes: ["شرط: منوتوڤ عورة, تيدک تبرج", "توجوان: منجاݢ کبرسيهن دان کچنتيکن", "مذموم: سومبوڠ دان بڠݢ"] },
-            { title: "ادب برمسافر", nodes: ["حکوم: هاروس (جک تجوان باءيق)", "ادب: نية باءيق, ممباچ دعا سفر, منجاݢ صلاة", "کلوڠݢرن: دإيزينکن صلاة قصر دان جمع"] },
-            { title: "ادب ممبلهارا عالم", nodes: ["تڠݢوڠجواب: خليفة د بومي", "ادب: منجاݢ کبرسيهن, تيدک ممبذير, تيدک مروسقکن فلورا/فونا", "فائده: کهيدوڤن هرموني"] },
-            { title: "صفت محمودة دان مذمومة", nodes: ["محمودة: إخلاص, رضا, صبر, توكل", "مذمومة: رياء, عجب, حسد, تكبر", "تزكية النفس: ممبرسيهکن هاتي دري صفت چلا"] }
+            { title: "ادب ترهادڤ ايبو باڤ", nodes: ["حکوم: فرض عين", "ادب: مماتوهي، برچاکڤ لمه لمبوت، مندعاءکن", "عاقبة درهاک: منداڤت مورکا الله"] },
+            { title: "ادب برتوبة", nodes: ["تعريف: کمبالي کڤد الله دري معصية", "شرط: مڽسل، برهنتي، برعزم تيدک مڠولڠي", "کأوتاماءن: دأمڤونکن الله دان هاتي تنڠ"] },
+            { title: "ادب زياره جنازه", nodes: ["حکوم زياره: سنة", "ادب: مندعاءکن الميت، تيدک مراتڤ، ممبنتو کلوارݢ جنازه", "توجوان: مڠيڠاتي ماتي"] },
+            { title: "ادب برهيس ديري", nodes: ["شرط: منوتوڤ عورة، تيدک تبرج", "توجوان: منجاݢ کبرسيهن دان کچنتيککن", "مذمومة: سومبوڠ دان بڠݢ"] },
+            { title: "ادب برمسافر", nodes: ["حکوم: هاروس (جک تجوان باءيق)", "ادب: نية باءيق، ممباچ دعا سفر، منجاݢ صلاة", "کلوڠݢرن: دأيذينکن صلاة قصر دان جمع"] },
+            { title: "ادب ممبلهارا عالم", nodes: ["تڠݢوڠجواب: خليفة د بومي", "ادب: منجاݢ کبرسيهن، تيدک ممبذير، تيدک مروسقکن فلورا/فونا", "فائده: کهيدوڤن هرموني"] },
+            { title: "صفت محمودة دان مذمومة", nodes: ["محمودة: إخلاص، رضا، صبر، توكل", "مذمومة: رياء، عجب، حسد، تكبر", "تزكية النفس: ممبرسيهکن هاتي دري صفت چلا"] }
         ];
 
         const akhlakMatchPairs = [
@@ -1041,30 +1044,30 @@
 
         // Data Pembelajaran Bahasa Arab (Pelajaran 1 - 5)
         const arabObjectiveData = [
-            { q: "اڤاکه مکنا ڤرکاتاءن 'مَدْرَسَةٌ'؟", options: ["سکوله", "رومه", "مسجد", "ڤاسر"], ans: 0, cat: "ڤلاجرن 1: دي سکوله" },
-            { q: "ڤيليه ترجمهن يڠ بتول باݢي 'قَلَمٌ'.", options: ["ڤين", "بوکو", "ڤمادام", "ڤمباريس"], ans: 0, cat: "ڤلاجرن 1: دي سکوله" },
+            { q: "اڤاکه معنى ڤرکاتاءن 'مَدْرَسَةٌ'؟", options: ["سکوله", "رومه", "مسجد", "ڤاسر"], ans: 0, cat: "ڤلاجرن 1: د سکوله" },
+            { q: "ڤيليه ترجمهن يڠ بتول باݢي 'قَلَمٌ'.", options: ["ڤين", "بوکو", "ڤمادام", "ڤمباريس"], ans: 0, cat: "ڤلاجرن 1: د سکوله" },
             { q: "اڤاکه ارتي 'أَبٌ' دالم بهاس ملايو؟", options: ["باڤ", "ايبو", "داتوق", "نينيق"], ans: 0, cat: "ڤلاجرن 2: کلوارݢ" },
             { q: "اڤاکه بهاس عرب باݢي نومبور 'تيݢ'؟", options: ["ثَلَاثَةٌ", "وَاحِدٌ", "اِثْنَانِ", "أَرْبَعَةٌ"], ans: 0, cat: "ڤلاجرن 3: نومبور" },
-            { q: "ڤرکاتاءن 'سَمَكٌ' برمکنا...", options: ["ايکن", "داݢيڠ", "أيم", "ناسي"], ans: 0, cat: "ڤلاجرن 4: ماکنن" }
+            { q: "ڤرکاتاءن 'سَمَكٌ' برمعنى...", options: ["ايکن", "داݢيڠ", "أيم", "ناسي"], ans: 0, cat: "ڤلاجرن 4: ماکنن" }
         ];
 
         const arabStructuredData = [
-            { q: "توليسکن ڤرکاتاءن عرب باݢي 'ݢورو ليلاکي'.", ans: "مُعَلِّمٌ", cat: "ڤلاجرن 1: دي سکوله" },
+            { q: "توليسکن ڤرکاتاءن عرب باݢي 'ݢورو للاکي'.", ans: "مُعَلِّمٌ", cat: "ڤلاجرن 1: د سکوله" },
             { q: "اڤاکه ارتي 'جَدَّةٌ' دالم بهاس ملايو؟", ans: "نينيق", cat: "ڤلاجرن 2: کلوارݢ" },
-            { q: "سنارايکن 3 بارڠ د دالم کلس دالم بهاس عرب.", ans: "1. كُرْسِيٌّ (کروسي)\n2. مَكْتَبٌ (ميجا)\n3. سَبُّورَةٌ (ڤاڤن هيتم)", cat: "ڤلاجرن 1: دي سکوله" },
+            { q: "سنارايکن 3 بارڠ د دالم کلس دالم بهاس عرب.", ans: "1. كُرْسِيٌّ (کروسي)\n2. مَكْتَبٌ (ميجا)\n3. سَبُّورَةٌ (ڤاڤن هيتم)", cat: "ڤلاجرن 1: د سکوله" },
             { q: "ترجمهکن ک دالم بهاس عرب: 'رومه ساي چنتيق'.", ans: "بَيْتِي جَمِيلٌ", cat: "ڤلاجرن 5: تمڤت" }
         ];
 
         const arabTrueFalseData = [
-            { q: "ڤرکاتاءن 'مَاءٌ' ممباوا مکنا 'اءير'.", ans: true, cat: "ڤلاجرن 4: ماکنن دان مينومن" },
-            { q: "نومبور 'خَمْسَةٌ' برمکنا انم.", ans: false, cat: "ڤلاجرن 3: نومبور" },
+            { q: "ڤرکاتاءن 'مَاءٌ' ممباوا معنى 'اءير'.", ans: true, cat: "ڤلاجرن 4: ماکنن دان مينومن" },
+            { q: "نومبور 'خَمْسَةٌ' برمعنى انم.", ans: false, cat: "ڤلاجرن 3: نومبور" },
             { q: "بهاس عرب باݢي 'رومه' اداله 'بَيْتٌ'.", ans: true, cat: "ڤلاجرن 5: تمڤت" },
-            { q: "ڤرکاتاءن 'أُمٌّ' برمکنا ابڠ.", ans: false, cat: "ڤلاجرن 2: کلوارݢ" }
+            { q: "ڤرکاتاءن 'أُمٌّ' برمعنى ابڠ.", ans: false, cat: "ڤلاجرن 2: کلوارݢ" }
         ];
 
         const arabMindMapTopics = [
             { title: "دالم کلس (فِي الفَصْلِ)", nodes: ["سَبُّورَةٌ: ڤاڤن هيتم", "كُرْسِيٌّ: کروسي", "مَكْتَبٌ: ميجا", "قَلَمٌ: ڤين", "كِتَابٌ: بوکو"] },
-            { title: "کلوارݢ (الأُسْرَة)", nodes: ["أَبٌ: باڤ", "أُمٌّ: ايبو", "أَخٌ: ابڠ/اديق ليلاکي", "أُخْتٌ: کاکق/اديق ڤرمڤوان", "جَدٌّ: داتوق"] },
+            { title: "کلوارݢ (الأُسْرَة)", nodes: ["أَبٌ: باڤ", "أُمٌّ: ايبو", "أَخٌ: ابڠ/اديق للاکي", "أُخْتٌ: کاکق/اديق ڤرمڤوان", "جَدٌّ: داتوق"] },
             { title: "نومبور (الأَرْقَام)", nodes: ["وَاحِدٌ: 1", "اِثْنَانِ: 2", "ثَلَاثَةٌ: 3", "أَرْبَعَةٌ: 4", "خَمْسَةٌ: 5"] }
         ];
 
@@ -1218,28 +1221,28 @@
             const titleJawi = document.getElementById('subject-mode-title-jawi');
 
             if (subject === 'tauhid') {
-                badge.innerText = "Tauhid Darjah 6";
-                badge.className = "text-xs bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-bold";
+                badge.innerText = "توحيد درجه 6";
+                badge.className = "bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded-full font-bold font-jawi text-lg mt-1";
                 icon.className = "fas fa-mosque text-emerald-600";
             } else if (subject === 'muamalat') {
-                badge.innerText = "Muamalat Darjah 6";
-                badge.className = "text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-bold";
+                badge.innerText = "معاملات درجه 6";
+                badge.className = "bg-blue-100 text-blue-800 px-3 py-1.5 rounded-full font-bold font-jawi text-lg mt-1";
                 icon.className = "fas fa-handshake text-blue-600";
             } else if (subject === 'akhlak') {
-                badge.innerText = "Akhlak Tasawuf Darjah 6";
-                badge.className = "text-xs bg-purple-100 text-purple-800 px-3 py-1 rounded-full font-bold";
+                badge.innerText = "اخلاق تصوف درجه 6";
+                badge.className = "bg-purple-100 text-purple-800 px-3 py-1.5 rounded-full font-bold font-jawi text-lg mt-1";
                 icon.className = "fas fa-heart text-purple-600";
             } else if (subject === 'arab') {
-                badge.innerText = "Bahasa Arab Darjah 6";
-                badge.className = "text-xs bg-amber-100 text-amber-800 px-3 py-1 rounded-full font-bold";
+                badge.innerText = "بهاس عرب درجه 6";
+                badge.className = "bg-amber-100 text-amber-800 px-3 py-1.5 rounded-full font-bold font-jawi text-lg mt-1";
                 icon.className = "fas fa-language text-amber-600";
             } else if (subject === 'ibadat') {
-                badge.innerText = "Ibadat Darjah 6";
-                badge.className = "text-xs bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-bold";
+                badge.innerText = "عبادات درجه 6";
+                badge.className = "bg-teal-100 text-teal-800 px-3 py-1.5 rounded-full font-bold font-jawi text-lg mt-1";
                 icon.className = "fas fa-pray text-teal-600";
             } else if (subject === 'faraid') {
-                badge.innerText = "Faraid Darjah 6";
-                badge.className = "text-xs bg-rose-100 text-rose-800 px-3 py-1 rounded-full font-bold";
+                badge.innerText = "فرائض درجه 6";
+                badge.className = "bg-rose-100 text-rose-800 px-3 py-1.5 rounded-full font-bold font-jawi text-lg mt-1";
                 icon.className = "fas fa-balance-scale text-rose-600";
             }
 
@@ -1540,7 +1543,7 @@
             matchedCount = 0;
             selectedMatchCard = null;
             const pairs = getActiveDataset('match');
-            document.getElementById('match-score').innerText = `Padanan Sah: 0 / ${pairs.length}`;
+            document.getElementById('match-score').innerText = `ڤادنن صح: 0 / ${pairs.length}`;
             const grid = document.getElementById('match-grid');
             grid.innerHTML = '';
 
@@ -1581,10 +1584,10 @@
                     cardEl.classList.add('matched');
                     selectedMatchCard = null;
                     matchedCount++;
-                    document.getElementById('match-score').innerText = `Padanan Sah: ${matchedCount} / ${pairs.length}`;
+                    document.getElementById('match-score').innerText = `ڤادنن صح: ${matchedCount} / ${pairs.length}`;
 
                     if (matchedCount === pairs.length) {
-                        showModal("تهنيئه!", "اندا برحاصيل مڽلسايکن سموا ڤادنن دڠن کجايأن!");
+                        showModal("تهنيئه!", "اندا برحاصيل مڽلسايکن سموا ڤادنن دڠن کجاياءن!");
                     }
                 } else {
                     cardEl.classList.add('error');
