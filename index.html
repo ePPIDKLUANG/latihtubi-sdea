@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Ilmu Islam - Modul Tauhid & Muamalat Darjah 6</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts (Amiri for Jawi script & Inter for Latin text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .font-jawi {
+            font-family: 'Amiri', serif;
+            line-height: 2.2;
+            direction: rtl;
+        }
+        .font-arabic {
+            font-family: 'Amiri', serif;
+            line-height: 2.2;
+            font-size: 1.3em;
+            direction: rtl;
+        }
+        section {
+            scroll-margin-top: 5rem;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Card & Button Interactive States */
+        .option-btn { transition: all 0.2s; }
+        .option-btn:hover:not(:disabled) { transform: translateX(-5px); }
+        .correct-ans { background-color: #22c55e !important; color: white !important; border-color: #16a34a !important; }
+        .wrong-ans { background-color: #ef4444 !important; color: white !important; border-color: #dc2626 !important; }
+        .disabled-option { opacity: 0.6; cursor: not-allowed; }
+        .textarea-jawi { resize: none; line-height: 2; }
+        
+        /* Mind Map Visual Hierarchy Styling */
+        .node-level-1 { background-color: #059669; color: white; border-radius: 16px; padding: 12px 24px; font-weight: bold; font-size: 1.8rem; text-align: center; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border: 4px solid #34d399; z-index: 10; max-width: 380px; }
+        .node-level-2 { background-color: #0f766e; color: white; border-radius: 12px; padding: 10px 20px; font-size: 1.4rem; font-weight: bold; text-align: center; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 2px solid #5eead4; z-index: 10; max-width: 320px; }
+        .node-level-3 { background-color: #ffffff; color: #065f46; border-radius: 10px; padding: 8px 16px; font-size: 1.2rem; font-weight: bold; text-align: center; border: 2px solid #6ee7b7; box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 10; max-width: 280px; }
+        .mm-bg { background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 24px 24px; }
+        
+        /* Matching Game Card Styles */
+        .match-card { transition: all 0.2s; cursor: pointer; user-select: none; }
+        .match-card:hover { transform: scale(1.02); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .match-card.selected { border-color: #d97706; background-color: #fef3c7; box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.3); }
+        .match-card.matched { border-color: #10b981; background-color: #ecfdf5; color: #065f46; cursor: default; opacity: 0.8; }
+        .match-card.error { border-color: #ef4444; background-color: #fef2f2; animation: shake 0.4s; }
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Navigasi Utama -->
+    <nav class="bg-white shadow-md fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <!-- Logo / Tajuk -->
+                <div class="flex items-center">
+                    <a href="#" onclick="showPortalHome()" class="flex-shrink-0 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-md">
+                            <i class="fas fa-book-quran"></i>
+                        </div>
+                        <span class="font-bold text-xl text-emerald-800 hidden sm:block">Portal Ilmu Islam</span>
+                    </a>
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-3">
+                    <a href="#tauhid" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 transition flex items-center gap-1.5">
+                        <i class="fas fa-mosque text-emerald-600"></i> Tauhid
+                    </a>
+                    <a href="#muamalat" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 transition flex items-center gap-1.5">
+                        <i class="fas fa-handshake text-blue-600"></i> Muamalat
+                    </a>
+                    <a href="#akhlak" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-purple-700 bg-purple-50 hover:bg-purple-100 transition flex items-center gap-1.5">
+                        <i class="fas fa-heart text-purple-600"></i> Akhlak Tasawuf
+                    </a>
+                    <a href="#arab" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-amber-700 bg-amber-50 hover:bg-amber-100 transition flex items-center gap-1.5">
+                        <i class="fas fa-language text-amber-600"></i> Bahasa Arab
+                    </a>
+                    <a href="#ibadat" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 transition">Ibadat</a>
+                    <a href="#faraid" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 transition">Faraid</a>
+                </div>
+
+                <!-- Butang Menu Mudah Alih (Hamburger) -->
+                <div class="flex items-center md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-emerald-600 hover:bg-emerald-50 focus:outline-none">
+                        <span class="sr-only">Buka menu utama</span>
+                        <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mudah Alih -->
+        <div class="md:hidden hidden bg-white border-t border-gray-100" id="mobile-menu">
+            <div class="px-3 pt-2 pb-3 space-y-1 shadow-inner">
+                <a href="#tauhid" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-semibold text-emerald-700 bg-emerald-50">SDEA Tauhid (5 Mod Interaktif)</a>
+                <a href="#muamalat" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-semibold text-blue-700 bg-blue-50">SDEA Muamalat (5 Mod Interaktif)</a>
+                <a href="#akhlak" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-semibold text-purple-700 bg-purple-50">SDEA Akhlak Tasawuf (5 Mod Interaktif)</a>
+                <a href="#arab" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-semibold text-amber-700 bg-amber-50">SDEA Bahasa Arab (5 Mod Interaktif)</a>
+                <a href="#ibadat" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-emerald-50">Ibadat</a>
+                <a href="#faraid" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-emerald-50">Faraid</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Global Modal Notification -->
+    <div id="customModal" class="fixed inset-0 bg-slate-900 bg-opacity-60 z-[100] hidden flex items-center justify-center fade-in p-4">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl text-center">
+            <div class="text-blue-500 text-5xl mb-4" id="modalIcon"><i class="fas fa-info-circle"></i></div>
+            <h3 class="font-jawi text-3xl font-bold text-slate-800 mb-4" id="modalTitle">معلومن</h3>
+            <p class="font-jawi text-xl text-slate-600 mb-8 leading-relaxed" id="modalMessage">ميسيج</p>
+            <button onclick="closeModal()" class="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold font-jawi text-xl transition-all shadow-md">
+                توتوڤ <i class="fas fa-times mr-2"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Ruang Utama -->
+    <main class="pt-20 flex-1">
+        <div id="portal-landing-views">
+            <!-- Pengepala Utama (Hero Section) -->
+            <header class="bg-gradient-to-r from-emerald-800 via-teal-800 to-blue-900 text-white py-16 px-4 text-center shadow-lg relative overflow-hidden">
+                <div class="max-w-4xl mx-auto relative z-10">
+                    <span class="inline-block px-4 py-1.5 bg-emerald-700/60 rounded-full text-emerald-200 text-sm font-semibold mb-4 border border-emerald-500/30">
+                        <i class="fas fa-star text-amber-300 mr-1"></i> Hub Pengajian Islam Terpadu
+                    </span>
+                    <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Koleksi Modul Pengajian Islam</h1>
+                    <p class="text-lg md:text-xl text-emerald-100 max-w-2xl mx-auto font-light">Satu portal komprehensif yang menghimpunkan ilmu Islam dengan modul pembelajaran interaktif lengkap bagi <strong>Tauhid & Muamalat Darjah 6</strong>.</p>
+                </div>
+            </header>
+
+            <!-- Bahagian 1: SDEA Tauhid (Dengan App Interaktif 5 Mod) -->
+            <section id="tauhid" class="py-16 px-4 sm:px-6 lg:px-8 bg-slate-100 border-b border-gray-200">
+                <div class="max-w-6xl mx-auto w-full">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-emerald-600 text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg">
+                                <i class="fas fa-mosque"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">SDEA Tauhid</h2>
+                                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">Darjah 6</span>
+                                </div>
+                                <p class="text-slate-600 font-jawi text-xl mt-1">ڤورتل اوتام توحيد درجه 6 (5 مود ڤمبلاجرن)</p>
+                            </div>
+                        </div>
+                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600">
+                            <i class="fas fa-layer-group text-emerald-600 mr-1"></i> Merangkumi <strong>Pelajaran 1 hingga 8</strong>
+                        </div>
+                    </div>
+
+                    <!-- Kad 5 Mod Interaktif Tauhid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <button onclick="startSubjectMode('tauhid', 'objective')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-blue-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-blue-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">اوجين اوبجيکتيف</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">سوءالن اوبجيکتيف بربنتوق ڤيليهن ݢندا (A, B, C, D).</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-blue-600 font-bold font-jawi text-lg">
+                                <span>مولا اوجين</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('tauhid', 'structured')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-indigo-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-indigo-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">لاتيهن ستروکتور</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">سوءالن ايسي تمڤت کوسوڠ / جواڤن ڤينديق.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-indigo-600 font-bold font-jawi text-lg">
+                                <span>مولا لاتيهن</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('tauhid', 'truefalse')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-pink-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-pink-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-check-double"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">اوجين بتول/ساله</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">ڤپاتاءن توحيد. تنتوکن 'بتول' اتاو 'ساله'.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-pink-600 font-bold font-jawi text-lg">
+                                <span>مولا اوجين</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('tauhid', 'mindmap')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-emerald-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-emerald-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">ڤتا ميندا (نوتا)</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">نوتا ريڠکس بربنتوق ڤتا ميندا اينترکتيف (ڤلاجرن 1-8).</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-emerald-600 font-bold font-jawi text-lg">
+                                <span>ليهت نوتا</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('tauhid', 'match')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-amber-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px] md:col-span-2 lg:col-span-2">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-amber-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-puzzle-piece"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">ڤادنن (سوءالن)</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">ڤادنکن کونسيف اتاو ڤپاتاءن دڠن جواڤن يڠ بتول.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-amber-600 font-bold font-jawi text-lg">
+                                <span>مولا ڤرماءينن</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bahagian 2: SDEA Muamalat (Dengan App Interaktif 5 Mod) -->
+            <section id="muamalat" class="py-16 px-4 sm:px-6 lg:px-8 bg-blue-50/50 border-b border-gray-200">
+                <div class="max-w-6xl mx-auto w-full">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">SDEA Muamalat</h2>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">Darjah 6</span>
+                                </div>
+                                <p class="text-slate-600 font-jawi text-xl mt-1">ڤورتل اوتام معاملات درجه 6 (5 مود ڤمبلاجرن)</p>
+                            </div>
+                        </div>
+                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600">
+                            <i class="fas fa-layer-group text-blue-600 mr-1"></i> Merangkumi <strong>Pelajaran 1 hingga 5</strong>
+                        </div>
+                    </div>
+
+                    <!-- Kad 5 Mod Interaktif Muamalat -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <button onclick="startSubjectMode('muamalat', 'objective')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-blue-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-blue-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">اوجين اوبجيکتيف</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">سوءالن اوبجيکتيف بربنتوق ڤيليهن ݢندا دڠن سيمقن جواڤن.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-blue-600 font-bold font-jawi text-lg">
+                                <span>مولا اوجين</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('muamalat', 'structured')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-indigo-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-indigo-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">لاتيهن ستروکتور</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">لاتيهن منجواب سوءالن ستروکتور برسرتا سکيما جواڤن.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-indigo-600 font-bold font-jawi text-lg">
+                                <span>مولا لاتيهن</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('muamalat', 'truefalse')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-pink-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-pink-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-check-double"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">اوجين بتول/ساله</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">ڤپاتاءن حکوم معاملات. تنتوکن 'بتول' اتاو 'ساله'.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-pink-600 font-bold font-jawi text-lg">
+                                <span>مولا اوجين</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('muamalat', 'mindmap')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-emerald-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-emerald-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">ڤتا ميندا (نوتا)</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">نوتا ريڠکس معاملات بربنتوق ڤتا ميندا اينترکتيف.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-emerald-600 font-bold font-jawi text-lg">
+                                <span>ليهت نوتا</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('muamalat', 'match')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-amber-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px] md:col-span-2 lg:col-span-2">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-amber-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-puzzle-piece"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">ڤادنن (سوءالن)</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">ڤادنکن کونسيف معاملات دڠن کترڠن يڠ بتول.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-amber-600 font-bold font-jawi text-lg">
+                                <span>مولا ڤرماءينن</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bahagian 3: Akhlak Tasawuf -->
+            <section id="akhlak" class="py-16 px-4 sm:px-6 lg:px-8 bg-purple-50/50 border-b border-gray-200">
+                <div class="max-w-6xl mx-auto w-full">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-purple-600 text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">SDEA Akhlak Tasawuf</h2>
+                                    <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full">Darjah 6</span>
+                                </div>
+                                <p class="text-slate-600 font-jawi text-xl mt-1">ڤورتل اوتام اخلاق دان تصوف درجه 6 (5 مود ڤمبلاجرن)</p>
+                            </div>
+                        </div>
+                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600">
+                            <i class="fas fa-layer-group text-purple-600 mr-1"></i> Merangkumi <strong>Pelajaran 1 hingga 10</strong>
+                        </div>
+                    </div>
+
+                    <!-- Kad 5 Mod Interaktif Akhlak Tasawuf -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <button onclick="startSubjectMode('akhlak', 'objective')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-blue-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-blue-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">اوجين اوبجيکتيف</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">سوءالن اوبجيکتيف بربنتوق ڤيليهن ݢندا (A, B, C, D).</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-blue-600 font-bold font-jawi text-lg">
+                                <span>مولا اوجين</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('akhlak', 'structured')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-indigo-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-indigo-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">لاتيهن ستروکتور</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">سوءالن ايسي تمڤت کوسوڠ / جواڤن ڤينديق.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-indigo-600 font-bold font-jawi text-lg">
+                                <span>مولا لاتيهن</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('akhlak', 'truefalse')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-pink-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-pink-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-check-double"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">اوجين بتول/ساله</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">ڤپاتاءن اخلاق. تنتوکن 'بتول' اتاو 'ساله'.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-pink-600 font-bold font-jawi text-lg">
+                                <span>مولا اوجين</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('akhlak', 'mindmap')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-emerald-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-emerald-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">ڤتا ميندا (نوتا)</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">نوتا ريڠکس اخلاق دان تصوف بربنتوق ڤتا ميندا اينترکتيف.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-emerald-600 font-bold font-jawi text-lg">
+                                <span>ليهت نوتا</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('akhlak', 'match')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-amber-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px] md:col-span-2 lg:col-span-2">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-amber-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-puzzle-piece"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">ڤادنن (سوءالن)</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">ڤادنکن کونسيف اخلاق دڠن کترڠن يڠ بتول.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-amber-600 font-bold font-jawi text-lg">
+                                <span>مولا ڤرماءينن</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bahagian 4: Bahasa Arab -->
+            <section id="arab" class="py-16 px-4 sm:px-6 lg:px-8 bg-amber-50/30 border-b border-gray-200">
+                <div class="max-w-6xl mx-auto w-full">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-amber-600 text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">SDEA Bahasa Arab</h2>
+                                    <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">Darjah 6</span>
+                                </div>
+                                <p class="text-slate-600 font-jawi text-xl mt-1">ڤورتل اوتام بهاس عرب درجه 6 (5 مود ڤمبلاجرن)</p>
+                            </div>
+                        </div>
+                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600">
+                            <i class="fas fa-layer-group text-amber-600 mr-1"></i> Merangkumi <strong>Pelajaran 1 hingga 5</strong>
+                        </div>
+                    </div>
+
+                    <!-- Kad 5 Mod Interaktif Bahasa Arab -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <button onclick="startSubjectMode('arab', 'objective')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-blue-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-blue-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">اوجين اوبجيکتيف</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">سوءالن اوبجيکتيف مفردات (کوسا کات) دان ناهو.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-blue-600 font-bold font-jawi text-lg">
+                                <span>مولا اوجين</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('arab', 'structured')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-indigo-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-indigo-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">لاتيهن ستروکتور</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">بين ايات موده دان ترجمهن ڤرکاتاءن بهاس عرب.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-indigo-600 font-bold font-jawi text-lg">
+                                <span>مولا لاتيهن</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('arab', 'truefalse')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-pink-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-pink-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-check-double"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">اوجين بتول/ساله</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">تنتوکن مکنا ڤرکاتاءن 'صَحِيحٌ' (بتول) اتاو 'خَطَأٌ' (ساله).</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-pink-600 font-bold font-jawi text-lg">
+                                <span>مولا اوجين</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('arab', 'mindmap')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-emerald-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-emerald-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">ڤتا ميندا (نوتا)</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">نوتا ريڠکس کوسا کات دان توڤيک ڤمبلاجرن عرب.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-emerald-600 font-bold font-jawi text-lg">
+                                <span>ليهت نوتا</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('arab', 'match')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-amber-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px] md:col-span-2 lg:col-span-2">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-amber-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-puzzle-piece"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">ڤادنن (سوءالن)</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">ڤادنکن ڤرکاتاءن عرب دڠن ارتيڽ دالم بهاس ملايو.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-amber-600 font-bold font-jawi text-lg">
+                                <span>مولا ڤرماءينن</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bahagian 5: Ibadat -->
+            <section id="ibadat" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 border-b border-gray-200">
+                <div class="max-w-4xl mx-auto w-full">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center text-teal-600 text-2xl">
+                            <i class="fas fa-pray"></i>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Ibadat</h2>
+                    </div>
+                    <div class="prose prose-lg text-gray-600">
+                        <p class="mb-4">Bahagian Ibadat (Feqah Ibadat) memperincikan tentang kewajipan-kewajipan harian seorang Muslim terhadap penciptanya. Ia menjelaskan syarat sah, rukun, sunat, dan perkara yang membatalkan sesuatu ibadat tersebut berdasarkan mazhab.</p>
+                        <div class="overflow-x-auto mt-6">
+                            <table class="min-w-full bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                                <thead class="bg-teal-50">
+                                    <tr>
+                                        <th class="py-3 px-4 text-left text-teal-900 font-semibold border-b">Topik</th>
+                                        <th class="py-3 px-4 text-left text-teal-900 font-semibold border-b">Penerangan Ringkas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b hover:bg-gray-50">
+                                        <td class="py-3 px-4 font-semibold">Thaharah (Bersuci)</td>
+                                        <td class="py-3 px-4 text-sm">Wuduk, Mandi Wajib, Tayammum, Najis</td>
+                                    </tr>
+                                    <tr class="border-b hover:bg-gray-50">
+                                        <td class="py-3 px-4 font-semibold">Solat</td>
+                                        <td class="py-3 px-4 text-sm">Solat Fardu, Solat Sunat, Solat Jemaah, Solat Musafir</td>
+                                    </tr>
+                                    <tr class="border-b hover:bg-gray-50">
+                                        <td class="py-3 px-4 font-semibold">Puasa & Zakat</td>
+                                        <td class="py-3 px-4 text-sm">Hukum-hakam puasa Ramadan, Zakat Fitrah, Zakat Harta</td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="py-3 px-4 font-semibold">Haji & Umrah</td>
+                                        <td class="py-3 px-4 text-sm">Syarat, Rukun, Wajib Haji, Pantang Larang Ihram</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bahagian 6: Faraid -->
+            <section id="faraid" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+                <div class="max-w-4xl mx-auto w-full">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-rose-100 rounded-2xl flex items-center justify-center text-rose-600 text-2xl">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Faraid</h2>
+                    </div>
+                    <div class="prose prose-lg text-gray-600">
+                        <p class="mb-4">Ilmu Faraid adalah ilmu matematik syariah yang berkaitan dengan pembahagian harta pusaka. Ia menetapkan siapa yang berhak mewarisi harta si mati dan berapa kadar atau peratusan yang telah ditetapkan oleh syarak untuk setiap waris tersebut.</p>
+                        <div class="bg-rose-50 p-6 rounded-2xl border-l-4 border-rose-500 shadow-sm mt-6">
+                            <p class="italic text-gray-800">"Pelajarilah ilmu Faraid dan ajarkanlah ia kepada manusia, kerana ia adalah separuh daripada ilmu, ia dilupakan, dan ia adalah ilmu pertama yang akan ditarik daripada umatku."</p>
+                            <p class="text-sm text-rose-700 mt-2 font-semibold">- Hadis Riwayat Ibnu Majah</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- CONTAINER APP INTERAKTIF (TAUHD & MUAMALAT - 5 MOD) -->
+        <div id="subject-interactive-container" class="hidden min-h-[85vh] bg-slate-50 flex flex-col">
+            <!-- Header Navigasi Aplikasi Interaktif -->
+            <header class="bg-white border-b border-slate-200 h-20 px-4 md:px-8 flex items-center justify-between shadow-sm sticky top-20 z-40">
+                <div class="flex items-center gap-3">
+                    <button onclick="showPortalHome()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-semibold text-sm transition flex items-center gap-2">
+                        <i class="fas fa-arrow-right"></i> Kembali ke Portal Utama
+                    </button>
+                    <span class="text-slate-300">|</span>
+                    <div class="flex items-center gap-2 font-bold font-jawi text-xl" id="subject-mode-header">
+                        <i class="fas fa-book-reader" id="subject-mode-icon"></i>
+                        <span id="subject-mode-title-jawi">اوچين اوبجيکتيف</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span id="subject-badge" class="text-xs bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-bold">Tauhid Darjah 6</span>
+                </div>
+            </header>
+
+            <!-- Workspace Mod 1: Ujian Objektif -->
+            <div id="app-objective" class="subject-sub-app hidden p-4 md:p-8 max-w-4xl mx-auto w-full flex-1">
+                <div class="bg-white rounded-3xl shadow-lg border border-slate-200 overflow-hidden fade-in">
+                    <div id="obj-header-bg" class="bg-blue-600 px-6 py-4 text-white flex justify-between items-center">
+                        <span class="font-bold text-lg" id="obj-qNumberBadge">سوءالن 1</span>
+                        <span class="text-xs bg-white/20 px-3 py-1 rounded-full font-semibold" id="obj-qCategoryBadge">TOPIK</span>
+                    </div>
+                    <div class="p-6 md:p-10">
+                        <p class="font-jawi text-2xl md:text-3xl text-slate-800 font-bold mb-8 leading-relaxed" id="obj-questionText">...</p>
+                        <div id="obj-optionsContainer" class="space-y-4"></div>
+                        <div id="obj-feedbackBox" class="hidden mt-6 p-4 rounded-2xl border font-jawi text-xl font-bold flex items-center gap-3"></div>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-between items-center">
+                    <button onclick="prevQuestion('obj')" id="obj-prevBtn" class="px-6 py-3 bg-white border border-slate-200 rounded-xl font-bold text-slate-700 hover:bg-slate-50 transition">
+                        <i class="fas fa-arrow-right ml-2"></i> سبلومڽ
+                    </button>
+                    <span class="text-sm font-bold text-slate-500" id="obj-scoreTracker">مرکه: 0</span>
+                    <button onclick="nextQuestion('obj')" id="obj-nextBtn" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition">
+                        ستروسڽ <i class="fas fa-arrow-left mr-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Workspace Mod 2: Latihan Struktur -->
+            <div id="app-structured" class="subject-sub-app hidden p-4 md:p-8 max-w-4xl mx-auto w-full flex-1">
+                <div class="bg-white rounded-3xl shadow-lg border border-slate-200 overflow-hidden fade-in">
+                    <div id="str-header-bg" class="bg-indigo-600 px-6 py-4 text-white flex justify-between items-center">
+                        <span class="font-bold text-lg" id="str-qNumberBadge">سوءالن 1</span>
+                        <span class="text-xs bg-white/20 px-3 py-1 rounded-full font-semibold" id="str-qCategoryBadge">TOPIK</span>
+                    </div>
+                    <div class="p-6 md:p-10">
+                        <p class="font-jawi text-2xl md:text-3xl text-slate-800 font-bold mb-6 leading-relaxed" id="str-questionText">...</p>
+                        <div class="mb-6">
+                            <label class="block font-jawi text-lg text-slate-500 mb-2 font-bold"><i class="fas fa-pen-nib ml-2"></i>روأڠن منجواب (اوڤشينل)</label>
+                            <textarea id="str-userAnswer" rows="3" class="font-jawi w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 text-xl text-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-400 textarea-jawi" placeholder="تاءيڤ جواڤن اندا د سيني..."></textarea>
+                        </div>
+                        <button onclick="revealStrAnswer()" id="str-revealBtn" class="px-6 py-3 bg-indigo-100 text-indigo-800 font-bold rounded-xl font-jawi text-xl hover:bg-indigo-200 transition">
+                            <i class="fas fa-eye ml-2"></i> ڤاڤر سکيما جواڤن
+                        </button>
+                        <div id="str-answerBox" class="hidden mt-6 bg-emerald-50 border border-emerald-200 rounded-2xl p-6 fade-in">
+                            <p class="font-jawi text-lg text-emerald-800 font-bold mb-1"><i class="fas fa-check-circle ml-2"></i>جواڤن سبنر:</p>
+                            <p class="font-jawi text-2xl text-emerald-700 font-bold leading-relaxed" id="str-answerText"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-between items-center">
+                    <button onclick="prevQuestion('str')" id="str-prevBtn" class="px-6 py-3 bg-white border border-slate-200 rounded-xl font-bold text-slate-700 hover:bg-slate-50 transition">
+                        <i class="fas fa-arrow-right ml-2"></i> سبلومڽ
+                    </button>
+                    <button onclick="nextQuestion('str')" id="str-nextBtn" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold transition">
+                        ستروسڽ <i class="fas fa-arrow-left mr-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Workspace Mod 3: Ujian Betul/Salah -->
+            <div id="app-truefalse" class="subject-sub-app hidden p-4 md:p-8 max-w-4xl mx-auto w-full flex-1">
+                <div class="bg-white rounded-3xl shadow-lg border border-slate-200 overflow-hidden fade-in">
+                    <div id="tf-header-bg" class="bg-pink-600 px-6 py-4 text-white flex justify-between items-center">
+                        <span class="font-bold text-lg" id="tf-qNumberBadge">سوءالن 1</span>
+                        <span class="text-xs bg-white/20 px-3 py-1 rounded-full font-semibold" id="tf-qCategoryBadge">TOPIK</span>
+                    </div>
+                    <div class="p-6 md:p-10 text-center">
+                        <p class="font-jawi text-2xl md:text-3xl text-slate-800 font-bold mb-10 leading-relaxed" id="tf-questionText">...</p>
+                        <div class="grid grid-cols-2 gap-4 max-w-md mx-auto">
+                            <button onclick="selectTfAnswer(true)" id="tf-btn-true" class="py-6 px-4 bg-white border-2 border-emerald-200 text-emerald-600 hover:border-emerald-500 hover:bg-emerald-50 rounded-2xl font-bold font-jawi text-3xl transition flex flex-col items-center gap-2">
+                                <i class="fas fa-check-circle text-4xl"></i> بتول
+                            </button>
+                            <button onclick="selectTfAnswer(false)" id="tf-btn-false" class="py-6 px-4 bg-white border-2 border-rose-200 text-rose-600 hover:border-rose-500 hover:bg-rose-50 rounded-2xl font-bold font-jawi text-3xl transition flex flex-col items-center gap-2">
+                                <i class="fas fa-times-circle text-4xl"></i> ساله
+                            </button>
+                        </div>
+                        <div id="tf-feedbackBox" class="hidden mt-8 p-4 rounded-2xl border font-jawi text-2xl font-bold flex items-center justify-center gap-3"></div>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-between items-center">
+                    <button onclick="prevQuestion('tf')" id="tf-prevBtn" class="px-6 py-3 bg-white border border-slate-200 rounded-xl font-bold text-slate-700 hover:bg-slate-50 transition">
+                        <i class="fas fa-arrow-right ml-2"></i> سبلومڽ
+                    </button>
+                    <span class="text-sm font-bold text-slate-500" id="tf-scoreTracker">مرکه: 0</span>
+                    <button onclick="nextQuestion('tf')" id="tf-nextBtn" class="px-6 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-xl font-bold transition">
+                        ستروسڽ <i class="fas fa-arrow-left mr-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Workspace Mod 4: Peta Minda -->
+            <div id="app-mindmap" class="subject-sub-app hidden p-4 md:p-6 max-w-6xl mx-auto w-full flex-1 flex flex-col">
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 mb-4 flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex items-center gap-2">
+                        <label class="font-jawi text-lg font-bold text-slate-700">ڤيليه ڤلاجرن:</label>
+                        <select id="mm-topic-select" onchange="renderMindMap(this.value)" class="font-jawi text-lg bg-emerald-50 border border-emerald-300 text-emerald-900 rounded-xl px-4 py-2 focus:outline-none"></select>
+                    </div>
+                </div>
+                <div class="flex-1 bg-white rounded-3xl border border-slate-200 shadow-inner p-6 overflow-auto mm-bg relative min-h-[450px]" id="mm-viewport">
+                    <div id="mm-nodes-wrapper" class="font-jawi w-full flex flex-col items-center justify-center gap-8 py-6"></div>
+                </div>
+            </div>
+
+            <!-- Workspace Mod 5: Padanan -->
+            <div id="app-match" class="subject-sub-app hidden p-4 md:p-8 max-w-5xl mx-auto w-full flex-1">
+                <div class="bg-white p-6 rounded-3xl shadow-lg border border-slate-200">
+                    <div class="flex justify-between items-center mb-6 border-b pb-4">
+                        <h3 class="font-jawi text-2xl font-bold text-amber-800">ڤادنکن ڤرپاتاءن دڠن جواڤن يڠ بتول</h3>
+                        <span id="match-score" class="font-sans font-bold text-amber-700 bg-amber-100 px-4 py-1.5 rounded-full text-sm">
+                            Padanan Sah: 0 / 4
+                        </span>
+                    </div>
+                    <div id="match-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 font-jawi text-xl"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Kaki Halaman (Footer) -->
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="text-sm">&copy; 2026 Portal Ilmu Islam & Modul Tauhid/Muamalat Interaktif Darjah 6.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Data Pembelajaran Tauhid (Pelajaran 1 - 8)
+        const tauhidObjectiveData = [
+            { q: "اڤاکه مئنا الإله دري هاتي بهاس؟", options: ["يڠ دسمبه", "يڠ دچيڤتا", "يڠ دموليکن", "يڠ دتاکوتي"], ans: 0, cat: "ڤلاجرن 1: الألوهية" },
+            { q: "حکوم معارفة الله تعالى باݢي ستياڤ مکلف اداله...", options: ["فرض عين", "فرض كفاية", "سنة", "هاروس"], ans: 0, cat: "ڤلاجرن 1: الألوهية" },
+            { q: "براڤکاه بيلڠن عقيدة الإيمان يڠ واجب دايتلاعي؟", options: ["50 عقيدة", "20 عقيدة", "13 عقيدة", "66 عقيدة"], ans: 0, cat: "ڤلاجرن 2: عقائد الإيمان" },
+            { q: "صفت يڠ واجب باݢي رسول بربيلڠ...", options: ["4 صفت", "20 صفت", "5 صفت", "1 صفت"], ans: 0, cat: "ڤلاجرن 3: نبي دان رسول" },
+            { q: "کتاب التوراة دتورونکن کيڤد نبي...", options: ["موسى عليه السلام", "عيسى عليه السلام", "داود عليه السلام", "محمد صلى الله عليه وسلم"], ans: 0, cat: "ڤلاجرن 4: کتاب" },
+            { q: "ملائکة يڠ برتݢس منچاتت عمل باءيق اداله...", options: ["رقيب", "عتيد", "جبريل", "ميكائيل"], ans: 0, cat: "ڤلاجرن 5: ملائکة" },
+            { q: "برإيمان کيڤد هاري قيامة ترماسوق دالم روکون...", options: ["الإيمان يڠ کـ5", "الإيمان يڠ کـ3", "الإسلام يڠ کـ2", "الإحسان"], ans: 0, cat: "ڤلاجرن 6: هاري قيامة" },
+            { q: "قضاء مپينديقکن کتنتوان الله sejak...", options: ["ازل", "سکارڠ", "هاري قيامة", "د عالم برزخ"], ans: 0, cat: "ڤلاجرن 7: قضاء دان قدر" }
+        ];
+
+        const tauhidStructuredData = [
+            { q: "پاتاکن تعريف الإله دري سݢي شرع.", ans: "الإله اداله ذات يڠ برحق دسمبه دڠن سبنر-بنرڽ.", cat: "ڤلاجرن 1: الألوهية" },
+            { q: "سنارايکن 4 صفت يڠ واجب باݢي رسول.", ans: "1. الصدق (بنر)\n2. الأمانة (جوجور)\n3. التبليغ (مپامڤايکن)\n4. الفطانة (بيجقسانا)", cat: "ڤلاجرن 3: نبي دان رسول" },
+            { q: "پاتاکن نبي يڠ منريما کتاب الإنجيل.", ans: "نبي عيسى عليه السلام.", cat: "ڤلاجرن 4: کتاب" },
+            { q: "اڤاکه مئنا الشفاعة العظمى؟", ans: "شفاعة تربسر نبي محمد صلى الله عليه وسلم د عالم محشر باݢي ملمڤسکن ماءنسي دري کسوسهن.", cat: "ڤلاجرن 8: الشفاعة" }
+        ];
+
+        const tauhidTrueFalseData = [
+            { q: "حکوم مڠتاهوءي صفت2 واجب باݢي الله اداله فرض عين باݢي ستياڤ مکلف.", ans: true, cat: "ڤلاجرن 1" },
+            { q: "صفت الكذب (بوست) اداله صفت يڠ واجب باݢي رسول.", ans: false, cat: "ڤلاجرن 3" },
+            { q: "کتاب القرآن دتورونکن دالم بهاس عرب.", ans: true, cat: "ڤلاجرن 4" },
+            { q: "ملائکة رضوان برتݢس منجاݢ نراک.", ans: false, cat: "ڤلاجرن 5" },
+            { q: "مؤمن يڠ برإيمان wajib برإيمان کيڤد قضاء دان قدر.", ans: true, cat: "ڤلاجرن 7" }
+        ];
+
+        const tauhidMindMapTopics = [
+            { title: "الألوهية (الإله)", nodes: ["تعريف: ذات يڠ برحق دسمبه", "حکوم معارفة: فرض عين", "توجوان: مڠتاهوءي صفت2 الله"] },
+            { title: "عقائد الإيمان (50 عقيدة)", nodes: ["20 صفت واجب باݢي الله", "20 صفت مستحيل باݢي الله", "1 صفت هاروس باݢي الله", "4 صفت واجب باݢي رسول", "4 صفت مستحيل باݢي رسول", "1 صفت هاروس باݢي رسول"] },
+            { title: "نبي دان رسول", nodes: ["صفت واجب: الصدق, الأمانة, التبليغ, الفطانة", "صفت مستحيل: الكذب, الخيانة, الكتمان, البلادة", "بيلڠن رسول wajib دکتاهوءي: 25 اورڠ"] },
+            { title: "کتاب2 الله", nodes: ["التوراة: نبي موسى عليه السلام", "الزبور: نبي داود عليه السلام", "الإنجيل: نبي عيسى عليه السلام", "القرآن: نبي محمد صلى الله عليه وسلم"] },
+            { title: "ملائکة الله", nodes: ["جبريل: مپامڤايکن وحي", "ميكائيل: منورونکن رزقي/هوجن", "إسرافيل: منيوڤ سڠککالا", "عزرائيل: مڽابوت ڽاوا"] },
+            { title: "هاري قيامة", nodes: ["تندا کوچک: باڽق معصية", "تندا تربسر: کلوار دجال & نبي عيسى", "عالم محشر: تمڤت برهيمڤول ماءنسي"] },
+            { title: "قضاء دان قدر", nodes: ["قضاء: کتنتوان الله منذ ازل", "قدر: perlaksanaan کتنتوان mengikut موديليتي", "المعلق: بوليه برأوبه دڠن دعاء", "المبرم: کتنتوان يڠ تتڤ"] },
+            { title: "الشفاعة", nodes: ["الشفاعة العظمى: باݢي نبي محمد صلى الله عليه وسلم", "توجوان: مڠهيندرکن کسيقساءن د محشر", "شرط: دإيزينکن الله تعالى"] }
+        ];
+
+        const tauhidMatchPairs = [
+            { left: "کتاب التوراة", right: "نبي موسى عليه السلام" },
+            { left: "صفت الفطانة", right: "بيجقسانا" },
+            { left: "ملائکة رضوان", right: "منجاݢ سيورݢ" },
+            { left: "قضاء المبرم", right: "کتنتوان يڠ تتڤ" }
+        ];
+
+        // Data Pembelajaran Muamalat (Pelajaran 1 - 5)
+        const muamalatObjectiveData = [
+            { q: "اڤاکه مئنا معاملات دري هاتي بهاس؟", options: ["سام-سام برعقاد/برأوروسن", "جوال بيلي سهاج", "مبايار هوتڠ", "سيوا مڽيوا"], ans: 0, cat: "ڤلاجرن 1: مفهوم معاملات" },
+            { q: "حکوم asal برمعاملات دالم اسلام اداله...", options: ["هاروس", "واجب", "سنة", "مکروه"], ans: 0, cat: "ڤلاجرن 1: مفهوم معاملات" },
+            { q: "روکون جوال بيلي (البيع) ترديري دري...", options: ["3 ڤرکارا", "4 ڤرکارا", "5 ڤرکارا", "2 ڤرکارا"], ans: 0, cat: "ڤلاجرن 2: البيع (جوال بيلي)" },
+            { q: "مڠمبيل تمباهن دالم أوروسن ڤينجمن اتاو ڤرتوکارن بارڠ ترماسوق دالم...", options: ["الربا", "الرهن", "الإجارة", "الوديعة"], ans: 0, cat: "ڤلاجرن 3: الربا" },
+            { q: "الرهن (ݢاداين) برمعنا...", options: ["مڠݢاداي بارڠ صبݢاي چاݢرن هوتڠ", "مڽيوا رومه", "مبوات صيغة جوال بيلي", "مڠولورکن صدقة"], ans: 0, cat: "ڤلاجرن 4: الرهن (ݢاداين)" },
+            { q: "اڤاکه حکوم ممباير هوتڠ باݢي اورڠ يڠ ممڤو؟", options: ["واجب", "سنة", "هاروس", "مکروه"], ans: 0, cat: "ڤلاجرن 5: الدين (هوتڠ)" }
+        ];
+
+        const muamalatStructuredData = [
+            { q: "پاتاکن تعريف البيع (جوال بيلي) دري سݢي شرع.", ans: "منوکرکن هرتا دڠن هرتا يڠ لاءين دڠن کاءيده ترتنتو يڠ دإيزينکن شرع.", cat: "ڤلاجرن 2: البيع" },
+            { q: "سنارايکن 3 rukun jual beli.", ans: "1. اورڠ يڠ برعقد (Penjual & Pembeli)\n2. بارڠ يڠ دچوال/دبلي\n3. صيغة (Ijab & Qabul)", cat: "ڤلاجرن 2: البيع" },
+            { q: "اڤاکه مئنا الربا دان حکومڽ دالم اسلام؟", ans: "الربا اداله تمباهن يڠ دشارطکن دالم أوروسن ڤينجمن اتاو ڤرتوکارن barangan terbabit. حکومڽ اداله حرام دان ترماسوق دالم ضوسا تربسر.", cat: "ڤلاجرن 3: الربا" },
+            { q: "پاتاکن 2 هکمة دشرعتکن الإجارة (سيوا مڽيوا).", ans: "1. ممودهکن أوروسن کهيدوڤن ماءنسي.\n2. ممبنتو اورڠ يڠ ممبرلوکن ڤرخدمتن اتاو بارڠن تنڤا ممبلي.", cat: "ڤلاجرن 4: الإجارة" }
+        ];
+
+        const muamalatTrueFalseData = [
+            { q: "حکوم asal ber-Muamalat dalam Islam adalah harus selagi tiada larangan Syarak.", ans: true, cat: "ڤلاجرن 1" },
+            { q: "جوال بيلي بارڠن يڠ حرام سڤرتي ارق دان بابي اداله صح.", ans: false, cat: "ڤلاجرن 2" },
+            { q: "الربا اداله عمالن يڠ دبرکاتي دالم إسلام.", ans: false, cat: "ڤلاجرن 3" },
+            { q: "مبايار هوتڠ اداله واجب دان واجب دجلسکن سݢرا apabila dimampu.", ans: true, cat: "ڤلاجرن 5" },
+            { q: "الإجارة برمعنا ممبري هرتا secara percuma tanpa bayaran.", ans: false, cat: "ڤلاجرن 4" }
+        ];
+
+        const muamalatMindMapTopics = [
+            { title: "مفهوم معاملات", nodes: ["تعريف: أوروسن هارين ماءنسي دالم هرتا", "حکوم اصل: هاروس", "توجوان: منجاݢ مسلحة دان هق ماءنسي"] },
+            { title: "البيع (جوال بيلي)", nodes: ["تعريف: ڤرتوکارن هرتا دڠن هرتا", "روکون: penjual/pembeli, barang, صيغة", "شرط صح: بالغ, عاقل, سريلاءين, برسوچي"] },
+            { title: "الربا (ربا)", nodes: ["تعريف: تمباهن دالم ڤينجمن/ڤرتوکارن", "حکوم: حرام دان ضوسا تربسر", "اکيبت: منجنيجقکن يکونومي & ظلم"] },
+            { title: "الإجارة (سيوا مڽيوا)", nodes: ["تعريف: مميلوقي منفعة دڠن بايرن", "شرط: منفعة معلوم دان حلال", "کتنتوان: بارڠ تمڤت سيوا تجروس باءيق"] },
+            { title: "الرهن & الدين (ݢاداين & هوتڠ)", nodes: ["الرهن: منجادين بارڠ چاݢرن هوتڠ", "الدين: ڤينجمن يڠ wajib دباير سيمولا", "ادب: چبت ممباير دان تيدک منڠقوض"] }
+        ];
+
+        const muamalatMatchPairs = [
+            { left: "البيع", right: "جوال بيلي" },
+            { left: "الإجارة", right: "سيوا مڽيوا" },
+            { left: "الرهن", right: "ݢاداين صبݢاي چاݢرن" },
+            { left: "الربا", right: "تمباهن حرام دالم هوتڠ" }
+        ];
+
+        // Data Pembelajaran Akhlak Tasawuf (Pelajaran 1 - 10)
+        const akhlakObjectiveData = [
+            { q: "اڤاکه حکوم برادب ترهادڤ کدوا ايبو باڤ؟", options: ["فرض عين", "فرض كفاية", "سنة", "هاروس"], ans: 0, cat: "ڤلاجرن 1: ادب ترهادڤ ايبو باڤ" },
+            { q: "انتارا ادب برتوبة يڠ بتول اداله...", options: ["مڽسلي معصية دان منتيکنڽ", "ممبوات معصية لاݢي", "منڠقوض توبة", "ملاکاوکنڽ تنڤا نية"], ans: 0, cat: "ڤلاجرن 2: ادب برتوبة" },
+            { q: "اڤاکه حکوم مڠيکوتي جنازة کي قبور باݢي ليلاکي؟", options: ["سنة", "واجب", "مکروه", "حرام"], ans: 0, cat: "ڤلاجرن 3: ادب زياره جنازة" },
+            { q: "صفت برهيس ديري يڠ دتنتوکن دالم إسلام اداله...", options: ["منوتوڤ عورة دان تيدک تبرج", "ممامرکن زينة", "سومبوڠ دڠن ڤکايان", "ممببزير دالم برهيس"], ans: 0, cat: "ڤلاجرن 4: ادب برهيس ديري" },
+            { q: "شرط صلاة قصر دان جمع کتيک برمسافر اداله مسافة سفر سد کورڠ-کورڠڽ...", options: ["2 مرحلة (81 كم)", "10 كم", "1 مرحلة", "50 كم"], ans: 0, cat: "ڤلاجرن 5: ادب برمسافر" },
+            { q: "ممبواڠ سمڤه ک دالم سڠاي اداله ڤربواتن يڠ...", options: ["مروسقکن عالم دان دتلاڠ شرع", "دتغاه دالم إسلام", "سنة", "هاروس سهاج"], ans: 0, cat: "ڤلاجرن 6: ادب ممبلهارا عالم" },
+            { q: "اڤاکه صفت محمودة يڠ برمعنا ممبوات عملن سمارت-مارتا کران الله تعالى؟", options: ["الإخلاص", "الرياء", "العجب", "الحسد"], ans: 0, cat: "ڤلاجرن 8: صفت محمودة" },
+            { q: "صفت رياء برمعنا...", options: ["منونجوق-نونجوق عملن سوڤايا دڤوجي", "برسوچي هاتي", "سبر منريم قضاء", "توكل کيڤد الله"], ans: 0, cat: "ڤلاجرن 9: صفت مذمومة" }
+        ];
+
+        const akhlakStructuredData = [
+            { q: "سنارايکن 3 ادب ترهادڤ کدوا ايبو باڤ.", ans: "1. ممباتوهي ڤرينته يڠ تيدک معصية.\n2. برباهس صنتون دان لمه لمبوت.\n3. مڠولورکن دعاء دان كباءيقن باݢي کدوا-دوڽ.", cat: "ڤلاجرن 1: ادب ايبو باڤ" },
+            { q: "پاتاکن 3 شرط توبة نصوح.", ans: "1. مڽسلي معصية يڠ دلاکوکن.\n2. برهنتي دري ملاکوکن معصية سݢرا.\n3. برعزم تيدک مڠولڠي معصية ترسبوت سسلماڽ.", cat: "ڤلاجرن 2: ادب برتوبة" },
+            { q: "اڤاکه مئنا صفت الإخلاص؟", ans: "الإخلاص اداله ممبوات ستياڤ عبادة دان عملن چمڽ سمارتا-مارتا کران الله تعالى تنڤا مڠهارڤکن ڤوجين ماءنسي.", cat: "ڤلاجرن 8: صفت محمودة" },
+            { q: "سنارايکن 2 بهايا صفت حسد (دڠکي) دالم کهيدوڤن.", ans: "1. ممبوسوقکن هاتي دان مڠهاڤوسکن کتنانݢن.\n2. ممبتاکر عملن باءيق سڤرتي اڤي ممباکر کاتوي.", cat: "ڤلاجرن 9: صفت مذمومة" }
+        ];
+
+        const akhlakTrueFalseData = [
+            { q: "مڠدارهاکي کدوا ايبو باڤ اداله ترماسوق دالم ضوسا-ضوسا تربسر.", ans: true, cat: "ڤلاجرن 1" },
+            { q: "توبة هاڽ بوليه دلاکوکن سواقتو صياڤ دالم أوسيا توا سهاج.", ans: false, cat: "ڤلاجرن 2" },
+            { q: "ممبواڠ سمڤه د تمڤت أوموم دان مروسقکن عالم اداله ادب يڠ دتلاڠ دالم إسلام.", ans: true, cat: "ڤلاجرن 6" },
+            { q: "صفت الإخلاص منجاديلن ستياڤ عبادة دتريما الله تعالى.", ans: true, cat: "ڤلاجرن 8" },
+            { q: "صفت رياء دان عجب اداله صفت محمودة يڠ وادجب دتلاعداني.", ans: false, cat: "ڤلاجرن 9" }
+        ];
+
+        const akhlakMindMapTopics = [
+            { title: "ادب ترهادڤ ايبو باڤ", nodes: ["حکوم: فرض عين", "ادب: ممباتوهي, برچاکڤ لمه لمبوت, مندعاءکن", "اکيبت درهاكا: مندمڤت غمورکا الله"] },
+            { title: "ادب برتوبة", nodes: ["تعريف: کملبالم کيڤد الله دري معصية", "شرط: مڽسل, برهنتي, برعزم تيدک مڠولڠي", "کليبهن: دأمڤوني الله دان ينقين هاتي"] },
+            { title: "ادب زياره جنازة", nodes: ["حکوم زياره: سنة", "ادب: مندعاءکن الميت, تيدک مراتڤ, ممبنتو کلوارݢ جنازة", "توجوان: مڠيڠتي ماتي"] },
+            { title: "ادب برهيس ديري", nodes: ["شرط: منوتوڤ عورة, تيدک تبرج", "توجوان: منجاݢ کبرسيهن دان کچنتيکن", "مذموم: سومبوڠ دان بڠݢ"] },
+            { title: "ادب برمسافر", nodes: ["حکوم: هاروس (جک تجوان باءيق)", "ادب: نية باءيق, ممبچ دعا سفر, منجاݢ صلاة", "کدواکن: دإيزينکن صلاة قصر دان جمع"] },
+            { title: "ادب ممبلهارا عالم", nodes: ["مسؤولية: خليفة د بومي", "ادب: منجاݢ کبرسيهن, تيدک ممببزير, تيدک مروسقکن فلورا/فونا", "فائده: کهيدوڤن هرموني"] },
+            { title: "صفت محمودة دان مذمومة", nodes: ["محمودة: إخلاص, رضا, صبر, توكل", "مذمومة: رياء, عجب, حسد, تكبر", "تزكية النفس: ممبرسيهکن هاتي دري صفت چلا"] }
+        ];
+
+        const akhlakMatchPairs = [
+            { left: "صفت الإخلاص", right: "عمل کران الله سهاج" },
+            { left: "صفت الرياء", right: "منونجوق-نونجوق عملن" },
+            { left: "ادب برتوبة", right: "مڽسلي معصية يڠ دلاکوکن" },
+            { left: "تزكية النفس", right: "مڽوچيکن هاتي دري صفت چلا" }
+        ];
+
+        // Data Pembelajaran Bahasa Arab (Pelajaran 1 - 5)
+        const arabObjectiveData = [
+            { q: "اڤاکه مئنا ڤرکاتاءن 'مَدْرَسَةٌ'؟", options: ["سکوله", "رومه", "مسجد", "ڤاسر"], ans: 0, cat: "ڤلاجرن 1: دي سکوله" },
+            { q: "ڤيليه ترجمهن يڠ بتول باݢي 'قَلَمٌ'.", options: ["ڤين", "بوکو", "ڤمادام", "ڤمباريس"], ans: 0, cat: "ڤلاجرن 1: دي سکوله" },
+            { q: "اڤاکه ارتي 'أَبٌ' دالم بهاس ملايو؟", options: ["باڤ", "ايبو", "داتوق", "نينيق"], ans: 0, cat: "ڤلاجرن 2: کلوارݢ" },
+            { q: "اڤاکه بهاس عرب باݢي نومبور 'تيݢ'؟", options: ["ثَلَاثَةٌ", "وَاحِدٌ", "اِثْنَانِ", "أَرْبَعَةٌ"], ans: 0, cat: "ڤلاجرن 3: نومبور" },
+            { q: "ڤرکاتاءن 'سَمَكٌ' برمئنا...", options: ["ايکن", "داݢيڠ", "أيم", "نساي"], ans: 0, cat: "ڤلاجرن 4: ماکنن" }
+        ];
+
+        const arabStructuredData = [
+            { q: "توليسکن ڤرکاتاءن عرب باݢي 'ݢورو ليلاکي'.", ans: "مُعَلِّمٌ", cat: "ڤلاجرن 1: دي سکوله" },
+            { q: "اڤاکه ارتي 'جَدَّةٌ' دالم بهاس ملايو؟", ans: "نينيق", cat: "ڤلاجرن 2: کلوارݢ" },
+            { q: "سنارايکن 3 بارڠ د دالم کلس دالم بهاس عرب.", ans: "1. كُرْسِيٌّ (کروسي)\n2. مَكْتَبٌ (ميجا)\n3. سَبُّورَةٌ (ڤاڤن هيتم)", cat: "ڤلاجرن 1: دي سکوله" },
+            { q: "ترجمهکن ک دالم بهاس عرب: 'رومه ساي چنتيق'.", ans: "بَيْتِي جَمِيلٌ", cat: "ڤلاجرن 5: تمڤت" }
+        ];
+
+        const arabTrueFalseData = [
+            { q: "ڤرکاتاءن 'مَاءٌ' ممباوا مئنا 'اءير'.", ans: true, cat: "ڤلاجرن 4: ماکنن دان مينومن" },
+            { q: "نومبور 'خَمْسَةٌ' برمئنا انم.", ans: false, cat: "ڤلاجرن 3: نومبور" },
+            { q: "بهاس عرب باݢي 'رومه' اداله 'بَيْتٌ'.", ans: true, cat: "ڤلاجرن 5: تمڤت" },
+            { q: "ڤرکاتاءن 'أُمٌّ' برمئنا ابڠ.", ans: false, cat: "ڤلاجرن 2: کلوارݢ" }
+        ];
+
+        const arabMindMapTopics = [
+            { title: "دالم کلس (فِي الفَصْلِ)", nodes: ["سَبُّورَةٌ: ڤاڤن هيتم", "كُرْسِيٌّ: کروسي", "مَكْتَبٌ: ميجا", "قَلَمٌ: ڤين", "كِتَابٌ: بوکو"] },
+            { title: "کلوارݢ (الأُسْرَة)", nodes: ["أَبٌ: باڤ", "أُمٌّ: ايبو", "أَخٌ: ابڠ/اديق ليلاکي", "أُخْتٌ: کاکق/اديق ڤرمڤوان", "جَدٌّ: داتوق"] },
+            { title: "نومبور (الأَرْقَام)", nodes: ["وَاحِدٌ: 1", "اِثْنَانِ: 2", "ثَلَاثَةٌ: 3", "أَرْبَعَةٌ: 4", "خَمْسَةٌ: 5"] }
+        ];
+
+        const arabMatchPairs = [
+            { left: "مَدْرَسَةٌ", right: "سکوله" },
+            { left: "كِتَابٌ", right: "بوکو" },
+            { left: "بَابٌ", right: "ڤينتو" },
+            { left: "سَمَكٌ", right: "ايکن" }
+        ];
+
+        let currentSubject = 'tauhid'; // 'tauhid', 'muamalat', 'akhlak' or 'arab'
+        let currentActiveMode = 'objective';
+
+        function showPortalHome() {
+            document.getElementById('portal-landing-views').classList.remove('hidden');
+            document.getElementById('subject-interactive-container').classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function startSubjectMode(subject, mode) {
+            currentSubject = subject;
+            currentActiveMode = mode;
+
+            document.getElementById('portal-landing-views').classList.add('hidden');
+            document.getElementById('subject-interactive-container').classList.remove('hidden');
+
+            const badge = document.getElementById('subject-badge');
+            const icon = document.getElementById('subject-mode-icon');
+            const titleJawi = document.getElementById('subject-mode-title-jawi');
+
+            if (subject === 'tauhid') {
+                badge.innerText = "Tauhid Darjah 6";
+                badge.className = "text-xs bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-bold";
+                icon.className = "fas fa-mosque text-emerald-600";
+            } else if (subject === 'muamalat') {
+                badge.innerText = "Muamalat Darjah 6";
+                badge.className = "text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-bold";
+                icon.className = "fas fa-handshake text-blue-600";
+            } else if (subject === 'akhlak') {
+                badge.innerText = "Akhlak Tasawuf Darjah 6";
+                badge.className = "text-xs bg-purple-100 text-purple-800 px-3 py-1 rounded-full font-bold";
+                icon.className = "fas fa-heart text-purple-600";
+            } else if (subject === 'arab') {
+                badge.innerText = "Bahasa Arab Darjah 6";
+                badge.className = "text-xs bg-amber-100 text-amber-800 px-3 py-1 rounded-full font-bold";
+                icon.className = "fas fa-language text-amber-600";
+            }
+
+            document.querySelectorAll('.subject-sub-app').forEach(el => el.classList.add('hidden'));
+
+            if (mode === 'objective') {
+                titleJawi.innerText = "اوچين اوبجيکتيف";
+                document.getElementById('app-objective').classList.remove('hidden');
+                loadObjQuestion(0);
+            } else if (mode === 'structured') {
+                titleJawi.innerText = "لاتيهن ستروکتور";
+                document.getElementById('app-structured').classList.remove('hidden');
+                loadStrQuestion(0);
+            } else if (mode === 'truefalse') {
+                titleJawi.innerText = "اوچين بتول/ساله";
+                document.getElementById('app-truefalse').classList.remove('hidden');
+                loadTfQuestion(0);
+            } else if (mode === 'mindmap') {
+                titleJawi.innerText = "ڤتا ميندا (نوتا)";
+                document.getElementById('app-mindmap').classList.remove('hidden');
+                setupMindMapTopicSelect();
+                renderMindMap(0);
+            } else if (mode === 'match') {
+                titleJawi.innerText = "ڤرماءينن ڤادنن";
+                document.getElementById('app-match').classList.remove('hidden');
+                initMatchGame();
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function getActiveDataset(type) {
+            if (currentSubject === 'tauhid') {
+                if (type === 'obj') return tauhidObjectiveData;
+                if (type === 'str') return tauhidStructuredData;
+                if (type === 'tf') return tauhidTrueFalseData;
+                if (type === 'mm') return tauhidMindMapTopics;
+                if (type === 'match') return tauhidMatchPairs;
+            } else if (currentSubject === 'muamalat') {
+                if (type === 'obj') return muamalatObjectiveData;
+                if (type === 'str') return muamalatStructuredData;
+                if (type === 'tf') return muamalatTrueFalseData;
+                if (type === 'mm') return muamalatMindMapTopics;
+                if (type === 'match') return muamalatMatchPairs;
+            } else if (currentSubject === 'akhlak') {
+                if (type === 'obj') return akhlakObjectiveData;
+                if (type === 'str') return akhlakStructuredData;
+                if (type === 'tf') return akhlakTrueFalseData;
+                if (type === 'mm') return akhlakMindMapTopics;
+                if (type === 'match') return akhlakMatchPairs;
+            } else if (currentSubject === 'arab') {
+                if (type === 'obj') return arabObjectiveData;
+                if (type === 'str') return arabStructuredData;
+                if (type === 'tf') return arabTrueFalseData;
+                if (type === 'mm') return arabMindMapTopics;
+                if (type === 'match') return arabMatchPairs;
+            }
+        }
+
+        let objIndex = 0;
+        let objScore = 0;
+
+        function loadObjQuestion(idx) {
+            objIndex = idx;
+            const data = getActiveDataset('obj');
+            const item = data[idx];
+
+            document.getElementById('obj-qNumberBadge').innerText = `سوءالن ${idx + 1} / ${data.length}`;
+            document.getElementById('obj-qCategoryBadge').innerText = item.cat;
+            document.getElementById('obj-questionText').innerText = item.q;
+
+            const container = document.getElementById('obj-optionsContainer');
+            container.innerHTML = '';
+            
+            item.options.forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.className = "option-btn w-full text-right bg-slate-50 border border-slate-200 hover:border-blue-400 p-4 rounded-2xl font-jawi text-xl text-slate-800 transition flex items-center justify-between";
+                btn.onclick = () => checkObjAns(i);
+                btn.innerHTML = `<span>${opt}</span> <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-sans font-bold flex items-center justify-center text-sm">${String.fromCharCode(65 + i)}</span>`;
+                container.appendChild(btn);
+            });
+
+            document.getElementById('obj-feedbackBox').classList.add('hidden');
+            document.getElementById('obj-prevBtn').disabled = (idx === 0);
+            document.getElementById('obj-nextBtn').disabled = (idx === data.length - 1);
+        }
+
+        function checkObjAns(selected) {
+            const data = getActiveDataset('obj');
+            const item = data[objIndex];
+            const feedbackBox = document.getElementById('obj-feedbackBox');
+            feedbackBox.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-rose-100', 'text-rose-800');
+
+            if (selected === item.ans) {
+                objScore += 10;
+                feedbackBox.classList.add('bg-emerald-100', 'text-emerald-800');
+                feedbackBox.innerHTML = `<i class="fas fa-check-circle text-2xl"></i> <span>جواڤن بتول! تاهنياه.</span>`;
+            } else {
+                feedbackBox.classList.add('bg-rose-100', 'text-rose-800');
+                feedbackBox.innerHTML = `<i class="fas fa-times-circle text-2xl"></i> <span>جواڤن کورڠ بتول. جواڤن يڠ بنر اداله: ${item.options[item.ans]}</span>`;
+            }
+            document.getElementById('obj-scoreTracker').innerText = `مرکه: ${objScore}`;
+        }
+
+        let strIndex = 0;
+        function loadStrQuestion(idx) {
+            strIndex = idx;
+            const data = getActiveDataset('str');
+            const item = data[idx];
+
+            document.getElementById('str-qNumberBadge').innerText = `سوءالن ${idx + 1} / ${data.length}`;
+            document.getElementById('str-qCategoryBadge').innerText = item.cat;
+            document.getElementById('str-questionText').innerText = item.q;
+            document.getElementById('str-userAnswer').value = '';
+            document.getElementById('str-answerBox').classList.add('hidden');
+            document.getElementById('str-prevBtn').disabled = (idx === 0);
+            document.getElementById('str-nextBtn').disabled = (idx === data.length - 1);
+        }
+
+        function revealStrAnswer() {
+            const data = getActiveDataset('str');
+            const item = data[strIndex];
+            document.getElementById('str-answerText').innerText = item.ans;
+            document.getElementById('str-answerBox').classList.remove('hidden');
+        }
+
+        let tfIndex = 0;
+        let tfScore = 0;
+        function loadTfQuestion(idx) {
+            tfIndex = idx;
+            const data = getActiveDataset('tf');
+            const item = data[idx];
+
+            document.getElementById('tf-qNumberBadge').innerText = `سوءالن ${idx + 1} / ${data.length}`;
+            document.getElementById('tf-qCategoryBadge').innerText = item.cat;
+            document.getElementById('tf-questionText').innerText = item.q;
+            document.getElementById('tf-feedbackBox').classList.add('hidden');
+            document.getElementById('tf-prevBtn').disabled = (idx === 0);
+            document.getElementById('tf-nextBtn').disabled = (idx === data.length - 1);
+        }
+
+        function selectTfAnswer(val) {
+            const data = getActiveDataset('tf');
+            const item = data[tfIndex];
+            const feedbackBox = document.getElementById('tf-feedbackBox');
+            feedbackBox.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-rose-100', 'text-rose-800');
+
+            if (val === item.ans) {
+                tfScore += 10;
+                feedbackBox.classList.add('bg-emerald-100', 'text-emerald-800');
+                feedbackBox.innerHTML = `<i class="fas fa-check-circle text-2xl"></i> <span>تحنيئة! جواڤن اندا بتول.</span>`;
+            } else {
+                feedbackBox.classList.add('bg-rose-100', 'text-rose-800');
+                feedbackBox.innerHTML = `<i class="fas fa-times-circle text-2xl"></i> <span>جواڤن اندا کورڠ بتول.</span>`;
+            }
+            document.getElementById('tf-scoreTracker').innerText = `مرکه: ${tfScore}`;
+        }
+
+        function nextQuestion(type) {
+            const data = getActiveDataset(type);
+            if (type === 'obj' && objIndex < data.length - 1) loadObjQuestion(objIndex + 1);
+            if (type === 'str' && strIndex < data.length - 1) loadStrQuestion(strIndex + 1);
+            if (type === 'tf' && tfIndex < data.length - 1) loadTfQuestion(tfIndex + 1);
+        }
+        function prevQuestion(type) {
+            if (type === 'obj' && objIndex > 0) loadObjQuestion(objIndex - 1);
+            if (type === 'str' && strIndex > 0) loadStrQuestion(strIndex - 1);
+            if (type === 'tf' && tfIndex > 0) loadTfQuestion(tfIndex - 1);
+        }
+
+        function setupMindMapTopicSelect() {
+            const select = document.getElementById('mm-topic-select');
+            const data = getActiveDataset('mm');
+            select.innerHTML = '';
+            data.forEach((topic, idx) => {
+                const opt = document.createElement('option');
+                opt.value = idx;
+                opt.innerText = `ڤلاجرن ${idx + 1}: ${topic.title}`;
+                select.appendChild(opt);
+            });
+        }
+
+        function renderMindMap(topicIdx) {
+            const data = getActiveDataset('mm')[topicIdx];
+            if (!data) return;
+            const wrapper = document.getElementById('mm-nodes-wrapper');
+            wrapper.innerHTML = '';
+
+            const rootNode = document.createElement('div');
+            rootNode.className = 'node-level-1 fade-in';
+            rootNode.innerText = data.title;
+            wrapper.appendChild(rootNode);
+
+            const childContainer = document.createElement('div');
+            childContainer.className = 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full mt-6';
+
+            data.nodes.forEach(text => {
+                const node = document.createElement('div');
+                node.className = 'node-level-3 fade-in';
+                node.innerText = text;
+                childContainer.appendChild(node);
+            });
+
+            wrapper.appendChild(childContainer);
+        }
+
+        let selectedMatchCard = null;
+        let matchedCount = 0;
+
+        function initMatchGame() {
+            matchedCount = 0;
+            selectedMatchCard = null;
+            const pairs = getActiveDataset('match');
+            document.getElementById('match-score').innerText = `Padanan Sah: 0 / ${pairs.length}`;
+            const grid = document.getElementById('match-grid');
+            grid.innerHTML = '';
+
+            let cards = [];
+            pairs.forEach((pair, idx) => {
+                cards.push({ id: idx, text: pair.left, type: 'left' });
+                cards.push({ id: idx, text: pair.right, type: 'right' });
+            });
+
+            cards.sort(() => Math.random() - 0.5);
+
+            cards.forEach(card => {
+                const el = document.createElement('div');
+                el.className = "match-card bg-slate-50 border-2 border-slate-200 p-5 rounded-2xl text-center cursor-pointer font-bold font-jawi text-xl hover:border-amber-400 transition";
+                el.innerText = card.text;
+                el.dataset.id = card.id;
+
+                el.onclick = () => handleMatchClick(el);
+                grid.appendChild(el);
+            });
+        }
+
+        function handleMatchClick(cardEl) {
+            if (cardEl.classList.contains('matched')) return;
+
+            const pairs = getActiveDataset('match');
+
+            if (!selectedMatchCard) {
+                selectedMatchCard = cardEl;
+                cardEl.classList.add('selected');
+            } else if (selectedMatchCard === cardEl) {
+                selectedMatchCard.classList.remove('selected');
+                selectedMatchCard = null;
+            } else {
+                if (selectedMatchCard.dataset.id === cardEl.dataset.id) {
+                    selectedMatchCard.classList.remove('selected');
+                    selectedMatchCard.classList.add('matched');
+                    cardEl.classList.add('matched');
+                    selectedMatchCard = null;
+                    matchedCount++;
+                    document.getElementById('match-score').innerText = `Padanan Sah: ${matchedCount} / ${pairs.length}`;
+
+                    if (matchedCount === pairs.length) {
+                        showModal("تاهنيئة!", "اندا برحاصيل مڽلسايکن سموا ڤادنن دڠن جباياءن!");
+                    }
+                } else {
+                    cardEl.classList.add('error');
+                    selectedMatchCard.classList.add('error');
+                    setTimeout(() => {
+                        cardEl.classList.remove('error', 'selected');
+                        if (selectedMatchCard) selectedMatchCard.classList.remove('error', 'selected');
+                        selectedMatchCard = null;
+                    }, 600);
+                }
+            }
+        }
+
+        // Modal Helper
+        function showModal(title, msg) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalMessage').innerText = msg;
+            document.getElementById('customModal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('customModal').classList.add('hidden');
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
