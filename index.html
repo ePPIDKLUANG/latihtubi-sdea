@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Ilmu Islam - Modul Tauhid & Muamalat Darjah 6</title>
+    <title>Koleksi Latihan SDEA DAERAH KLUANG</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -54,8 +54,8 @@
         /* Card & Button Interactive States */
         .option-btn { transition: all 0.2s; }
         .option-btn:hover:not(:disabled) { transform: translateX(-5px); }
-        .correct-ans { background-color: #22c55e !important; color: white !important; border-color: #16a34a !important; }
-        .wrong-ans { background-color: #ef4444 !important; color: white !important; border-color: #dc2626 !important; }
+        .correct-ans { background-color: #ecfdf5 !important; color: #065f46 !important; border-color: #10b981 !important; }
+        .wrong-ans { background-color: #fef2f2 !important; color: #991b1b !important; border-color: #ef4444 !important; }
         .disabled-option { opacity: 0.6; cursor: not-allowed; }
         .textarea-jawi { resize: none; line-height: 2; }
         
@@ -86,7 +86,7 @@
                         <div class="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-md">
                             <i class="fas fa-book-quran"></i>
                         </div>
-                        <span class="font-bold text-xl text-emerald-800 hidden sm:block">Portal Ilmu Islam</span>
+                        <span class="font-bold text-xl text-emerald-800 hidden sm:block">Koleksi Latihan SDEA DAERAH KLUANG</span>
                     </a>
                 </div>
 
@@ -104,7 +104,9 @@
                     <a href="#arab" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-amber-700 bg-amber-50 hover:bg-amber-100 transition flex items-center gap-1.5">
                         <i class="fas fa-language text-amber-600"></i> Bahasa Arab
                     </a>
-                    <a href="#ibadat" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 transition">Ibadat</a>
+                    <a href="#ibadat" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-teal-700 bg-teal-50 hover:bg-teal-100 transition flex items-center gap-1.5">
+                        <i class="fas fa-pray text-teal-600"></i> Ibadat
+                    </a>
                     <a href="#faraid" onclick="showPortalHome()" class="nav-link px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 transition">Faraid</a>
                 </div>
 
@@ -127,8 +129,8 @@
                 <a href="#muamalat" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-semibold text-blue-700 bg-blue-50">SDEA Muamalat (5 Mod Interaktif)</a>
                 <a href="#akhlak" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-semibold text-purple-700 bg-purple-50">SDEA Akhlak Tasawuf (5 Mod Interaktif)</a>
                 <a href="#arab" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-semibold text-amber-700 bg-amber-50">SDEA Bahasa Arab (5 Mod Interaktif)</a>
-                <a href="#ibadat" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-emerald-50">Ibadat</a>
-                <a href="#faraid" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-emerald-50">Faraid</a>
+                <a href="#ibadat" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-semibold text-teal-700 bg-teal-50">SDEA Ibadat (5 Mod Interaktif)</a>
+                <a href="#faraid" onclick="showPortalHome()" class="block px-3 py-2 rounded-md text-base font-semibold text-rose-700 bg-rose-50">SDEA Faraid (5 Mod Interaktif)</a>
             </div>
         </div>
     </nav>
@@ -154,8 +156,8 @@
                     <span class="inline-block px-4 py-1.5 bg-emerald-700/60 rounded-full text-emerald-200 text-sm font-semibold mb-4 border border-emerald-500/30">
                         <i class="fas fa-star text-amber-300 mr-1"></i> Hub Pengajian Islam Terpadu
                     </span>
-                    <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Koleksi Modul Pengajian Islam</h1>
-                    <p class="text-lg md:text-xl text-emerald-100 max-w-2xl mx-auto font-light">Satu portal komprehensif yang menghimpunkan ilmu Islam dengan modul pembelajaran interaktif lengkap bagi <strong>Tauhid & Muamalat Darjah 6</strong>.</p>
+                    <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Koleksi Latihan SDEA DAERAH KLUANG</h1>
+                    <p class="text-lg md:text-xl text-emerald-100 max-w-2xl mx-auto font-light">Satu portal komprehensif yang menghimpunkan koleksi soalan dan modul pembelajaran interaktif persediaan peperiksaan <strong>Sijil Darjah Enam Agama (SDEA)</strong> yang lengkap bagi murid-murid Darjah 6.</p>
                 </div>
             </header>
 
@@ -564,63 +566,203 @@
             </section>
 
             <!-- Bahagian 5: Ibadat -->
-            <section id="ibadat" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 border-b border-gray-200">
-                <div class="max-w-4xl mx-auto w-full">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center text-teal-600 text-2xl">
-                            <i class="fas fa-pray"></i>
+            <section id="ibadat" class="py-16 px-4 sm:px-6 lg:px-8 bg-teal-50/30 border-b border-gray-200">
+                <div class="max-w-6xl mx-auto w-full">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-teal-600 text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg">
+                                <i class="fas fa-pray"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">SDEA Ibadat</h2>
+                                    <span class="bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full">Darjah 6</span>
+                                </div>
+                                <p class="text-slate-600 font-jawi text-xl mt-1">ڤورتل اوتام عبادات درجه 6 (5 مود ڤمبلاجرن)</p>
+                            </div>
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Ibadat</h2>
+                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600">
+                            <i class="fas fa-layer-group text-teal-600 mr-1"></i> Merangkumi <strong>Pelajaran 1 hingga 8</strong>
+                        </div>
                     </div>
-                    <div class="prose prose-lg text-gray-600">
-                        <p class="mb-4">Bahagian Ibadat (Feqah Ibadat) memperincikan tentang kewajipan-kewajipan harian seorang Muslim terhadap penciptanya. Ia menjelaskan syarat sah, rukun, sunat, dan perkara yang membatalkan sesuatu ibadat tersebut berdasarkan mazhab.</p>
-                        <div class="overflow-x-auto mt-6">
-                            <table class="min-w-full bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-                                <thead class="bg-teal-50">
-                                    <tr>
-                                        <th class="py-3 px-4 text-left text-teal-900 font-semibold border-b">Topik</th>
-                                        <th class="py-3 px-4 text-left text-teal-900 font-semibold border-b">Penerangan Ringkas</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="border-b hover:bg-gray-50">
-                                        <td class="py-3 px-4 font-semibold">Thaharah (Bersuci)</td>
-                                        <td class="py-3 px-4 text-sm">Wuduk, Mandi Wajib, Tayammum, Najis</td>
-                                    </tr>
-                                    <tr class="border-b hover:bg-gray-50">
-                                        <td class="py-3 px-4 font-semibold">Solat</td>
-                                        <td class="py-3 px-4 text-sm">Solat Fardu, Solat Sunat, Solat Jemaah, Solat Musafir</td>
-                                    </tr>
-                                    <tr class="border-b hover:bg-gray-50">
-                                        <td class="py-3 px-4 font-semibold">Puasa & Zakat</td>
-                                        <td class="py-3 px-4 text-sm">Hukum-hakam puasa Ramadan, Zakat Fitrah, Zakat Harta</td>
-                                    </tr>
-                                    <tr class="hover:bg-gray-50">
-                                        <td class="py-3 px-4 font-semibold">Haji & Umrah</td>
-                                        <td class="py-3 px-4 text-sm">Syarat, Rukun, Wajib Haji, Pantang Larang Ihram</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+
+                    <!-- Kad 5 Mod Interaktif Ibadat -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <button onclick="startSubjectMode('ibadat', 'objective')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-blue-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-blue-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">اوجين اوبجيکتيف</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">سوءالن اوبجيکتيف بربنتوق ڤيليهن ݢندا مڠناءي عبادات.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-blue-600 font-bold font-jawi text-lg">
+                                <span>مولا اوجين</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('ibadat', 'structured')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-indigo-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-indigo-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">لاتيهن ستروکتور</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">سوءالن ايسي تمڤت کوسوڠ اتاو جواڤن ڤينديق.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-indigo-600 font-bold font-jawi text-lg">
+                                <span>مولا لاتيهن</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('ibadat', 'truefalse')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-pink-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-pink-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-check-double"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">اوجين بتول/ساله</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">ڤپاتاءن عبادات. تنتوکن 'بتول' اتاو 'ساله'.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-pink-600 font-bold font-jawi text-lg">
+                                <span>مولا اوجين</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('ibadat', 'mindmap')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-emerald-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-emerald-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">ڤتا ميندا (نوتا)</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">نوتا ريڠکس توڤيک عبادات بربنتوق ڤتا ميندا.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-emerald-600 font-bold font-jawi text-lg">
+                                <span>ليهت نوتا</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('ibadat', 'match')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-amber-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px] md:col-span-2 lg:col-span-2">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-amber-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-puzzle-piece"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">ڤادنن (سوءالن)</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">ڤادنکن کونسيف عبادات دڠن کترڠن يڠ بتول.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-amber-600 font-bold font-jawi text-lg">
+                                <span>مولا ڤرماءينن</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
                     </div>
                 </div>
             </section>
 
             <!-- Bahagian 6: Faraid -->
-            <section id="faraid" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-                <div class="max-w-4xl mx-auto w-full">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 bg-rose-100 rounded-2xl flex items-center justify-center text-rose-600 text-2xl">
-                            <i class="fas fa-calculator"></i>
+            <section id="faraid" class="py-16 px-4 sm:px-6 lg:px-8 bg-rose-50/30 border-b border-gray-200">
+                <div class="max-w-6xl mx-auto w-full">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-rose-600 text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">SDEA Faraid</h2>
+                                    <span class="bg-rose-100 text-rose-800 text-xs font-bold px-3 py-1 rounded-full">Darjah 6</span>
+                                </div>
+                                <p class="text-slate-600 font-jawi text-xl mt-1">ڤورتل اوتام فرائض درجه 6 (5 مود ڤمبلاجرن)</p>
+                            </div>
                         </div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Faraid</h2>
+                        <div class="text-sm bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-slate-600">
+                            <i class="fas fa-layer-group text-rose-600 mr-1"></i> Merangkumi <strong>Pelajaran 1 hingga 7</strong>
+                        </div>
                     </div>
-                    <div class="prose prose-lg text-gray-600">
-                        <p class="mb-4">Ilmu Faraid adalah ilmu matematik syariah yang berkaitan dengan pembahagian harta pusaka. Ia menetapkan siapa yang berhak mewarisi harta si mati dan berapa kadar atau peratusan yang telah ditetapkan oleh syarak untuk setiap waris tersebut.</p>
-                        <div class="bg-rose-50 p-6 rounded-2xl border-l-4 border-rose-500 shadow-sm mt-6">
-                            <p class="italic text-gray-800">"Pelajarilah ilmu Faraid dan ajarkanlah ia kepada manusia, kerana ia adalah separuh daripada ilmu, ia dilupakan, dan ia adalah ilmu pertama yang akan ditarik daripada umatku."</p>
-                            <p class="text-sm text-rose-700 mt-2 font-semibold">- Hadis Riwayat Ibnu Majah</p>
-                        </div>
+
+                    <!-- Kad 5 Mod Interaktif Faraid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <button onclick="startSubjectMode('faraid', 'objective')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-blue-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-blue-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">اوجين اوبجيکتيف</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">سوءالن اوبجيکتيف بربنتوق ڤيليهن ݢندا (A, B, C, D) مڠناءي فرائض.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-blue-600 font-bold font-jawi text-lg">
+                                <span>مولا اوجين</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('faraid', 'structured')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-indigo-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-indigo-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">لاتيهن ستروکتور</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">سوءالن ايسي تمڤت کوسوڠ اتاو جواڤن ڤينديق مڠناءي ڤمبهاݢين هرتا ڤوساک.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-indigo-600 font-bold font-jawi text-lg">
+                                <span>مولا لاتيهن</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('faraid', 'truefalse')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-pink-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-pink-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-check-double"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">اوجين بتول/ساله</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">ڤپاتاءن فرائض. تنتوکن 'بتول' اتاو 'ساله'.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-pink-600 font-bold font-jawi text-lg">
+                                <span>مولا اوجين</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('faraid', 'mindmap')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-emerald-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-emerald-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">ڤتا ميندا (نوتا)</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">نوتا ريڠکس توڤيک فرائض بربنتوق ڤتا ميندا.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-emerald-600 font-bold font-jawi text-lg">
+                                <span>ليهت نوتا</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
+
+                        <button onclick="startSubjectMode('faraid', 'match')" class="group text-right bg-white rounded-3xl p-6 border-2 border-transparent hover:border-amber-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[220px] md:col-span-2 lg:col-span-2">
+                            <div class="absolute top-0 left-0 w-full h-2 bg-amber-500"></div>
+                            <div>
+                                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-puzzle-piece"></i>
+                                </div>
+                                <h3 class="font-jawi text-2xl font-bold mb-2 text-slate-800">ڤادنن (سوءالن)</h3>
+                                <p class="font-jawi text-lg text-slate-500 leading-relaxed">ڤادنکن کونسيف فرائض دڠن کترڠن يڠ بتول.</p>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between text-amber-600 font-bold font-jawi text-lg">
+                                <span>مولا ڤرماءينن</span>
+                                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform"></i>
+                            </div>
+                        </button>
                     </div>
                 </div>
             </section>
@@ -637,7 +779,7 @@
                     <span class="text-slate-300">|</span>
                     <div class="flex items-center gap-2 font-bold font-jawi text-xl" id="subject-mode-header">
                         <i class="fas fa-book-reader" id="subject-mode-icon"></i>
-                        <span id="subject-mode-title-jawi">اوچين اوبجيکتيف</span>
+                        <span id="subject-mode-title-jawi">اوجين اوبجيکتيف</span>
                     </div>
                 </div>
                 <div class="flex items-center gap-2">
@@ -659,11 +801,11 @@
                     </div>
                 </div>
                 <div class="mt-6 flex justify-between items-center">
-                    <button onclick="prevQuestion('obj')" id="obj-prevBtn" class="px-6 py-3 bg-white border border-slate-200 rounded-xl font-bold text-slate-700 hover:bg-slate-50 transition">
+                    <button onclick="prevQuestion('obj')" id="obj-prevBtn" class="px-6 py-3 bg-white border border-slate-200 rounded-xl font-bold text-slate-700 hover:bg-slate-50 transition disabled:opacity-50 disabled:cursor-not-allowed">
                         <i class="fas fa-arrow-right ml-2"></i> سبلومڽ
                     </button>
                     <span class="text-sm font-bold text-slate-500" id="obj-scoreTracker">مرکه: 0</span>
-                    <button onclick="nextQuestion('obj')" id="obj-nextBtn" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition">
+                    <button onclick="nextQuestion('obj')" id="obj-nextBtn" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition disabled:opacity-50 disabled:cursor-not-allowed">
                         ستروسڽ <i class="fas fa-arrow-left mr-2"></i>
                     </button>
                 </div>
@@ -692,10 +834,10 @@
                     </div>
                 </div>
                 <div class="mt-6 flex justify-between items-center">
-                    <button onclick="prevQuestion('str')" id="str-prevBtn" class="px-6 py-3 bg-white border border-slate-200 rounded-xl font-bold text-slate-700 hover:bg-slate-50 transition">
+                    <button onclick="prevQuestion('str')" id="str-prevBtn" class="px-6 py-3 bg-white border border-slate-200 rounded-xl font-bold text-slate-700 hover:bg-slate-50 transition disabled:opacity-50 disabled:cursor-not-allowed">
                         <i class="fas fa-arrow-right ml-2"></i> سبلومڽ
                     </button>
-                    <button onclick="nextQuestion('str')" id="str-nextBtn" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold transition">
+                    <button onclick="nextQuestion('str')" id="str-nextBtn" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold transition disabled:opacity-50 disabled:cursor-not-allowed">
                         ستروسڽ <i class="fas fa-arrow-left mr-2"></i>
                     </button>
                 </div>
@@ -711,10 +853,10 @@
                     <div class="p-6 md:p-10 text-center">
                         <p class="font-jawi text-2xl md:text-3xl text-slate-800 font-bold mb-10 leading-relaxed" id="tf-questionText">...</p>
                         <div class="grid grid-cols-2 gap-4 max-w-md mx-auto">
-                            <button onclick="selectTfAnswer(true)" id="tf-btn-true" class="py-6 px-4 bg-white border-2 border-emerald-200 text-emerald-600 hover:border-emerald-500 hover:bg-emerald-50 rounded-2xl font-bold font-jawi text-3xl transition flex flex-col items-center gap-2">
+                            <button onclick="selectTfAnswer(true)" id="tf-btn-true" class="py-6 px-4 bg-white border-2 border-slate-200 text-emerald-600 hover:border-emerald-500 hover:bg-emerald-50 rounded-2xl font-bold font-jawi text-3xl transition flex flex-col items-center gap-2">
                                 <i class="fas fa-check-circle text-4xl"></i> بتول
                             </button>
-                            <button onclick="selectTfAnswer(false)" id="tf-btn-false" class="py-6 px-4 bg-white border-2 border-rose-200 text-rose-600 hover:border-rose-500 hover:bg-rose-50 rounded-2xl font-bold font-jawi text-3xl transition flex flex-col items-center gap-2">
+                            <button onclick="selectTfAnswer(false)" id="tf-btn-false" class="py-6 px-4 bg-white border-2 border-slate-200 text-rose-600 hover:border-rose-500 hover:bg-rose-50 rounded-2xl font-bold font-jawi text-3xl transition flex flex-col items-center gap-2">
                                 <i class="fas fa-times-circle text-4xl"></i> ساله
                             </button>
                         </div>
@@ -722,11 +864,11 @@
                     </div>
                 </div>
                 <div class="mt-6 flex justify-between items-center">
-                    <button onclick="prevQuestion('tf')" id="tf-prevBtn" class="px-6 py-3 bg-white border border-slate-200 rounded-xl font-bold text-slate-700 hover:bg-slate-50 transition">
+                    <button onclick="prevQuestion('tf')" id="tf-prevBtn" class="px-6 py-3 bg-white border border-slate-200 rounded-xl font-bold text-slate-700 hover:bg-slate-50 transition disabled:opacity-50 disabled:cursor-not-allowed">
                         <i class="fas fa-arrow-right ml-2"></i> سبلومڽ
                     </button>
                     <span class="text-sm font-bold text-slate-500" id="tf-scoreTracker">مرکه: 0</span>
-                    <button onclick="nextQuestion('tf')" id="tf-nextBtn" class="px-6 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-xl font-bold transition">
+                    <button onclick="nextQuestion('tf')" id="tf-nextBtn" class="px-6 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-xl font-bold transition disabled:opacity-50 disabled:cursor-not-allowed">
                         ستروسڽ <i class="fas fa-arrow-left mr-2"></i>
                     </button>
                 </div>
@@ -763,40 +905,40 @@
     <!-- Kaki Halaman (Footer) -->
     <footer class="bg-slate-900 text-slate-400 py-8 text-center border-t border-slate-800 mt-auto">
         <div class="max-w-7xl mx-auto px-4">
-            <p class="text-sm">&copy; 2026 Portal Ilmu Islam & Modul Tauhid/Muamalat Interaktif Darjah 6.</p>
+            <p class="text-sm">&copy; 2026 Koleksi Latihan SDEA DAERAH KLUANG.</p>
         </div>
     </footer>
 
     <script>
         // Data Pembelajaran Tauhid (Pelajaran 1 - 8)
         const tauhidObjectiveData = [
-            { q: "اڤاکه مئنا الإله دري هاتي بهاس؟", options: ["يڠ دسمبه", "يڠ دچيڤتا", "يڠ دموليکن", "يڠ دتاکوتي"], ans: 0, cat: "ڤلاجرن 1: الألوهية" },
-            { q: "حکوم معارفة الله تعالى باݢي ستياڤ مکلف اداله...", options: ["فرض عين", "فرض كفاية", "سنة", "هاروس"], ans: 0, cat: "ڤلاجرن 1: الألوهية" },
-            { q: "براڤکاه بيلڠن عقيدة الإيمان يڠ واجب دايتلاعي؟", options: ["50 عقيدة", "20 عقيدة", "13 عقيدة", "66 عقيدة"], ans: 0, cat: "ڤلاجرن 2: عقائد الإيمان" },
+            { q: "اڤاکه مکنا الإله دري سݢي بهاس؟", options: ["يڠ دسمبه", "يڠ دچيڤتا", "يڠ دموليکن", "يڠ دتاکوتي"], ans: 0, cat: "ڤلاجرن 1: الألوهية" },
+            { q: "حکوم معرفة الله تعالى باݢي ستياڤ مکلف اداله...", options: ["فرض عين", "فرض كفاية", "سنة", "هاروس"], ans: 0, cat: "ڤلاجرن 1: الألوهية" },
+            { q: "براڤکاه بيلڠن عقيدة الإيمان يڠ واجب دکتاهوءي؟", options: ["50 عقيدة", "20 عقيدة", "13 عقيدة", "66 عقيدة"], ans: 0, cat: "ڤلاجرن 2: عقائد الإيمان" },
             { q: "صفت يڠ واجب باݢي رسول بربيلڠ...", options: ["4 صفت", "20 صفت", "5 صفت", "1 صفت"], ans: 0, cat: "ڤلاجرن 3: نبي دان رسول" },
             { q: "کتاب التوراة دتورونکن کيڤد نبي...", options: ["موسى عليه السلام", "عيسى عليه السلام", "داود عليه السلام", "محمد صلى الله عليه وسلم"], ans: 0, cat: "ڤلاجرن 4: کتاب" },
             { q: "ملائکة يڠ برتݢس منچاتت عمل باءيق اداله...", options: ["رقيب", "عتيد", "جبريل", "ميكائيل"], ans: 0, cat: "ڤلاجرن 5: ملائکة" },
             { q: "برإيمان کيڤد هاري قيامة ترماسوق دالم روکون...", options: ["الإيمان يڠ کـ5", "الإيمان يڠ کـ3", "الإسلام يڠ کـ2", "الإحسان"], ans: 0, cat: "ڤلاجرن 6: هاري قيامة" },
-            { q: "قضاء مپينديقکن کتنتوان الله sejak...", options: ["ازل", "سکارڠ", "هاري قيامة", "د عالم برزخ"], ans: 0, cat: "ڤلاجرن 7: قضاء دان قدر" }
+            { q: "قضاء مپاتاکن کتنتوان الله سجق...", options: ["ازل", "سکارڠ", "هاري قيامة", "د عالم برزخ"], ans: 0, cat: "ڤلاجرن 7: قضاء دان قدر" }
         ];
 
         const tauhidStructuredData = [
             { q: "پاتاکن تعريف الإله دري سݢي شرع.", ans: "الإله اداله ذات يڠ برحق دسمبه دڠن سبنر-بنرڽ.", cat: "ڤلاجرن 1: الألوهية" },
             { q: "سنارايکن 4 صفت يڠ واجب باݢي رسول.", ans: "1. الصدق (بنر)\n2. الأمانة (جوجور)\n3. التبليغ (مپامڤايکن)\n4. الفطانة (بيجقسانا)", cat: "ڤلاجرن 3: نبي دان رسول" },
             { q: "پاتاکن نبي يڠ منريما کتاب الإنجيل.", ans: "نبي عيسى عليه السلام.", cat: "ڤلاجرن 4: کتاب" },
-            { q: "اڤاکه مئنا الشفاعة العظمى؟", ans: "شفاعة تربسر نبي محمد صلى الله عليه وسلم د عالم محشر باݢي ملمڤسکن ماءنسي دري کسوسهن.", cat: "ڤلاجرن 8: الشفاعة" }
+            { q: "اڤاکه مکنا الشفاعة العظمى؟", ans: "شفاعة تربسر نبي محمد صلى الله عليه وسلم د عالم محشر باݢي ملڤسکن ماءنسي دري کسوسهن.", cat: "ڤلاجرن 8: الشفاعة" }
         ];
 
         const tauhidTrueFalseData = [
             { q: "حکوم مڠتاهوءي صفت2 واجب باݢي الله اداله فرض عين باݢي ستياڤ مکلف.", ans: true, cat: "ڤلاجرن 1" },
-            { q: "صفت الكذب (بوست) اداله صفت يڠ واجب باݢي رسول.", ans: false, cat: "ڤلاجرن 3" },
+            { q: "صفت الكذب (دوستا) اداله صفت يڠ واجب باݢي رسول.", ans: false, cat: "ڤلاجرن 3" },
             { q: "کتاب القرآن دتورونکن دالم بهاس عرب.", ans: true, cat: "ڤلاجرن 4" },
             { q: "ملائکة رضوان برتݢس منجاݢ نراک.", ans: false, cat: "ڤلاجرن 5" },
             { q: "مؤمن يڠ برإيمان wajib برإيمان کيڤد قضاء دان قدر.", ans: true, cat: "ڤلاجرن 7" }
         ];
 
         const tauhidMindMapTopics = [
-            { title: "الألوهية (الإله)", nodes: ["تعريف: ذات يڠ برحق دسمبه", "حکوم معارفة: فرض عين", "توجوان: مڠتاهوءي صفت2 الله"] },
+            { title: "الألوهية (الإله)", nodes: ["تعريف: ذات يڠ برحق دسمبه", "حکوم معرفة: فرض عين", "توجوان: مڠتاهوءي صفت2 الله"] },
             { title: "عقائد الإيمان (50 عقيدة)", nodes: ["20 صفت واجب باݢي الله", "20 صفت مستحيل باݢي الله", "1 صفت هاروس باݢي الله", "4 صفت واجب باݢي رسول", "4 صفت مستحيل باݢي رسول", "1 صفت هاروس باݢي رسول"] },
             { title: "نبي دان رسول", nodes: ["صفت واجب: الصدق, الأمانة, التبليغ, الفطانة", "صفت مستحيل: الكذب, الخيانة, الكتمان, البلادة", "بيلڠن رسول wajib دکتاهوءي: 25 اورڠ"] },
             { title: "کتاب2 الله", nodes: ["التوراة: نبي موسى عليه السلام", "الزبور: نبي داود عليه السلام", "الإنجيل: نبي عيسى عليه السلام", "القرآن: نبي محمد صلى الله عليه وسلم"] },
@@ -809,24 +951,24 @@
         const tauhidMatchPairs = [
             { left: "کتاب التوراة", right: "نبي موسى عليه السلام" },
             { left: "صفت الفطانة", right: "بيجقسانا" },
-            { left: "ملائکة رضوان", right: "منجاݢ سيورݢ" },
+            { left: "ملائکة رضوان", right: "منجاݢ شرݢ" },
             { left: "قضاء المبرم", right: "کتنتوان يڠ تتڤ" }
         ];
 
         // Data Pembelajaran Muamalat (Pelajaran 1 - 5)
         const muamalatObjectiveData = [
-            { q: "اڤاکه مئنا معاملات دري هاتي بهاس؟", options: ["سام-سام برعقاد/برأوروسن", "جوال بيلي سهاج", "مبايار هوتڠ", "سيوا مڽيوا"], ans: 0, cat: "ڤلاجرن 1: مفهوم معاملات" },
+            { q: "اڤاکه مکنا معاملات دري سݢي بهاس؟", options: ["سام-سام برعقاد/برأوروسن", "جوال بيلي سهاج", "ممباير هوتڠ", "سيوا مڽيوا"], ans: 0, cat: "ڤلاجرن 1: مفهوم معاملات" },
             { q: "حکوم asal برمعاملات دالم اسلام اداله...", options: ["هاروس", "واجب", "سنة", "مکروه"], ans: 0, cat: "ڤلاجرن 1: مفهوم معاملات" },
             { q: "روکون جوال بيلي (البيع) ترديري دري...", options: ["3 ڤرکارا", "4 ڤرکارا", "5 ڤرکارا", "2 ڤرکارا"], ans: 0, cat: "ڤلاجرن 2: البيع (جوال بيلي)" },
             { q: "مڠمبيل تمباهن دالم أوروسن ڤينجمن اتاو ڤرتوکارن بارڠ ترماسوق دالم...", options: ["الربا", "الرهن", "الإجارة", "الوديعة"], ans: 0, cat: "ڤلاجرن 3: الربا" },
-            { q: "الرهن (ݢاداين) برمعنا...", options: ["مڠݢاداي بارڠ صبݢاي چاݢرن هوتڠ", "مڽيوا رومه", "مبوات صيغة جوال بيلي", "مڠولورکن صدقة"], ans: 0, cat: "ڤلاجرن 4: الرهن (ݢاداين)" },
+            { q: "الرهن (ݢاداين) برمعنا...", options: ["مڠݢاداي بارڠ سباݢاي چاݢرن هوتڠ", "مڽيوا رومه", "ممبوات صيغة جوال بيلي", "مڠولورکن صدقة"], ans: 0, cat: "ڤلاجرن 4: الرهن (ݢاداين)" },
             { q: "اڤاکه حکوم ممباير هوتڠ باݢي اورڠ يڠ ممڤو؟", options: ["واجب", "سنة", "هاروس", "مکروه"], ans: 0, cat: "ڤلاجرن 5: الدين (هوتڠ)" }
         ];
 
         const muamalatStructuredData = [
             { q: "پاتاکن تعريف البيع (جوال بيلي) دري سݢي شرع.", ans: "منوکرکن هرتا دڠن هرتا يڠ لاءين دڠن کاءيده ترتنتو يڠ دإيزينکن شرع.", cat: "ڤلاجرن 2: البيع" },
             { q: "سنارايکن 3 rukun jual beli.", ans: "1. اورڠ يڠ برعقد (Penjual & Pembeli)\n2. بارڠ يڠ دچوال/دبلي\n3. صيغة (Ijab & Qabul)", cat: "ڤلاجرن 2: البيع" },
-            { q: "اڤاکه مئنا الربا دان حکومڽ دالم اسلام؟", ans: "الربا اداله تمباهن يڠ دشارطکن دالم أوروسن ڤينجمن اتاو ڤرتوکارن barangan terbabit. حکومڽ اداله حرام دان ترماسوق دالم ضوسا تربسر.", cat: "ڤلاجرن 3: الربا" },
+            { q: "اڤاکه مکنا الربا دان حکومڽ دالم اسلام؟", ans: "الربا اداله تمباهن يڠ دشارطکن دالم أوروسن ڤينجمن اتاو ڤرتوکارن barangan terbabit. حکومڽ اداله حرام دان ترماسوق دالم دوسا تربسر.", cat: "ڤلاجرن 3: الربا" },
             { q: "پاتاکن 2 هکمة دشرعتکن الإجارة (سيوا مڽيوا).", ans: "1. ممودهکن أوروسن کهيدوڤن ماءنسي.\n2. ممبنتو اورڠ يڠ ممبرلوکن ڤرخدمتن اتاو بارڠن تنڤا ممبلي.", cat: "ڤلاجرن 4: الإجارة" }
         ];
 
@@ -834,59 +976,59 @@
             { q: "حکوم asal ber-Muamalat dalam Islam adalah harus selagi tiada larangan Syarak.", ans: true, cat: "ڤلاجرن 1" },
             { q: "جوال بيلي بارڠن يڠ حرام سڤرتي ارق دان بابي اداله صح.", ans: false, cat: "ڤلاجرن 2" },
             { q: "الربا اداله عمالن يڠ دبرکاتي دالم إسلام.", ans: false, cat: "ڤلاجرن 3" },
-            { q: "مبايار هوتڠ اداله واجب دان واجب دجلسکن سݢرا apabila dimampu.", ans: true, cat: "ڤلاجرن 5" },
+            { q: "ممباير هوتڠ اداله واجب دان واجب دجلسکن سݢرا apabila dimampu.", ans: true, cat: "ڤلاجرن 5" },
             { q: "الإجارة برمعنا ممبري هرتا secara percuma tanpa bayaran.", ans: false, cat: "ڤلاجرن 4" }
         ];
 
         const muamalatMindMapTopics = [
             { title: "مفهوم معاملات", nodes: ["تعريف: أوروسن هارين ماءنسي دالم هرتا", "حکوم اصل: هاروس", "توجوان: منجاݢ مسلحة دان هق ماءنسي"] },
             { title: "البيع (جوال بيلي)", nodes: ["تعريف: ڤرتوکارن هرتا دڠن هرتا", "روکون: penjual/pembeli, barang, صيغة", "شرط صح: بالغ, عاقل, سريلاءين, برسوچي"] },
-            { title: "الربا (ربا)", nodes: ["تعريف: تمباهن دالم ڤينجمن/ڤرتوکارن", "حکوم: حرام دان ضوسا تربسر", "اکيبت: منجنيجقکن يکونومي & ظلم"] },
-            { title: "الإجارة (سيوا مڽيوا)", nodes: ["تعريف: مميلوقي منفعة دڠن بايرن", "شرط: منفعة معلوم دان حلال", "کتنتوان: بارڠ تمڤت سيوا تجروس باءيق"] },
-            { title: "الرهن & الدين (ݢاداين & هوتڠ)", nodes: ["الرهن: منجادين بارڠ چاݢرن هوتڠ", "الدين: ڤينجمن يڠ wajib دباير سيمولا", "ادب: چبت ممباير دان تيدک منڠقوض"] }
+            { title: "الربا (ربا)", nodes: ["تعريف: تمباهن دالم ڤينجمن/ڤرتوکارن", "حکوم: حرام دان دوسا تربسر", "اکيبت: منجسکن ايكونومي & ظلم"] },
+            { title: "الإجارة (سيوا مڽيوا)", nodes: ["تعريف: مميليقي منفعة دڠن بايرن", "شرط: منفعة معلوم دان حلال", "کتنتوان: بارڠ تمڤت سيوا ترأوروس باءيق"] },
+            { title: "الرهن & الدين (ݢاداين & هوتڠ)", nodes: ["الرهن: منجادين بارڠ چاݢرن هوتڠ", "الدين: ڤينجمن يڠ wajib دباير سيمولا", "ادب: چڤت ممباير دان تيدک منڠݢوه"] }
         ];
 
         const muamalatMatchPairs = [
             { left: "البيع", right: "جوال بيلي" },
             { left: "الإجارة", right: "سيوا مڽيوا" },
-            { left: "الرهن", right: "ݢاداين صبݢاي چاݢرن" },
+            { left: "الرهن", right: "ݢاداين سباݢاي چاݢرن" },
             { left: "الربا", right: "تمباهن حرام دالم هوتڠ" }
         ];
 
         // Data Pembelajaran Akhlak Tasawuf (Pelajaran 1 - 10)
         const akhlakObjectiveData = [
             { q: "اڤاکه حکوم برادب ترهادڤ کدوا ايبو باڤ؟", options: ["فرض عين", "فرض كفاية", "سنة", "هاروس"], ans: 0, cat: "ڤلاجرن 1: ادب ترهادڤ ايبو باڤ" },
-            { q: "انتارا ادب برتوبة يڠ بتول اداله...", options: ["مڽسلي معصية دان منتيکنڽ", "ممبوات معصية لاݢي", "منڠقوض توبة", "ملاکاوکنڽ تنڤا نية"], ans: 0, cat: "ڤلاجرن 2: ادب برتوبة" },
+            { q: "انتارا ادب برتوبة يڠ بتول اداله...", options: ["مڽسلي معصية دان مڠهنتيکنڽ", "ممبوات معصية لاݢي", "منڠݢوه توبة", "ملاکوکنڽ تنڤا نية"], ans: 0, cat: "ڤلاجرن 2: ادب برتوبة" },
             { q: "اڤاکه حکوم مڠيکوتي جنازة کي قبور باݢي ليلاکي؟", options: ["سنة", "واجب", "مکروه", "حرام"], ans: 0, cat: "ڤلاجرن 3: ادب زياره جنازة" },
-            { q: "صفت برهيس ديري يڠ دتنتوکن دالم إسلام اداله...", options: ["منوتوڤ عورة دان تيدک تبرج", "ممامرکن زينة", "سومبوڠ دڠن ڤکايان", "ممببزير دالم برهيس"], ans: 0, cat: "ڤلاجرن 4: ادب برهيس ديري" },
+            { q: "صفت برهيس ديري يڠ دتنتوکن دالم إسلام اداله...", options: ["منوتوڤ عورة دان تيدک تبرج", "ممامرکن زينة", "سومبوڠ دڠن ڤکايان", "ممبذير دالم برهيس"], ans: 0, cat: "ڤلاجرن 4: ادب برهيس ديري" },
             { q: "شرط صلاة قصر دان جمع کتيک برمسافر اداله مسافة سفر سد کورڠ-کورڠڽ...", options: ["2 مرحلة (81 كم)", "10 كم", "1 مرحلة", "50 كم"], ans: 0, cat: "ڤلاجرن 5: ادب برمسافر" },
-            { q: "ممبواڠ سمڤه ک دالم سڠاي اداله ڤربواتن يڠ...", options: ["مروسقکن عالم دان دتلاڠ شرع", "دتغاه دالم إسلام", "سنة", "هاروس سهاج"], ans: 0, cat: "ڤلاجرن 6: ادب ممبلهارا عالم" },
-            { q: "اڤاکه صفت محمودة يڠ برمعنا ممبوات عملن سمارت-مارتا کران الله تعالى؟", options: ["الإخلاص", "الرياء", "العجب", "الحسد"], ans: 0, cat: "ڤلاجرن 8: صفت محمودة" },
-            { q: "صفت رياء برمعنا...", options: ["منونجوق-نونجوق عملن سوڤايا دڤوجي", "برسوچي هاتي", "سبر منريم قضاء", "توكل کيڤد الله"], ans: 0, cat: "ڤلاجرن 9: صفت مذمومة" }
+            { q: "ممبواڠ سمڤه ک دالم سوڠاي اداله ڤربواتن يڠ...", options: ["مروسقکن عالم دان دتلاڠ شرع", "دتغاه دالم إسلام", "سنة", "هاروس سهاج"], ans: 0, cat: "ڤلاجرن 6: ادب ممبلهارا عالم" },
+            { q: "اڤاکه صفت محمودة يڠ برمکنا ممبوات عملن سمارتا-مارتا کران الله تعالى؟", options: ["الإخلاص", "الرياء", "العجب", "الحسد"], ans: 0, cat: "ڤلاجرن 8: صفت محمودة" },
+            { q: "صفت رياء برمکنا...", options: ["منونجوق-نونجوق عملن سوڤايا دڤوجي", "برسوچي هاتي", "سبر منريم قضاء", "توكل کيڤد الله"], ans: 0, cat: "ڤلاجرن 9: صفت مذمومة" }
         ];
 
         const akhlakStructuredData = [
-            { q: "سنارايکن 3 ادب ترهادڤ کدوا ايبو باڤ.", ans: "1. ممباتوهي ڤرينته يڠ تيدک معصية.\n2. برباهس صنتون دان لمه لمبوت.\n3. مڠولورکن دعاء دان كباءيقن باݢي کدوا-دوڽ.", cat: "ڤلاجرن 1: ادب ايبو باڤ" },
+            { q: "سنارايکن 3 ادب ترهادڤ کدوا ايبو باڤ.", ans: "1. ممباتوهي ڤرينته يڠ تيدک معصية.\n2. بربهاس صنتون دان لمه لمبوت.\n3. مڠولورکن دعاء دان كباءيقن باݢي کدوا-دواڽ.", cat: "ڤلاجرن 1: ادب ايبو باڤ" },
             { q: "پاتاکن 3 شرط توبة نصوح.", ans: "1. مڽسلي معصية يڠ دلاکوکن.\n2. برهنتي دري ملاکوکن معصية سݢرا.\n3. برعزم تيدک مڠولڠي معصية ترسبوت سسلماڽ.", cat: "ڤلاجرن 2: ادب برتوبة" },
-            { q: "اڤاکه مئنا صفت الإخلاص؟", ans: "الإخلاص اداله ممبوات ستياڤ عبادة دان عملن چمڽ سمارتا-مارتا کران الله تعالى تنڤا مڠهارڤکن ڤوجين ماءنسي.", cat: "ڤلاجرن 8: صفت محمودة" },
-            { q: "سنارايکن 2 بهايا صفت حسد (دڠکي) دالم کهيدوڤن.", ans: "1. ممبوسوقکن هاتي دان مڠهاڤوسکن کتنانݢن.\n2. ممبتاکر عملن باءيق سڤرتي اڤي ممباکر کاتوي.", cat: "ڤلاجرن 9: صفت مذمومة" }
+            { q: "اڤاکه مکنا صفت الإخلاص؟", ans: "الإخلاص اداله ممبوات ستياڤ عبادة دان عملن هاڽ سمارتا-مارتا کران الله تعالى تنڤا مڠهارڤکن ڤوجين ماءنسي.", cat: "ڤلاجرن 8: صفت محمودة" },
+            { q: "سنارايکن 2 بهايا صفت حسد (دڠکي) دالم کهيدوڤن.", ans: "1. ممبوسوقکن هاتي دان مڠهاڤوسکن کتنانݢن.\n2. ممباکر عملن باءيق سڤرتي اڤي ممباکر کايو.", cat: "ڤلاجرن 9: صفت مذمومة" }
         ];
 
         const akhlakTrueFalseData = [
-            { q: "مڠدارهاکي کدوا ايبو باڤ اداله ترماسوق دالم ضوسا-ضوسا تربسر.", ans: true, cat: "ڤلاجرن 1" },
-            { q: "توبة هاڽ بوليه دلاکوکن سواقتو صياڤ دالم أوسيا توا سهاج.", ans: false, cat: "ڤلاجرن 2" },
+            { q: "مڠدرهاکاي کدوا ايبو باڤ اداله ترماسوق دالم دوسا-دوسا تربسر.", ans: true, cat: "ڤلاجرن 1" },
+            { q: "توبة هاڽ بوليه دلاکوکن سماس دالم أوسيا توا سهاج.", ans: false, cat: "ڤلاجرن 2" },
             { q: "ممبواڠ سمڤه د تمڤت أوموم دان مروسقکن عالم اداله ادب يڠ دتلاڠ دالم إسلام.", ans: true, cat: "ڤلاجرن 6" },
             { q: "صفت الإخلاص منجاديلن ستياڤ عبادة دتريما الله تعالى.", ans: true, cat: "ڤلاجرن 8" },
-            { q: "صفت رياء دان عجب اداله صفت محمودة يڠ وادجب دتلاعداني.", ans: false, cat: "ڤلاجرن 9" }
+            { q: "صفت رياء دان عجب اداله صفت محمودة يڠ واجب دتلاعداني.", ans: false, cat: "ڤلاجرن 9" }
         ];
 
         const akhlakMindMapTopics = [
-            { title: "ادب ترهادڤ ايبو باڤ", nodes: ["حکوم: فرض عين", "ادب: ممباتوهي, برچاکڤ لمه لمبوت, مندعاءکن", "اکيبت درهاكا: مندمڤت غمورکا الله"] },
-            { title: "ادب برتوبة", nodes: ["تعريف: کملبالم کيڤد الله دري معصية", "شرط: مڽسل, برهنتي, برعزم تيدک مڠولڠي", "کليبهن: دأمڤوني الله دان ينقين هاتي"] },
+            { title: "ادب ترهادڤ ايبو باڤ", nodes: ["حکوم: فرض عين", "ادب: ممباتوهي, برچاکڤ لمه لمبوت, مندعاءکن", "اکيبت درهاكا: منداڤت مورکا الله"] },
+            { title: "ادب برتوبة", nodes: ["تعريف: کمبالي کيڤد الله دري معصية", "شرط: مڽسل, برهنتي, برعزم تيدک مڠولڠي", "کليبهن: دأمڤوني الله دان تنڠ هاتي"] },
             { title: "ادب زياره جنازة", nodes: ["حکوم زياره: سنة", "ادب: مندعاءکن الميت, تيدک مراتڤ, ممبنتو کلوارݢ جنازة", "توجوان: مڠيڠتي ماتي"] },
             { title: "ادب برهيس ديري", nodes: ["شرط: منوتوڤ عورة, تيدک تبرج", "توجوان: منجاݢ کبرسيهن دان کچنتيکن", "مذموم: سومبوڠ دان بڠݢ"] },
-            { title: "ادب برمسافر", nodes: ["حکوم: هاروس (جک تجوان باءيق)", "ادب: نية باءيق, ممبچ دعا سفر, منجاݢ صلاة", "کدواکن: دإيزينکن صلاة قصر دان جمع"] },
-            { title: "ادب ممبلهارا عالم", nodes: ["مسؤولية: خليفة د بومي", "ادب: منجاݢ کبرسيهن, تيدک ممببزير, تيدک مروسقکن فلورا/فونا", "فائده: کهيدوڤن هرموني"] },
+            { title: "ادب برمسافر", nodes: ["حکوم: هاروس (جک تجوان باءيق)", "ادب: نية باءيق, ممباچ دعا سفر, منجاݢ صلاة", "کلوڠݢرن: دإيزينکن صلاة قصر دان جمع"] },
+            { title: "ادب ممبلهارا عالم", nodes: ["تڠݢوڠجواب: خليفة د بومي", "ادب: منجاݢ کبرسيهن, تيدک ممبذير, تيدک مروسقکن فلورا/فونا", "فائده: کهيدوڤن هرموني"] },
             { title: "صفت محمودة دان مذمومة", nodes: ["محمودة: إخلاص, رضا, صبر, توكل", "مذمومة: رياء, عجب, حسد, تكبر", "تزكية النفس: ممبرسيهکن هاتي دري صفت چلا"] }
         ];
 
@@ -899,30 +1041,30 @@
 
         // Data Pembelajaran Bahasa Arab (Pelajaran 1 - 5)
         const arabObjectiveData = [
-            { q: "اڤاکه مئنا ڤرکاتاءن 'مَدْرَسَةٌ'؟", options: ["سکوله", "رومه", "مسجد", "ڤاسر"], ans: 0, cat: "ڤلاجرن 1: دي سکوله" },
+            { q: "اڤاکه مکنا ڤرکاتاءن 'مَدْرَسَةٌ'؟", options: ["سکوله", "رومه", "مسجد", "ڤاسر"], ans: 0, cat: "ڤلاجرن 1: دي سکوله" },
             { q: "ڤيليه ترجمهن يڠ بتول باݢي 'قَلَمٌ'.", options: ["ڤين", "بوکو", "ڤمادام", "ڤمباريس"], ans: 0, cat: "ڤلاجرن 1: دي سکوله" },
             { q: "اڤاکه ارتي 'أَبٌ' دالم بهاس ملايو؟", options: ["باڤ", "ايبو", "داتوق", "نينيق"], ans: 0, cat: "ڤلاجرن 2: کلوارݢ" },
             { q: "اڤاکه بهاس عرب باݢي نومبور 'تيݢ'؟", options: ["ثَلَاثَةٌ", "وَاحِدٌ", "اِثْنَانِ", "أَرْبَعَةٌ"], ans: 0, cat: "ڤلاجرن 3: نومبور" },
-            { q: "ڤرکاتاءن 'سَمَكٌ' برمئنا...", options: ["ايکن", "داݢيڠ", "أيم", "نساي"], ans: 0, cat: "ڤلاجرن 4: ماکنن" }
+            { q: "ڤرکاتاءن 'سَمَكٌ' برمکنا...", options: ["ايکن", "داݢيڠ", "أيم", "ناسي"], ans: 0, cat: "ڤلاجرن 4: ماکنن" }
         ];
 
         const arabStructuredData = [
-            { q: "توليسکن ڤرکاتاءن عرب باݢي 'ݢورو ليلاکي'.", ans: "مُعَلِّمٌ", cat: "ڤلاجرن 1: دي سکوله" },
-            { q: "اڤاکه ارتي 'جَدَّةٌ' دالم بهاس ملايو؟", ans: "نينيق", cat: "ڤلاجرن 2: کلوارݢ" },
-            { q: "سنارايکن 3 بارڠ د دالم کلس دالم بهاس عرب.", ans: "1. كُرْسِيٌّ (کروسي)\n2. مَكْتَبٌ (ميجا)\n3. سَبُّورَةٌ (ڤاڤن هيتم)", cat: "ڤلاجرن 1: دي سکوله" },
+            { q: "توليسکن ڤرکاتاءن عرب باݢي 'ݢورو ليلاکي'.", ans: "مُعَلِّمٌ", cat: "ڤلاجرن 1: دي سکوله" },
+            { q: "اڤاکه ارتي 'جَدَّةٌ' دالم بهاس ملايو؟", ans: "نينيق", cat: "ڤلاجرن 2: کلوارݢ" },
+            { q: "سنارايکن 3 بارڠ د دالم کلس دالم بهاس عرب.", ans: "1. كُرْسِيٌّ (کروسي)\n2. مَكْتَبٌ (ميجا)\n3. سَبُّورَةٌ (ڤاڤن هيتم)", cat: "ڤلاجرن 1: دي سکوله" },
             { q: "ترجمهکن ک دالم بهاس عرب: 'رومه ساي چنتيق'.", ans: "بَيْتِي جَمِيلٌ", cat: "ڤلاجرن 5: تمڤت" }
         ];
 
         const arabTrueFalseData = [
-            { q: "ڤرکاتاءن 'مَاءٌ' ممباوا مئنا 'اءير'.", ans: true, cat: "ڤلاجرن 4: ماکنن دان مينومن" },
-            { q: "نومبور 'خَمْسَةٌ' برمئنا انم.", ans: false, cat: "ڤلاجرن 3: نومبور" },
+            { q: "ڤرکاتاءن 'مَاءٌ' ممباوا مکنا 'اءير'.", ans: true, cat: "ڤلاجرن 4: ماکنن دان مينومن" },
+            { q: "نومبور 'خَمْسَةٌ' برمکنا انم.", ans: false, cat: "ڤلاجرن 3: نومبور" },
             { q: "بهاس عرب باݢي 'رومه' اداله 'بَيْتٌ'.", ans: true, cat: "ڤلاجرن 5: تمڤت" },
-            { q: "ڤرکاتاءن 'أُمٌّ' برمئنا ابڠ.", ans: false, cat: "ڤلاجرن 2: کلوارݢ" }
+            { q: "ڤرکاتاءن 'أُمٌّ' برمکنا ابڠ.", ans: false, cat: "ڤلاجرن 2: کلوارݢ" }
         ];
 
         const arabMindMapTopics = [
-            { title: "دالم کلس (فِي الفَصْلِ)", nodes: ["سَبُّورَةٌ: ڤاڤن هيتم", "كُرْسِيٌّ: کروسي", "مَكْتَبٌ: ميجا", "قَلَمٌ: ڤين", "كِتَابٌ: بوکو"] },
-            { title: "کلوارݢ (الأُسْرَة)", nodes: ["أَبٌ: باڤ", "أُمٌّ: ايبو", "أَخٌ: ابڠ/اديق ليلاکي", "أُخْتٌ: کاکق/اديق ڤرمڤوان", "جَدٌّ: داتوق"] },
+            { title: "دالم کلس (فِي الفَصْلِ)", nodes: ["سَبُّورَةٌ: ڤاڤن هيتم", "كُرْسِيٌّ: کروسي", "مَكْتَبٌ: ميجا", "قَلَمٌ: ڤين", "كِتَابٌ: بوکو"] },
+            { title: "کلوارݢ (الأُسْرَة)", nodes: ["أَبٌ: باڤ", "أُمٌّ: ايبو", "أَخٌ: ابڠ/اديق ليلاکي", "أُخْتٌ: کاکق/اديق ڤرمڤوان", "جَدٌّ: داتوق"] },
             { title: "نومبور (الأَرْقَام)", nodes: ["وَاحِدٌ: 1", "اِثْنَانِ: 2", "ثَلَاثَةٌ: 3", "أَرْبَعَةٌ: 4", "خَمْسَةٌ: 5"] }
         ];
 
@@ -933,8 +1075,124 @@
             { left: "سَمَكٌ", right: "ايکن" }
         ];
 
-        let currentSubject = 'tauhid'; // 'tauhid', 'muamalat', 'akhlak' or 'arab'
+        // Data Pembelajaran Ibadat (Pelajaran 1 - 8)
+        const ibadatObjectiveData = [
+            { q: "اڤاکه حکوم للاکي دان خنثى مماکاي سوترا درڤد اولت يڠ دامبيل ماس هيدوڤ اتاو ماتي؟", options: ["سنة", "هاروس", "مکروه", "حرام"], ans: 3, cat: "ڤلاجرن 1: حکوم برڤاکاين" },
+            { q: "انتارا بريکوت يڠ ماناکه دبنرکن (هاروس) باݢي للاکي مڠݢوناکن سوترا؟", options: ["دودوق دأتسن", "دجاديكن تمڤت مپورت", "دبوات بکس اونتوق مصحف", "مماکاي سوترا تنڤا عذور"], ans: 2, cat: "ڤلاجرن 1: حکوم برڤاکاين" },
+            { q: "اڤاکه ڤڠرتين زکاة دري سݢي بهاس؟", options: ["ممبرسيهکن", "تمبه اتاو تومبوه", "مڠلوارکن هرتا", "سدقه"], ans: 1, cat: "ڤلاجرن 2: زکاة هرتا" },
+            { q: "نصاب باݢي اونتا اياله برمولا دري...", options: ["2 ایکور", "5 ایکور", "10 ایکور", "40 ایکور"], ans: 1, cat: "ڤلاجرن 2: زکاة هرتا" },
+            { q: "وقتو 'واجب' مڠلوارکن زکاة فطرة اياله...", options: ["اول رمضان", "ستله تربنم ماتاهاري اخير رمضان", "سبلوم صلاة هاري راي", "سلڤس صلاة هاري راي"], ans: 1, cat: "ڤلاجرن 3: زکاة فطرة" },
+            { q: "ڤواسا دري سݢي شرع اياله...", options: ["مناهن ديري درڤد ماکن دان مينوم سهاج", "مناهن ديري درڤد ڤرکارا يڠ ممبطلکن ڤواسا", "تيدق برچاکڤ سڤنجڠ هاري", "برعبادة ددالم مسجد"], ans: 1, cat: "ڤلاجرن 4: ڤواسا" },
+            { q: "حکوم اعتکاف اداله...", options: ["واجب", "سنة مؤكدة ڤد تياڤ-تياڤ وقتو", "مکروه", "حرام"], ans: 1, cat: "ڤلاجرن 5: اعتکاف" },
+            { q: "ميقات زماني (ماس) باݢي حج اياله...", options: ["بولن رمضان", "بولن شوال، ذو القعدة دان هيڠݢ 10 ذو الحجة", "بولن محرم", "سڤنجڠ تاهون"], ans: 1, cat: "ڤلاجرن 6: حج دان عمرة" },
+            { q: "سعي دمولاكن دصفا دان براخير د...", options: ["کعبة", "مروة", "عرفة", "منى"], ans: 1, cat: "ڤلاجرن 7: روكون حج" },
+            { q: "حج تمتع اياله مندهولوکن...", options: ["عمرة درڤد حج ڤد بولن حج", "حج درڤد عمرة", "حج دان عمرة سرنتق", "طواف درڤد سعي"], ans: 0, cat: "ڤلاجرن 8: بهاݢين حج" }
+        ];
+
+        const ibadatStructuredData = [
+            { q: "ڽاتاکن دوا ڤرکارا يڠ دحرامکن برکاءيتن سوترا باݢي للاکي.", ans: "مماکاينڽ، دودوق دأتسن، برسندر کڤداڽ تنڤا برلاڤيق.", cat: "ڤلاجرن 1: حکوم برڤاکاين" },
+            { q: "اڤاکه شرط باݢي وانيتا مماکاي ݢلڠ کاکي درڤد امس اتاو ڤيرق؟", ans: "دبنرکن سقدر 200 مثقال (850 ݢرام) دان تيدق برلبيه-لبيهن.", cat: "ڤلاجرن 1: حکوم برڤاکاين" },
+            { q: "سنارايکن 3 درڤد 5 ڤرکارا واجب زکاة.", ans: "بيناتڠ ترنقن، الأثمان (امس دان ڤيرق)، بيجي-بيجين، بواه-بواهن، هرتا ڤرنياݢاءن.", cat: "ڤلاجرن 2: زکاة هرتا" },
+            { q: "سنارايکن 4 ݢولوڠن (أصناف) يڠ برحق منريما زکاة.", ans: "فقير، ميسکين، عامل، موالف، همبا مکاتب، اورڠ برهوتڠ، في سبيل الله، ابن سبيل.", cat: "ڤلاجرن 3: زکاة فطرة" },
+            { q: "سنارايکن 3 ڤرکارا يڠ ممبطلکن ڤواسا.", ans: "مماسوقکن سسواتو کدالم روڠݢ سڠاج، مونته دغن سڠاج، جماع سياڠ هاري.", cat: "ڤلاجرن 4: ڤواسا" },
+            { q: "اڤاکه مقصود اعتکاف دري سݢي شرع؟", ans: "برهنتي ددالم مسجد دغن نية قربة (مڠهمڤيرکن ديري کڤد الله).", cat: "ڤلاجرن 5: اعتکاف" },
+            { q: "سنارايکن 6 روكون حج.", ans: "نية، وقوف عرفة، طواف إفاضة، سعي، برچوکور، ترتيب.", cat: "ڤلاجرن 7: روكون حج" }
+        ];
+
+        const ibadatTrueFalseData = [
+            { q: "حرام کأتس للاکي مماکاي سوترا دان ڤاکاين سوترا.", ans: true, cat: "ڤلاجرن 1" },
+            { q: "زکاة بيناتڠ ترنقن هاڽ دواجبکن کأتس اونتا، لمبو/کرباو دان کمبيڠ/کيبش سهاج.", ans: true, cat: "ڤلاجرن 2" },
+            { q: "زکاة فطرة واجب دکلوارکن سلڤس صلاة هاري راي فطر.", ans: false, cat: "ڤلاجرن 3" },
+            { q: "تيدور سڤنجڠ هاري ممبطلکن ڤواسا.", ans: false, cat: "ڤلاجرن 4" },
+            { q: "منلن اءير ليور يڠ برچمڤور دغن ماکنن دچله ݢيݢي ممبطلکن ڤواسا.", ans: true, cat: "ڤلاجرن 4" },
+            { q: "صح اعتكاف جک دلاکوکن ددالم رومه (بوکن مسجد).", ans: false, cat: "ڤلاجرن 5" },
+            { q: "حج دان عمرة دواجبکن ستياڤ تاهون باݢي يڠ ممڤو.", ans: false, cat: "ڤلاجرن 6" },
+            { q: "إحصار اياله سکتن کأتس اورڠ يڠ إحرام درڤد مپمڤورناکن عبادة حج (سڤرتي دهالڠ موسوه).", ans: true, cat: "ڤلاجرن 8" }
+        ];
+
+        const ibadatMindMapTopics = [
+            { title: "حکوم برڤاکاين", nodes: ["حرام باݢي للاکي مماکاي سوترا دان امس", "هاروس باݢي وانيتا (تيدق برلبيهن)", "هاروس باݢي للاکي وقتو ضرورة (سجوق/ڤرڤرڠن)", "سنة مماکاي چينچين ڤيرق"] },
+            { title: "زکاة هرتا", nodes: ["بيناتڠ ترنقن (اونتا، لمبو، کمبيڠ)", "الأثمان (امس 85g، ڤيرق 595g)", "بيجي-بيجين دان بواه-بواهن (5 أوسق)", "هرتا ڤرنياݢاءن", "معدن دان رکاز (1/5 / 20%)"] },
+            { title: "زکاة فطرة", nodes: ["واجب: ستله تربنم ماتاهاري اخير رمضان", "قدر: 1 ݢنتڠ (صاع) ماکنن اساسي", "8 اصناف يڠ لايق منريما زکاة", "سنة: سبلوم صلاة هاري راي"] },
+            { title: "ڤواسا", nodes: ["مناهن ديري درڤد ڤرکارا ممبطلکن ڤواسا", "شرط صح: إسلام، برعقل، سوچي حيض/نفاس", "واجب نية تياڤ مالم باݢي فرض", "هاري حرام ڤواسا: هاري راي & تشريق"] },
+            { title: "اعتکاف", nodes: ["حكوم: سنة مؤكدة", "شرط: مسجد، نية قربة", "بطل: مرتد، مابوق، حيض، جماع"] },
+            { title: "حج دان عمرة", nodes: ["روكون: نية، وقوف، طواف، سعي، برچوکور، ترتيب", "ميقات زماني (شوال-ذو الحجة) دان مکاني", "چارا حج: إفراد، تمتع، قرآن"] }
+        ];
+
+        const ibadatMatchPairs = [
+            { left: "نصاب امس (24 کارات)", right: "85 ݢرام" },
+            { left: "قدر زكاة فطرة", right: "1 ݢنتڠ (صاع)" },
+            { left: "حج دهولو، کمودين عمرة", right: "إفراد" },
+            { left: "مڠليليڠي کعبة 7 کالي", right: "طواف" },
+            { left: "حاضير دبومي عرفة", right: "وقوف" }
+        ];
+
+        // Data Pembelajaran Faraid (Pelajaran 1 - 7)
+        const faraidObjectiveData = [
+            { q: "اڤاکه مقصود وصيت دري سݢي بهاس؟", options: ["ممرينتهکن، منصيحتکن اتاو منجنجيکن", "ممبريکن هرتا تنڤا شرط", "ممبهاݢيکن هرتا سماس هيدوڤ", "منيڠݢلکن ڤسنن کوسڠ"], ans: 0, cat: "ڤلاجرن 1: وصيت" },
+            { q: "اڤاکه حکوم برواصيت باݢي ملaksanaکن تونتوتن شرعي سڤرتي زکاة دان حج؟", options: ["واجب", "سنة", "هاروس", "مکروه"], ans: 0, cat: "ڤلاجرن 1: وصيت" },
+            { q: "براڤاکه حد مقسيما هرتا يڠ بوليه دواصيتکن تنڤا ممرلوکن ايذين واريث؟", options: ["1/3 (ساتو ڤرتيݢ) درڤد هرتا", "1/2 (سڤاروه) درڤد هرتا", "1/4 درڤد هرتا", "کسلوروهن هرتا"], ans: 0, cat: "ڤلاجرن 1: وصيت" },
+            { q: "سياڤاکه 'داتوق' يڠ ممڤوساکاي؟", options: ["باڤ کڤد باڤ سي ماتي هيڠݢ کأتس", "باڤ کڤد ايبو سي ماتي", "داتوق ساودارا", "باڤ تيري"], ans: 0, cat: "ڤلاجرن 2: ڤوساک باڤ، داتوق دان ايبو" },
+            { q: "بيلاکه ايبو منداڤت فرض ثلث (1/3)؟", options: ["سي ماتي تيدق منيڠݢلکن فروع وارث دان تياد راماي اديق-براديق", "سي ماتي منيڠݢلکن فروع وارث", "سي ماتي منيڠݢلکن 2 اورڠ اديق-براديق", "سي ماتي منيڠݢلکن سوامي"], ans: 0, cat: "ڤلاجرن 2: ڤوساک باڤ، داتوق دان ايبو" },
+            { q: "سياڤاکه يڠ مڠهالڠ نينيق سبله باڤ (أم الأب) درڤد منداڤت فوساک؟", options: ["ايبو دان باڤ سي ماتي", "انق للاکي سي ماتي", "ايستري سي ماتي", "سوامي سي ماتي"], ans: 0, cat: "ڤلاجرن 3: ڤوساک نينيق" },
+            { q: "اڤاکه يڠ ديمقصودکن دڠن 'حواشي' دالم فوساک؟", options: ["ساودارا-مارا دري ڤيهق تڤي (اديق-براديق)", "ايبو باڤ سي ماتي", "انق دان چوچو سي ماتي", "ايستري اتاو سوامي سي ماتي"], ans: 0, cat: "ڤلاجرن 4: ڤوساک حواشي" },
+            { q: "اڤاکه مقصود 'مشرکة' دالم علمو فرائض؟", options: ["دشريکتکن (دکوڠسيکن) بهاݢين 1/3 انتارا اديق-براديق سأيبو دان اديق-براديق سأيبو سباڤ", "دشريکتکن هرتا انتارا سوامي دان ايستري", "دکوڠسيکن هرتا انتارا باڤ دان داتوق", "دکوڠسيکن هرتا انتارا انق للاکي دان انق ڤرمڤوان"], ans: 0, cat: "ڤلاجرن 5: ڤوساک مشرکة" },
+            { q: "اڤاکه مقصود 'برهيمڤون دوا چارا' دالم ممڤوساکاي؟", options: ["سأورڠ واريث لايق منداڤت فوساک ملالوءي 2 هوبوڠن قرابت يڠ بربيذا", "منريما هرتا دان واڠ", "منريما وصيت دان فوساک", "منريما فوساک سماس هيدوڤ دان ماتي"], ans: 0, cat: "ڤلاجرن 6: برهيمڤون دوا چارا" },
+            { q: "اڤاکه يڠ ديمقصودکن دڠن 'أکدرية' دالم فرائض؟", options: ["مسئله دمان داتوق دان اديق-براديق ڤرمڤوان سأيبو سباڤ منداڤت فوساک برسام", "مسئله دمان ايستري منداڤت سموا هرتا", "مسئله يڠ مليبتکن فوساک انق تيري", "مسئله دمان باڤ منداڤت 1/6 دان عصبة"], ans: 0, cat: "ڤلاجرن 7: ڤوساک أکدرية" }
+        ];
+
+        const faraidStructuredData = [
+            { q: "اڤاکه مقصود وصيت دري سݢي شرع؟", ans: "اقرار יڠ دبوات سسأورڠ ڤد ماس حياتڽ کأتس هرتان دڠن مقصود اونتوق دسمڤورناکن کباجيقن يڠ دبنرکن منوروت حکوم شرع سلفس کماتين.", cat: "ڤلاجرن 1: وصيت" },
+            { q: "سنارايکن 4 روكون وصيت.", ans: "1. موصى (ڤواصيت)\n2. موصى له (ڤنريما وصيت)\n3. موصى به (هرتا יڠ دواصيتکن)\n4. صيغة (ايجاب دان قبول)", cat: "ڤلاجرن 1: وصيت" },
+            { q: "بيلاکه باڤ منداڤت 'عصبة' سهاج؟", ans: "جک سي ماتي تيدق منيڠݢلکن فروع وارث سام سکالي.", cat: "ڤلاجرن 2: ڤوساک باڤ، داتوق دان ايبو" },
+            { q: "سياڤاکه يڠ مڠهالڠ داتوق دريڤد منداڤت فوساک (محجوب)؟", ans: "باڤ سي ماتي.", cat: "ڤلاجرن 2: ڤوساک باڤ، داتوق دان ايبو" },
+            { q: "اڤاکه يڠ ديمقصودکن دڠن نينيق يڠ ممڤوساکاي؟", ans: "نينيق سبله ايبو (أم الأم) دان نينيق سبله باڤ (أم الأب).", cat: "ڤلاجرن 3: ڤوساک نينيق" },
+            { q: "اديق-براديق سأيبو سباڤ/سباڤ منداڤت فوساک سچارا...", ans: "عصبة (للاکي داڤت 2 بهاݢين، ڤرمڤوان 1 بهاݢين)", cat: "ڤلاجرن 4: ڤوساک حواشي" },
+            { q: "سياڤاکه واريث يڠ ترليبت دالم مسئله أکدرية؟", ans: "سوامي، ايبو، داتوق دان اديق-براديق ڤرمڤوان سأيبو سباڤ/سباڤ.", cat: "ڤلاجرن 7: ڤوساک أکدرية" }
+        ];
+
+        const faraidTrueFalseData = [
+            { q: "وصيت دري سݢي بهاس برارتي ممرينتهکن، منصيحتکن اتاو منجنجيکن.", ans: true, cat: "ڤلاجرن 1: وصيت" },
+            { q: "وصيت سأورڠ کانق-کانق اتاو اورڠ ݢيلا اداله صح.", ans: false, cat: "ڤلاجرن 1: وصيت" },
+            { q: "هرتا يڠ دواصيتکن تيدق بوليه ملبيهي 1/3 درڤد کسلوروهن هرتا تنڤا ايذين واريث.", ans: true, cat: "ڤلاجرن 1: وصيت" },
+            { q: "باڤ مرتوا بوليه ممڤوساکاي هرتا مننطوڽ.", ans: false, cat: "ڤلاجرن 2: ڤوساک باڤ، داتوق دان ايبو" },
+            { q: "باڤ منداڤت فرض 1/6 دان عصبة جک سي ماتي منيڠݢلکن انق ڤرمڤوان سهاج.", ans: true, cat: "ڤلاجرن 2: ڤوساک باڤ، داتوق دان ايبو" },
+            { q: "داتوق تيدق بوليه مڠهالڠ اديق-براديق سأيبو سباڤ اتاو سباڤ.", ans: true, cat: "ڤلاجرن 2: ڤوساک باڤ، داتوق دان ايبو" },
+            { q: "نينيق سبله باڤ دان نينيق سبله ايبو کدو-دواڽ بوليه ممڤوساکاي.", ans: true, cat: "ڤلاجرن 3: ڤوساک نينيق" },
+            { q: "حواشي اياله ساودارا-مارا دري ڤيهق تڤي سڤرتي اديق-براديق.", ans: true, cat: "ڤلاجرن 4: ڤوساک حواشي" },
+            { q: "مشرکة مروڤاکن مسئله دمان اديق-براديق سأيبو دان سأيبو سباڤ برکوڠسي 1/3 هرتا.", ans: true, cat: "ڤلاجرن 5: ڤوساک مشرکة" },
+            { q: "مسئله أکدرية مليبتکن سوامي، ايبو، داتوق دان اديق-براديق ڤرمڤوان سأيبو سباڤ/سباڤ.", ans: true, cat: "ڤلاجرن 7: ڤوساک أکدرية" }
+        ];
+
+        const faraidMindMapTopics = [
+            { title: "وصيت", nodes: ["حکوم: واجب (تونتوتن شرعي)، سنة، هاروس، مکروه، حرام", "روكون: موصى، موصى له، موصى به، صيغة", "حد: مقسيما 1/3 درڤد هرتا (تنڤا ايذين)"] },
+            { title: "ڤوساک باڤ، داتوق، ايبو", nodes: ["باڤ: 1/6 (اد فروع)، عصبة (تياد فروع)", "داتوق: سام सڤرتي باڤ (محجوب جک اد باڤ)", "ايبو: 1/3 (تياد فروع/اديق-براديق)، 1/6 (اد فروع)"] },
+            { title: "ڤوساک نينيق", nodes: ["نينيق صح: أم الأم (سبله ايبو)، أم الأب (سبله باڤ)", "بهاݢين: فرض 1/6", "حجب: ايبو مڠهالڠ سموا، باڤ مڠهالڠ أم الأب"] },
+            { title: "ڤوساک حواشي", nodes: ["مقصود: ساودارا دري ڤيهق تڤي (اديق-براديق)", "سأيبو سباڤ/سباڤ: عصبة / فرض", "سأيبو: فرض 1/6 (جک 1), 1/3 (جک 2+)"] },
+            { title: "مشرکة & برهيمڤون", nodes: ["مشرکة: برکوڠسي 1/3 (اديق سأيبو & سأيبو سباڤ)", "برهيمڤون: 1 واريث داڤت فوساک 2 چارا (چونتوه: سوامي & سڤوڤو)"] },
+            { title: "ڤوساک أکدرية", nodes: ["مقصود: مسئله خاص مليبتکن داتوق & اديق ڤرمڤوان", "واريث: سوامي، ايبو، داتوق، اديق ڤرمڤوان", "ڤپلساين: بهاݢين داتوق & اديق دچمڤور -> عصبة"] }
+        ];
+
+        const faraidMatchPairs = [
+            { left: "اقرار ڤد ماس حيات اونتوق کباجيقن سلفس ماتي", right: "وصيت" },
+            { left: "اورڠ يڠ برواصيت", right: "موصى" },
+            { left: "هرتا يڠ دواصيتکن", right: "موصى به" },
+            { left: "حد مقسيما وصيت تنڤا ايذين", right: "1/3 درڤد هرتا" },
+            { left: "باڤ کڤد سي ماتي", right: "باڤ يڠ ممڤوساکاي" },
+            { left: "باڤ داڤت عصبة سهاج", right: "تياد فروع وارث" },
+            { left: "ايبو داڤت 1/3 درڤد باقي", right: "مسئله الغراوين" },
+            { left: "نينيق سبله ايبو", right: "أم الأم" },
+            { left: "مڠهالڠ سموا نينيق", right: "ايبو" },
+            { left: "ساودارا دري ڤيهق تڤي", right: "حواشي" }
+        ];
+
+
+        let currentSubject = 'tauhid'; // 'tauhid', 'muamalat', 'akhlak', 'arab', 'ibadat' or 'faraid'
         let currentActiveMode = 'objective';
+
+        // Session Trackers for scores to prevent infinite point clicking
+        let objSession = { score: 0, answers: {} };
+        let tfSession = { score: 0, answers: {} };
 
         function showPortalHome() {
             document.getElementById('portal-landing-views').classList.remove('hidden');
@@ -945,6 +1203,12 @@
         function startSubjectMode(subject, mode) {
             currentSubject = subject;
             currentActiveMode = mode;
+
+            // Reset session data when entering a new mode
+            objSession = { score: 0, answers: {} };
+            tfSession = { score: 0, answers: {} };
+            document.getElementById('obj-scoreTracker').innerText = `مرکه: 0`;
+            document.getElementById('tf-scoreTracker').innerText = `مرکه: 0`;
 
             document.getElementById('portal-landing-views').classList.add('hidden');
             document.getElementById('subject-interactive-container').classList.remove('hidden');
@@ -969,12 +1233,20 @@
                 badge.innerText = "Bahasa Arab Darjah 6";
                 badge.className = "text-xs bg-amber-100 text-amber-800 px-3 py-1 rounded-full font-bold";
                 icon.className = "fas fa-language text-amber-600";
+            } else if (subject === 'ibadat') {
+                badge.innerText = "Ibadat Darjah 6";
+                badge.className = "text-xs bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-bold";
+                icon.className = "fas fa-pray text-teal-600";
+            } else if (subject === 'faraid') {
+                badge.innerText = "Faraid Darjah 6";
+                badge.className = "text-xs bg-rose-100 text-rose-800 px-3 py-1 rounded-full font-bold";
+                icon.className = "fas fa-balance-scale text-rose-600";
             }
 
             document.querySelectorAll('.subject-sub-app').forEach(el => el.classList.add('hidden'));
 
             if (mode === 'objective') {
-                titleJawi.innerText = "اوچين اوبجيکتيف";
+                titleJawi.innerText = "اوجين اوبجيکتيف";
                 document.getElementById('app-objective').classList.remove('hidden');
                 loadObjQuestion(0);
             } else if (mode === 'structured') {
@@ -982,7 +1254,7 @@
                 document.getElementById('app-structured').classList.remove('hidden');
                 loadStrQuestion(0);
             } else if (mode === 'truefalse') {
-                titleJawi.innerText = "اوچين بتول/ساله";
+                titleJawi.innerText = "اوجين بتول/ساله";
                 document.getElementById('app-truefalse').classList.remove('hidden');
                 loadTfQuestion(0);
             } else if (mode === 'mindmap') {
@@ -1024,11 +1296,22 @@
                 if (type === 'tf') return arabTrueFalseData;
                 if (type === 'mm') return arabMindMapTopics;
                 if (type === 'match') return arabMatchPairs;
+            } else if (currentSubject === 'ibadat') {
+                if (type === 'obj') return ibadatObjectiveData;
+                if (type === 'str') return ibadatStructuredData;
+                if (type === 'tf') return ibadatTrueFalseData;
+                if (type === 'mm') return ibadatMindMapTopics;
+                if (type === 'match') return ibadatMatchPairs;
+            } else if (currentSubject === 'faraid') {
+                if (type === 'obj') return faraidObjectiveData;
+                if (type === 'str') return faraidStructuredData;
+                if (type === 'tf') return faraidTrueFalseData;
+                if (type === 'mm') return faraidMindMapTopics;
+                if (type === 'match') return faraidMatchPairs;
             }
         }
 
         let objIndex = 0;
-        let objScore = 0;
 
         function loadObjQuestion(idx) {
             objIndex = idx;
@@ -1042,34 +1325,73 @@
             const container = document.getElementById('obj-optionsContainer');
             container.innerHTML = '';
             
+            const hasAnswered = objSession.answers[idx] !== undefined;
+            const userAnswer = objSession.answers[idx];
+            
             item.options.forEach((opt, i) => {
                 const btn = document.createElement('button');
-                btn.className = "option-btn w-full text-right bg-slate-50 border border-slate-200 hover:border-blue-400 p-4 rounded-2xl font-jawi text-xl text-slate-800 transition flex items-center justify-between";
-                btn.onclick = () => checkObjAns(i);
-                btn.innerHTML = `<span>${opt}</span> <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-sans font-bold flex items-center justify-center text-sm">${String.fromCharCode(65 + i)}</span>`;
+                
+                // Style based on whether question was already answered
+                let baseClass = "option-btn w-full text-right bg-slate-50 border p-4 rounded-2xl font-jawi text-xl transition flex items-center justify-between ";
+                if (hasAnswered) {
+                    btn.disabled = true;
+                    if (i === item.ans) {
+                        baseClass += "border-emerald-500 bg-emerald-50 text-emerald-800 font-bold";
+                    } else if (i === userAnswer) {
+                        baseClass += "border-rose-500 bg-rose-50 text-rose-800 font-bold opacity-80";
+                    } else {
+                        baseClass += "border-slate-200 text-slate-500 opacity-50";
+                    }
+                } else {
+                    baseClass += "border-slate-200 hover:border-blue-400 text-slate-800";
+                    btn.onclick = () => checkObjAns(i);
+                }
+                
+                btn.className = baseClass;
+                
+                let letterCircleClass = (hasAnswered && i === item.ans) ? "bg-emerald-200 text-emerald-800" : (hasAnswered && i === userAnswer) ? "bg-rose-200 text-rose-800" : "bg-blue-100 text-blue-700";
+                
+                btn.innerHTML = `<span>${opt}</span> <span class="w-8 h-8 rounded-full ${letterCircleClass} font-sans font-bold flex items-center justify-center text-sm">${String.fromCharCode(65 + i)}</span>`;
                 container.appendChild(btn);
             });
 
-            document.getElementById('obj-feedbackBox').classList.add('hidden');
+            // Show or hide feedback depending on answered state
+            const feedbackBox = document.getElementById('obj-feedbackBox');
+            if (hasAnswered) {
+                feedbackBox.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-rose-100', 'text-rose-800');
+                if (userAnswer === item.ans) {
+                    feedbackBox.classList.add('bg-emerald-100', 'text-emerald-800');
+                    feedbackBox.innerHTML = `<i class="fas fa-check-circle text-2xl"></i> <span>جواڤن بتول! تهنيئه.</span>`;
+                } else {
+                    feedbackBox.classList.add('bg-rose-100', 'text-rose-800');
+                    feedbackBox.innerHTML = `<i class="fas fa-times-circle text-2xl"></i> <span>جواڤن کورڠ بتول. جواڤن يڠ بنر اداله: ${item.options[item.ans]}</span>`;
+                }
+            } else {
+                feedbackBox.classList.add('hidden');
+            }
+
             document.getElementById('obj-prevBtn').disabled = (idx === 0);
             document.getElementById('obj-nextBtn').disabled = (idx === data.length - 1);
         }
 
         function checkObjAns(selected) {
+            // Prevent re-answering
+            if (objSession.answers[objIndex] !== undefined) return;
+            
             const data = getActiveDataset('obj');
             const item = data[objIndex];
-            const feedbackBox = document.getElementById('obj-feedbackBox');
-            feedbackBox.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-rose-100', 'text-rose-800');
+            
+            // Record answer
+            objSession.answers[objIndex] = selected;
 
             if (selected === item.ans) {
-                objScore += 10;
-                feedbackBox.classList.add('bg-emerald-100', 'text-emerald-800');
-                feedbackBox.innerHTML = `<i class="fas fa-check-circle text-2xl"></i> <span>جواڤن بتول! تاهنياه.</span>`;
-            } else {
-                feedbackBox.classList.add('bg-rose-100', 'text-rose-800');
-                feedbackBox.innerHTML = `<i class="fas fa-times-circle text-2xl"></i> <span>جواڤن کورڠ بتول. جواڤن يڠ بنر اداله: ${item.options[item.ans]}</span>`;
+                objSession.score += 10;
             }
-            document.getElementById('obj-scoreTracker').innerText = `مرکه: ${objScore}`;
+            
+            document.getElementById('obj-scoreTracker').innerText = `مرکه: ${objSession.score}`;
+            
+            // Re-render UI to show locked options
+            loadObjQuestion(objIndex);
         }
 
         let strIndex = 0;
@@ -1095,7 +1417,6 @@
         }
 
         let tfIndex = 0;
-        let tfScore = 0;
         function loadTfQuestion(idx) {
             tfIndex = idx;
             const data = getActiveDataset('tf');
@@ -1104,26 +1425,64 @@
             document.getElementById('tf-qNumberBadge').innerText = `سوءالن ${idx + 1} / ${data.length}`;
             document.getElementById('tf-qCategoryBadge').innerText = item.cat;
             document.getElementById('tf-questionText').innerText = item.q;
-            document.getElementById('tf-feedbackBox').classList.add('hidden');
+            
+            const hasAnswered = tfSession.answers[idx] !== undefined;
+            const userAnswer = tfSession.answers[idx];
+            
+            const btnTrue = document.getElementById('tf-btn-true');
+            const btnFalse = document.getElementById('tf-btn-false');
+            const feedbackBox = document.getElementById('tf-feedbackBox');
+            
+            // Reset state
+            btnTrue.className = "py-6 px-4 bg-white border-2 border-emerald-200 text-emerald-600 hover:border-emerald-500 hover:bg-emerald-50 rounded-2xl font-bold font-jawi text-3xl transition flex flex-col items-center gap-2";
+            btnFalse.className = "py-6 px-4 bg-white border-2 border-rose-200 text-rose-600 hover:border-rose-500 hover:bg-rose-50 rounded-2xl font-bold font-jawi text-3xl transition flex flex-col items-center gap-2";
+            btnTrue.disabled = false;
+            btnFalse.disabled = false;
+            
+            if (hasAnswered) {
+                btnTrue.disabled = true;
+                btnFalse.disabled = true;
+                btnTrue.classList.add('opacity-50', 'cursor-not-allowed');
+                btnFalse.classList.add('opacity-50', 'cursor-not-allowed');
+                
+                if (userAnswer === true) {
+                    btnTrue.classList.replace('opacity-50', 'opacity-100');
+                    btnTrue.classList.add('ring-4', 'ring-emerald-300', 'bg-emerald-50');
+                } else if (userAnswer === false) {
+                    btnFalse.classList.replace('opacity-50', 'opacity-100');
+                    btnFalse.classList.add('ring-4', 'ring-rose-300', 'bg-rose-50');
+                }
+                
+                feedbackBox.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-rose-100', 'text-rose-800');
+                if (userAnswer === item.ans) {
+                    feedbackBox.classList.add('bg-emerald-100', 'text-emerald-800');
+                    feedbackBox.innerHTML = `<i class="fas fa-check-circle text-2xl"></i> <span>تهنيئه! جواڤن اندا بتول.</span>`;
+                } else {
+                    feedbackBox.classList.add('bg-rose-100', 'text-rose-800');
+                    feedbackBox.innerHTML = `<i class="fas fa-times-circle text-2xl"></i> <span>جواڤن اندا کورڠ بتول.</span>`;
+                }
+            } else {
+                feedbackBox.classList.add('hidden');
+            }
+
             document.getElementById('tf-prevBtn').disabled = (idx === 0);
             document.getElementById('tf-nextBtn').disabled = (idx === data.length - 1);
         }
 
         function selectTfAnswer(val) {
+            if (tfSession.answers[tfIndex] !== undefined) return;
+
             const data = getActiveDataset('tf');
             const item = data[tfIndex];
-            const feedbackBox = document.getElementById('tf-feedbackBox');
-            feedbackBox.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-rose-100', 'text-rose-800');
+            
+            tfSession.answers[tfIndex] = val;
 
             if (val === item.ans) {
-                tfScore += 10;
-                feedbackBox.classList.add('bg-emerald-100', 'text-emerald-800');
-                feedbackBox.innerHTML = `<i class="fas fa-check-circle text-2xl"></i> <span>تحنيئة! جواڤن اندا بتول.</span>`;
-            } else {
-                feedbackBox.classList.add('bg-rose-100', 'text-rose-800');
-                feedbackBox.innerHTML = `<i class="fas fa-times-circle text-2xl"></i> <span>جواڤن اندا کورڠ بتول.</span>`;
+                tfSession.score += 10;
             }
-            document.getElementById('tf-scoreTracker').innerText = `مرکه: ${tfScore}`;
+            
+            document.getElementById('tf-scoreTracker').innerText = `مرکه: ${tfSession.score}`;
+            loadTfQuestion(tfIndex);
         }
 
         function nextQuestion(type) {
@@ -1225,7 +1584,7 @@
                     document.getElementById('match-score').innerText = `Padanan Sah: ${matchedCount} / ${pairs.length}`;
 
                     if (matchedCount === pairs.length) {
-                        showModal("تاهنيئة!", "اندا برحاصيل مڽلسايکن سموا ڤادنن دڠن جباياءن!");
+                        showModal("تهنيئه!", "اندا برحاصيل مڽلسايکن سموا ڤادنن دڠن کجايأن!");
                     }
                 } else {
                     cardEl.classList.add('error');
